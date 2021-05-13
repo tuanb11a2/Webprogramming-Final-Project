@@ -7,11 +7,13 @@ if(isset($_GET['url'])){
     $url = $_GET['url'];
 }
 
+
 //require_once (ROOT . DS . 'library' . DS . 'bootstrap.php');
+
 ?>
 
 <html>
     <body>
-        <p> đây là index trong public</p>
+    	<?php require_once '../application/views/home.php'; ?>
     </body>
 </html>
