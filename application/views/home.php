@@ -1,12 +1,12 @@
-<?php
-	/*
-	*	MAIN PAGE
-	*/ 
 
-	// header
-	require_once 'header/header.php';
+<body>
+	<?php require_once 'header/header.php'; ?>
+	
+	<div class="block-1">	
+		<?php include('slider/slider.html') ?>
+	</div>		
+	
 
-	// footer
-	require_once 'footer/footer.php';	
+	<?php require_once 'footer/footer.php'; ?>
 
-?>
+</body>
