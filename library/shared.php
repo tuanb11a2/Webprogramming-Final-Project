@@ -22,11 +22,9 @@ function stripSlashesDeep($value) {
 }
 
 function removeMagicQuotes() {
-if ( get_magic_quotes_gpc() ) {
 	$_GET    = stripSlashesDeep($_GET   );
 	$_POST   = stripSlashesDeep($_POST  );
 	$_COOKIE = stripSlashesDeep($_COOKIE);
-}
 }
 
 /** Check register globals and remove them **/
@@ -73,7 +71,7 @@ function callHook() {
 
 /** Autoload any classes that are required **/
 
-function __autoload($className) {
+spl_autoload_register(function($className) {
 	if (file_exists(ROOT . DS . 'library' . DS . strtolower($className) . '.class.php')) {
 		require_once(ROOT . DS . 'library' . DS . strtolower($className) . '.class.php');
 	} else if (file_exists(ROOT . DS . 'application' . DS . 'controllers' . DS . strtolower($className) . '.php')) {
@@ -83,7 +81,7 @@ function __autoload($className) {
 	} else {
 		/* Error Generation Code Here */
 	}
-}
+});
 
 setReporting();
 removeMagicQuotes();
