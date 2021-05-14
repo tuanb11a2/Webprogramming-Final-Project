@@ -19,10 +19,12 @@ if(isset($_GET['url'])){
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"> 
 	<link rel="stylesheet" href="css/slider.css" type="text/css">
+	<link rel="stylesheet" href="css/slider1.css" type="text/css">
 	<link rel="stylesheet" href="css/home.css" type="text/css">
 </head>
 <body>
 	<?php require_once '../application/views/home.php'; ?>
 	<script type="text/javascript" src="js/slider.js"></script>
+	<script type="text/javascript" src="js/slider1.js"></script>
 </body>
 </html>
