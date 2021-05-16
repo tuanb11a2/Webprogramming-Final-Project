@@ -3,36 +3,73 @@
 }
 header{
     display: flex;
-    padding: 20px 20px;
+    flex-direction: row;
+    padding: 0px 20px;
+    align-items: center;
 }
 .header-logo {
-    padding: 20px 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    flex-basis: 15%;
+    display: flex;
+    justify-content: flex-end;
 }
 .signin-logout{
     padding: 20px 20px;
+    flex-basis: 35%;
+    display: flex;
+    justify-content: flex-end;
 }
 .header-logo img{
     height: 90px;
     border-radius: 45%;
+}
+.header-logo img:hover{
     box-shadow: 2px 2px pink;
 }
 .search-bar{
+    flex-basis: 40%;
     border: 1px solid;
     border-radius: 30px;
-    padding: 10px 20px;
+    margin: 10px 20px;
     height: 50px;
     font-size: larger;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.search-bar-form{
+    display: flex;
+    flex-basis: 100%;
 }
 .search-bar input[type=text]{
+    margin-left: 20px;
     border: none;
     outline: none;
+    width: fit-content;
+    flex-basis: 85%;
+    /* padding-right: 10px; */
+}
+.search-bar button[type=submit]{
+    /* padding-left: 10px; */
+    flex-basis: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-style: none;
+    background-color: inherit;
+    padding-right: 10px;
 }
 .signin-logout-btn{
     padding: 25px 34px;
     font-size: 16px;
-    background-color: red;
+    background-color: palevioletred;
     font-size: larger;
     border-radius: 40px;
+    text-decoration: none;
+}
+.signin-logout-btn:hover{
+    text-decoration: underline;
 }
 #main-menu{
     display: block;
@@ -58,9 +95,12 @@ ul#main-menu a:hover{
     color: red;
 }
 .sticky{
-    background-color: white;
+    background-color: white !important;
     position: fixed;
     z-index: 9999;
     top: 0;
     width: 100%
 }
+/* .sub-menu{
+    display: hidden;
+} */
