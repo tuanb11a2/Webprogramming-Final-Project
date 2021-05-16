@@ -20,6 +20,8 @@ if(isset($_GET['url'])){
 	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"> 
 	<link rel="stylesheet" href="css/slider.css" type="text/css">
 	<link rel="stylesheet" href="css/home.css" type="text/css">
+	<link rel="stylesheet" href="css/card.css" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
 <body>
 	<?php require_once '../application/views/home.php'; ?>
