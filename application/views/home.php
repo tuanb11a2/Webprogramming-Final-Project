@@ -6,6 +6,6 @@
 		<?php include('slider/slider.html') ?>
 	</div>		
 
-	<?php require_once 'footer/footer.php'; ?>
+	<?php require_once 'footer/footer.html'; ?>
 
 </body>

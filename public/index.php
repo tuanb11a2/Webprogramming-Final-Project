@@ -22,6 +22,7 @@ if(isset($_GET['url'])){
 	<link rel="stylesheet" href="css/home.css" type="text/css">
 	<link rel="stylesheet" href="css/card.css" type="text/css">
 	<link rel="stylesheet" href="css/header.css" type="text/css">
+	<link rel="stylesheet" href="css/footer.css" type="text/css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
 <body>

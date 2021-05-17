@@ -48,6 +48,7 @@ header{
     outline: none;
     width: fit-content;
     flex-basis: 85%;
+    font-size: large;
     /* padding-right: 10px; */
 }
 .search-bar button[type=submit]{
@@ -68,16 +69,17 @@ header{
     padding: 15px 34px;
     font-size: 16px;
     background-color: palevioletred;
-    color: indigo;
+    color: black;
     font-size: larger;
     border-radius: 40px;
     text-decoration: none;
+    font-weight: bold;
 }
 .signin-logout-btn:hover{
     text-decoration: underline;
 }
 .signin-logout-btn:visited{
-    color: indigo;
+    color: black;
 }
 
 #main-menu{
