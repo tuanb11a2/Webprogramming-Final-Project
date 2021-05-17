@@ -14,9 +14,13 @@ function myFunction() {
     header.classList.add("sticky");
     var main = document.getElementById("main-menu");
     main.style.backgroundColor = "white";
+    var sub = document.getElementById("dropdown-content-id");
+    sub.style.backgroundColor = "white";
   } else {
     header.classList.remove("sticky");
     var main = document.getElementById("main-menu");
     main.style.backgroundColor = "#fef4f4";
+    var sub = document.getElementById("dropdown-content-id");
+    sub.style.backgroundColor = "ghostwhite";
   }
 }
