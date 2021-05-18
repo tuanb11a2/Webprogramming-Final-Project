@@ -1,4 +1,5 @@
 .window {
+  position: absolute;
   --dark-background: #5a5a5a;
   --light-background: #8a8a8a;
   --light-foreground: #ededed;
@@ -8,7 +9,7 @@
   position: relative;
   padding-top: 20px;
   padding-bottom: 20px;
-    background-color: #FF1616;
+  background-color: #FF1616;
 }
 
 .window__current-img {
@@ -151,6 +152,39 @@
   opacity: 1;
 }
 
+.window__right {
+  position: absolute;
+  top: 30%;
+  padding-left: 40%;
+  color: white;
+  line-height: 2;
+  width: 100%;
+}
+
+.window__right h1{
+  font-size: 40px;
+}
+
+.window__right button {
+  font-size: 14px;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: #FF1616;
+  border: 1px solid white;
+  font-weight: bold;
+  height: 40px;
+  width: 140px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 40px;  
+}
+.window__right button:hover {
+  background-color: white;
+  color: #FF1616;
+  cursor: pointer;
+}
 img {
   display: block;
 }

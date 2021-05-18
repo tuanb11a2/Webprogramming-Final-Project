@@ -102,7 +102,7 @@ var imageSlider = (function() {
       .add('window__current-img__btn--current');
       
       // start animation
-      interval = setInterval(slideRight, 3000);
+      interval = setInterval(slideRight, 3000000);
     },
     handleBtnSlideLeft: function() {
       // stop animation
@@ -134,7 +134,7 @@ var imageSlider = (function() {
         .add('window__current-img__btn--current');
 
       // start animation
-      interval = setInterval(slideRight, 3000);
+      interval = setInterval(slideRight, 3000000);
     },
     handleBtnSlideRight: function() {
       // stop animation
@@ -165,11 +165,11 @@ var imageSlider = (function() {
         .add('window__current-img__btn--current');
 
       // start animation
-      interval = setInterval(slideRight, 3000);
+      interval = setInterval(slideRight, 3000000);
     },
     // used to start animation when page loads
     startSlideRightInterval: function() {
-      interval = setInterval(slideRight, 3000);
+      interval = setInterval(slideRight, 3000000);
     }
   };
 })();

@@ -17,17 +17,17 @@
 	height: 800px;
 	padding-top: 50px;
 	padding-bottom: 50px;
+	position: relative;
 }
 
 .block-2-left{
-	
 	width: 75%;
 	float: left;
 }
 
 .block-2-right{
 	width: 25%;
-	height: 600px;
+	/*height: 600px;*/
 	float: left;
 
 }
