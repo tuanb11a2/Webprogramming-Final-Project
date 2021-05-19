@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
-* {
+.login_signup_html_page {
 	margin: 0 auto;
 	box-sizing: border-box;
 }
