@@ -1,7 +1,3 @@
-
-<body>
-	<?php require_once 'header/header.html'; ?>
-	
 	<div class="block-1">	
 		<?php include('slider/slider.html') ?>
 	</div>	
@@ -19,6 +15,4 @@
 		</div>
 	</div>		
 
-	<?php require_once 'footer/footer.html'; ?>
 
-</body>
