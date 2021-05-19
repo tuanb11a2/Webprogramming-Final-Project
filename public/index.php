@@ -25,6 +25,7 @@ if(isset($_GET['url'])){
 	<link rel="stylesheet" href="css/card.css" type="text/css">
 	<link rel="stylesheet" href="css/header.css" type="text/css">
 	<link rel="stylesheet" href="css/footer.css" type="text/css">
+	<link rel="stylesheet" href="css/login.css" type="text/css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
 </head>
 <body>
@@ -37,6 +38,9 @@ if(isset($_GET['url'])){
   			case "category":
 			    require_once '../application/views/category.php';
 			    break;
+			case "login":
+			    require_once '../application/views/login/login.php';
+			    break;
   			default:
 			    echo "Invalid url";
 		}
@@ -45,5 +49,6 @@ if(isset($_GET['url'])){
 	<script type="text/javascript" src="js/slider.js"></script>
 	<script type="text/javascript" src="js/slider1.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
+	<script src="js/login.js"></script>
 </body>
 </html>
