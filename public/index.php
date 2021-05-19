@@ -31,18 +31,22 @@ if(isset($_GET['url'])){
 <body>
 	<?php 
 		require_once '../application/views/header/header.html';
-		switch ($url) {
-  			case "":
-				require_once '../application/views/home.php';
-			    break;
-  			case "category":
-			    require_once '../application/views/category.php';
-			    break;
-			case "login":
-			    require_once '../application/views/login/login.php';
-			    break;
-  			default:
-			    echo "Invalid url";
+		if(isset($url)){
+			switch ($url) {
+				case "":
+				  require_once '../application/views/home.php';
+				  break;
+				case "category":
+				  require_once '../application/views/category.php';
+				  break;
+			  case "login":
+				  require_once '../application/views/login/login.php';
+				  break;
+				default:
+				  echo "Invalid url";
+		  }
+		}else{
+			require_once '../application/views/home.php';
 		}
 		require_once '../application/views/footer/footer.html'; 
 	?>
