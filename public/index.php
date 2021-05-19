@@ -46,6 +46,8 @@ if(isset($_GET['url'])){
 				  echo "Invalid url";
 		  }
 		}else{
+			// In case first come to website there will be no url to request
+			// Just show the homepage to client
 			require_once '../application/views/home.php';
 		}
 		require_once '../application/views/footer/footer.html'; 
