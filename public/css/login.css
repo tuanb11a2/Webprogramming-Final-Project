@@ -2,8 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 .login_signup_html_page {
-	margin: 0 auto;
+	margin: auto;
 	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
 }
 
 .login__container {
@@ -14,7 +16,7 @@
 	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
 	height: 100vh;
-	/*margin: -20px 0 50px;*/
+	margin: -20px 0 50px;
 	margin-top: 50px;
 }
 
