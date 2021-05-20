@@ -13,6 +13,10 @@
 			style="float: right" 
 			>
 		</div>
-	</div>		
+	</div>	
+
+	<div class="block-3">
+		<?php include('slider/card_slider_2.html') ?>
+	</div>	
 
 
