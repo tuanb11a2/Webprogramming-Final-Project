@@ -1,0 +1,84 @@
+.card-slick-list{
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    user-select: none;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.card-slick-prev{
+    display: block;
+    left: -40px;
+}
+
+.card-slick-next{
+    display: block;
+    right: -40px;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+    .card-slick-next{
+        right: -30px;
+    }
+
+    .card-slick-prev{
+        left: -30px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    .card-slick-next{
+        right: -20px;
+    }
+
+    .card-slick-prev{
+        left: -20px;
+    }
+}
+
+.card-slick-arrow{
+    position: absolute;
+    border: 0;
+    padding: 0;
+    z-index: 2;
+    cursor: pointer;
+    top: 50%;
+    transform: translateY(-50%);
+    left: auto;
+    background: none;
+}
+
+.div-slick-track{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.slick-track{
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1;
+    width: 4212px;
+}
+
+.card-slick-clone{
+    width: 208px;
+    margin: 0 12px;
+    outline: 0;
+    display: block;
+    padding-bottom: 20px;
+    float:left;
+    height: 100%;
+    min-height: 1px;
+}
+
+.card-slick-clone:first-child{
+    margin-left: 0;
+}
