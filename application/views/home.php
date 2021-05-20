@@ -2,6 +2,11 @@
 		<?php include('slider/slider.html') ?>
 	</div>	
 
+	<div class="block-3">
+		<h2>Best Selling Books Ever</h2>
+		<?php include('slider/card_slider_2.html') ?>
+	</div>	
+
 	<div class="block-2">	
 		<div class="block-2-left">
 			<h1 style="font-weight: bold; margin-top: -10px; padding-bottom: 10px;">Feature this week</h1>
@@ -15,8 +20,6 @@
 		</div>
 	</div>	
 
-	<div class="block-3">
-		<?php include('slider/card_slider_2.html') ?>
-	</div>	
+	
 
 

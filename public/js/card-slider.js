@@ -2,6 +2,9 @@ $(document).ready(function () {
     var itemsMainDiv = ('.MultiCarousel');
     var itemsDiv = ('.MultiCarousel-inner');
     var itemWidth = "";
+    var start = 0;
+    var end = 5;
+    var count = $(".card-item").length;
 
     $('.leftLst, .rightLst').click(function () {
         var condition = $(this).hasClass("leftLst");
@@ -13,9 +16,6 @@ $(document).ready(function () {
 
     ResCarouselSize();
 
-
-
-
     $(window).resize(function () {
         ResCarouselSize();
     });
@@ -24,7 +24,7 @@ $(document).ready(function () {
     function ResCarouselSize() {
         var incno = 0;
         var dataItems = ("data-items");
-        var itemClass = ('.item');
+        var itemClass = ('.card-item');
         var id = 0;
         var btnParentSb = '';
         var itemsSplit = '';
@@ -36,7 +36,6 @@ $(document).ready(function () {
             btnParentSb = $(this).parent().attr(dataItems);
             itemsSplit = btnParentSb.split(',');
             $(this).parent().attr("id", "MultiCarousel" + id);
-
 
             if (bodyWidth >= 1200) {
                 incno = itemsSplit[3];
@@ -61,7 +60,6 @@ $(document).ready(function () {
 
             $(".leftLst").addClass("over");
             $(".rightLst").removeClass("over");
-
         });
     }
 
@@ -82,6 +80,9 @@ $(document).ready(function () {
                 translateXval = 0;
                 $(el + ' ' + leftBtn).addClass("over");
             }
+
+            start = start -1;
+            end = end - 1;
         }
         else if (e == 1) {
             var itemsCondition = $(el).find(itemsDiv).width() - $(el).width();
@@ -92,9 +93,28 @@ $(document).ready(function () {
                 translateXval = itemsCondition;
                 $(el + ' ' + rightBtn).addClass("over");
             }
+
+            start = start + 1;
+            end = end + 1;
         }
         $(el + ' ' + itemsDiv).css('transform', 'translateX(' + -translateXval + 'px)');
     }
+
+    // function hiddenItem(){
+    //     var tmp = "card-item-";
+    //     var i = 0;
+    //     for(i = 0;i < count;i++){
+    //         if(i == start - 1 || i > end){
+    //             tmp += i;
+    //             $("div#"+tmp+"").hide();
+    //             tmp = "card-item-";
+    //         }else{
+    //             tmp += i;
+    //             $("div#"+tmp+"").css("display","");
+    //             tmp = "card-item-";
+    //         }
+    //     }
+    // }
 
     //It is used to get some elements from btn
     function click(ell, ee) {
