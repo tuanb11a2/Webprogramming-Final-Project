@@ -4,7 +4,9 @@
 
 <div class="category__product">
 	<div class="category__product__filter">
-		<h1>Filter goes here</h1>
+		<div class="category__product__filter__by__category">
+			
+		</div>
 	</div>
 	<div class="category__product__cards">
 		<h1>Cards goes here</h1>
