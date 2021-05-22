@@ -1,5 +1,6 @@
 .header{
-    font-family: 'Times New Roman', Times, serif;
+    /* font-family: 'Times New Roman', Times, serif; */
+    font-family: inherit;
 }
 header{
     display: flex;
@@ -97,7 +98,8 @@ header{
 }
 ul#main-menu a, .dropbtn {
     color: #232F55;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
+    font-family: inherit;
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;

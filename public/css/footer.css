@@ -1,6 +1,7 @@
 .footer{
     margin-top: 20px;
-    font-family: 'Times New Roman', Times, serif;
+    /* font-family: 'Times New Roman', Times, serif; */
+    font-family: inherit;
     background-color: #fef4f4;
     display: inline-flex;
     flex-direction: row;
