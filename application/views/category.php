@@ -1,5 +1,5 @@
 <div class="category__banner">
-	<h1>Banner's here</h1>
+	<h1>Category</h1>
 </div>
 
 <div class="category__product">
