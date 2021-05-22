@@ -1,11 +1,11 @@
 .category__banner {
-	width: 75%;
+	width: 80%;
 	background-color: palevioletred;
 	margin: 0 auto;
 }
 
 .category__product {
-	width: 75%;
+	width: 80%;
 	height: 200px;
 	background-color: #fef4f4;
 	margin: 0 auto;
@@ -26,7 +26,7 @@
 }
 
 .category__contact {
-	width: 75%;
+	width: 80%;
 	height: 200px;
 	background-color: palevioletred;
 	margin: 0 auto;
