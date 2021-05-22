@@ -3,7 +3,7 @@
 	</div>	
 
 	<div class="block-3">
-		<h2>Best Selling Books Ever</h2>
+		<h1>Best Selling Books Ever</h1>
 		<?php include('slider/card_slider_2.html') ?>
 	</div>	
 
@@ -18,6 +18,14 @@
 			style="float: right" 
 			>
 		</div>
+	</div>	
+
+	<div class="block-4">
+		<div class="block-4-h1-div">
+			<div class="block-4-left"><h1>Latest Published items</h1></div>
+			<div class="block-4-right"><?php include('button/latest-publish-button.html') ?></div>
+		</div>
+		<?php include('card/card-div.html') ?>
 	</div>	
 
 	
