@@ -150,6 +150,8 @@
 
 .window__slider__img-container--opacity {
   opacity: 1;
+  display: inline-flex;
+  /* flex-direction: row; */
 }
 
 .window__right {
