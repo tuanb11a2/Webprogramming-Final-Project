@@ -37,6 +37,9 @@
 	/* background-color: gray; */
 	margin-right: 1rem;
 	border: 2px solid #ededed;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 }
 
 .category__product__cards {
