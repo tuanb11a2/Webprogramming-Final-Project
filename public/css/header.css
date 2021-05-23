@@ -1,5 +1,6 @@
 .header{
-    font-family: 'Times New Roman', Times, serif;
+    /* font-family: 'Times New Roman', Times, serif; */
+    font-family: inherit;
 }
 header{
     display: flex;
@@ -8,7 +9,7 @@ header{
     align-items: center;
 }
 .header-logo {
-    padding-left: 40px;
+    padding-left: 10rem;
     padding-right: 40px;
     flex-basis: 15%;
     display: flex;
@@ -16,6 +17,7 @@ header{
 }
 .signin-logout{
     padding: 20px 20px;
+    padding-right: 5rem;
     flex-basis: 35%;
     display: flex;
     justify-content: flex-end;
@@ -97,7 +99,8 @@ header{
 }
 ul#main-menu a, .dropbtn {
     color: #232F55;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
+    font-family: inherit;
     font-size: 16px;
     font-weight: bold;
     text-decoration: none;
