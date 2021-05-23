@@ -17,16 +17,14 @@
 				<img src="https://preview.colorlib.com/theme/abcbook/assets/img/gallery/xad.jpg.pagespeed.ic.WvnALPgj6F.webp" width=80% style="float: right">
 			</div>
 		</div>
-
+	</div>
 
 	<div class="block-4">
 		<div class="block-4-h1-div">
-			<div class="block-4-left"><h1>Latest Published items</h1></div>
+			<div class="block-4-left">
+				<h1>Latest Published items</h1>
+			</div>
 			<div class="block-4-right"><?php include('button/latest-publish-button.html') ?></div>
 		</div>
 		<?php include('card/card-div.html') ?>
-	</div>	
-
-	
-
-
+	</div>
