@@ -1,7 +1,7 @@
 <div class="category__banner">
 	<h1>Category</h1>
 </div>
-
+<?php var_dump($data) ?>
 <div class="category__product">
 	<div class="category__product__filter">
 		<div class="category__product__filter__by__category">

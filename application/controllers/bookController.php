@@ -6,12 +6,14 @@
 	{
 		public function __construct()
 		{
-			// echo "string";
+			$this->userModel = $this->model('Book');
 		}
 
 		public function index()
 		{
-			$this->view('category');
+			$books = $this->userModel->getAllBook();
+			var_dump($books);
+			$this->view('category', $books);
 		}
 	}
 ?>
