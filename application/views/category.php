@@ -1,3 +1,8 @@
+<style>
+	.category__banner{
+		background-image: url("<?php echo LINK; ?>/image/category_banner_1.jpg");
+	}
+</style>
 <div class="category__banner">
 	<h1>Category</h1>
 </div>

@@ -6,7 +6,7 @@
                     <div class="card card-div-item">
                         <div class="card-img">
                             <a href="#">
-                                <img src="image/card_image_1.png" alt="Card example">
+                                <img src="<?php echo LINK; ?>/image/card_image_1.png" alt="Card example">
                             </a>
                         </div>
                     
@@ -38,7 +38,7 @@
                     <div class="card card-div-item">
                         <div class="card-img">
                             <a href="#">
-                                <img src="image/card_image_2.png" alt="Card example">
+                                <img src="<?php echo LINK; ?>/image/card_image_2.png" alt="Card example">
                             </a>
                         </div>
                     
@@ -70,7 +70,7 @@
                     <div class="card card-div-item">
                         <div class="card-img">
                             <a href="#">
-                                <img src="image/card_image_2.png" alt="Card example">
+                                <img src="<?php echo LINK; ?>/image/card_image_2.png" alt="Card example">
                             </a>
                         </div>
                     
@@ -102,7 +102,7 @@
                     <div class="card card-div-item">
                         <div class="card-img">
                             <a href="#">
-                                <img src="image/card_image_3.png" alt="Card example">
+                                <img src="<?php echo LINK; ?>/image/card_image_3.png" alt="Card example">
                             </a>
                         </div>
                     
@@ -134,7 +134,7 @@
                     <div class="card card-div-item">
                         <div class="card-img">
                             <a href="#">
-                                <img src="image/card_image_1.png" alt="Card example">
+                                <img src="<?php echo LINK; ?>/image/card_image_1.png" alt="Card example">
                             </a>
                         </div>
                     
@@ -166,7 +166,7 @@
                     <div class="card card-div-item">
                         <div class="card-img">
                             <a href="#">
-                                <img src="image/card_image_3.png" alt="Card example">
+                                <img src="<?php echo LINK; ?>/image/card_image_3.png" alt="Card example">
                             </a>
                         </div>
                     
