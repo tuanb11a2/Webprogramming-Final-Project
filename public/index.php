@@ -1,4 +1,8 @@
 <?php
+ob_start();
+session_start();
+//session_destroy();
+
 function getAbsolutePath() {
 	if(isset($_SERVER["REQUEST_URI"])){
 		$tmp = rtrim($_SERVER["REQUEST_URI"], '/');
@@ -56,7 +60,16 @@ require_once(ROOT . DS . 'config' . DS . 'config.php');
 
 <body>
 	<?php
-	require_once '../application/views/header/header.php';
+    print_r($_SESSION);
+//    require_once '../application/views/header/header.php';
+    if (isset($_SESSION["username"])){
+//        echo "Welcome" . $_SESSION["username"];
+        require_once '../application/views/header/headerUser.php';
+    }
+    else
+    {
+        require_once '../application/views/header/header.php';
+    }
 	$init = new Route();
 	require_once '../application/views/footer/footer.html';
 	?>
