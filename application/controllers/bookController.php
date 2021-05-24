@@ -12,7 +12,6 @@
 		public function index()
 		{
 			$books = $this->userModel->getAllBook();
-			var_dump($books);
 			$this->view('category', $books);
 		}
 	}
