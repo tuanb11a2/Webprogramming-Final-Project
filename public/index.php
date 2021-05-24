@@ -7,7 +7,6 @@ if (isset($_GET['url'])) {
 	$url = $_GET['url'];
 }
 
-
 //require_once (ROOT . DS . 'library' . DS . 'bootstrap.php');
 require_once(ROOT . DS . 'library' . DS . 'Route.php');
 require_once(ROOT . DS . 'library' . DS . 'Controller.php');
