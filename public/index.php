@@ -41,16 +41,16 @@ require_once(ROOT . DS . 'config' . DS . 'config.php');
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/slider.css" type="text/css">
-	<link rel="stylesheet" href="css/slider1.css" type="text/css">
-	<link rel="stylesheet" href="css/home.css" type="text/css">
-	<link rel="stylesheet" href="css/category.css" type="text/css">
-	<link rel="stylesheet" href="css/card.css" type="text/css">
-	<link rel="stylesheet" href="css/header.css" type="text/css">
-	<link rel="stylesheet" href="css/footer.css" type="text/css">
-	<link rel="stylesheet" href="css/login.css" type="text/css">
-	<link rel="stylesheet" href="css/card-slider-2.css" type="text/css">
-	<link rel="stylesheet" href="css/latest-publish-button.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $actual_link; ?>/css/slider.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $actual_link; ?>/css/slider1.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $actual_link; ?>/css/home.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $actual_link; ?>/css/category.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $actual_link; ?>/css/card.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $actual_link; ?>/css/header.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $actual_link; ?>/css/footer.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $actual_link; ?>/css/login.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $actual_link; ?>/css/card-slider-2.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo $actual_link; ?>/css/latest-publish-button.css" type="text/css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
