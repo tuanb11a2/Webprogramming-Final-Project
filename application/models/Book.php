@@ -59,7 +59,7 @@
                     (`book_id`, `title`, `author`, `description`, `rating`, `number_of_review`, `publisher`, `thumbnail_address`, `bookPDF`) 
                     VALUES 
                     (NULL, '" . $this->title . "','" . $this->author . "','" . $this->description . "', '0', '0', '" . $this->publisher . "', '#', '#');";
-		    echo $sql;
+		    //echo $sql;
             if ($this->db) {
                 return $this->db->query($sql);
             }

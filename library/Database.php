@@ -9,6 +9,12 @@ class Database {
     function connect($address, $account, $pwd, $name) {
         $this->_dbHandle = @mysqli_connect($address, $account, $pwd);
         if ($this->_dbHandle) {
+            
+            if (!$this->_dbHandle->set_charset("utf8mb4")) {
+                printf("Error loading character set utf8mb4: %s\n", $this->_dbHandle->error);
+                exit();
+            }
+
             if (mysqli_select_db($this->_dbHandle, $name)) {
                 return 1;
             } else {

@@ -35,8 +35,9 @@
             $this->userModel->setAuthor($author);
             $this->userModel->setDescription($description);
             $this->userModel->setPublisher($publisher);
+			//print_r($this->userModel);
             $this->userModel->addBookToDb();
             $directory = getAbsolutePath();
-            header("Location: http://$_SERVER[HTTP_HOST]$directory");
+            //header("Location: http://$_SERVER[HTTP_HOST]$directory");
 		}
 	}
