@@ -28,7 +28,7 @@
 			if (isset($url[1])) {
 				if (method_exists($this->currentController, $url[1])) {
 					$this->currentMethod = $url[1];
-					echo ($url[1]);
+//					echo ($url[1]);
 					unset($url[1]);
 				}
 			}
