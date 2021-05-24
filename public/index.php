@@ -63,6 +63,7 @@ require_once(ROOT . DS . 'config' . DS . 'config.php');
 	<script type="text/javascript" src="<?php echo $actual_link; ?>/js/slider1.js"></script>
 	<script type="text/javascript" src="<?php echo $actual_link; ?>/js/header.js"></script>
 	<script src="<?php echo $actual_link; ?>/js/login.js"></script>
+	<script src="<?php echo $actual_link; ?>/js/category.js"></script>
 	<script type="text/javascript" src="<?php echo $actual_link; ?>/js/card-slider.js"></script>
 </body>
 
