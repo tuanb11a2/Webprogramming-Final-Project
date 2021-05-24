@@ -48,6 +48,7 @@ require_once(ROOT . DS . 'library' . DS . 'Controller.php');
 	<script type="text/javascript" src="js/slider1.js"></script>
 	<script type="text/javascript" src="js/header.js"></script>
 	<script src="js/login.js"></script>
+	<script src="js/category.js"></script>
 	<script type="text/javascript" src="js/card-slider.js"></script>
 </body>
 
