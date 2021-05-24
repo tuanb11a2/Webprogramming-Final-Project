@@ -6,7 +6,7 @@
 <div class="category__banner">
 	<h1>Category</h1>
 </div>
-<?php var_dump($data) ?>
+<?php //var_dump($data) ?>
 <div class="category__product">
 	<div class="category__product__filter">
 		<div class="category__product__filter__by__category">
@@ -92,12 +92,19 @@
 					<input type="button" id="filter__by__rating__choice__button" value="2 Star Rating" onclick='filter__by__rating__choice__button("2 Star Rating")'>
 					<input type="button" id="filter__by__rating__choice__button" value="1 Star Rating" onclick='filter__by__rating__choice__button("1 Star Rating")'>
 					<input type="button" id="filter__by__rating__choice__button" value="Filter by Rating" onclick='filter__by__rating__choice__button("Filter by Rating")'>
-				</ul>
 			</div>
 		</div>
 	</div>
 	<div class="category__product__cards">
-		<h1>Cards goes here</h1>
+		<div class="category__dropdown__div" tabindex="0">
+			<select name="browse_dropdown" class="category_dropdown">
+				<option value="Popularity">Browse by popularity</option>
+				<option value="Old">Old</option>
+				<option value="New">New</option>
+				<option value="Name">Name</option>
+			</select>
+		</div>
+		<?php include('card/category-card-div.html') ?>
 	</div>
 </div>
 
