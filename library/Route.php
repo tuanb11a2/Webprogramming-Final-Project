@@ -16,6 +16,7 @@
 			//GET CONTROLLER
 			if (file_exists('../application/controllers/'. ($url[0]) . 'Controller.php')) {
 				$this->currentController = ($url[0]);
+				//echo ($url[0]);
 				unset($url[0]);
 			}
 			// echo '../application/controllers/'. $this->currentController . 'Controller.php';
@@ -27,9 +28,13 @@
 			if (isset($url[1])) {
 				if (method_exists($this->currentController, $url[1])) {
 					$this->currentMethod = $url[1];
+//					echo ($url[1]);
 					unset($url[1]);
 				}
 			}
+
+			//echo realpath('css/header.css'), PHP_EOL;
+
 
 			//GET PARAMS
 			$this->params = $url ? array_values($url) : [];
