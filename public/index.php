@@ -56,7 +56,7 @@ require_once(ROOT . DS . 'config' . DS . 'config.php');
 
 <body>
 	<?php
-	require_once '../application/views/header/header.html';
+	require_once '../application/views/header/header.php';
 	$init = new Route();
 	require_once '../application/views/footer/footer.html';
 	?>
