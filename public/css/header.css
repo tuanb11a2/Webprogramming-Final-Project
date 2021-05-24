@@ -90,6 +90,7 @@ header{
     text-align: center;
     align-items: center;
     padding: auto;
+    box-shadow: 0 14px 28px rgb(0 0 0 / 5%), 0 10px 10px rgb(0 0 0 / 5%);
 }
 #main-menu li {
     display: inline-block;

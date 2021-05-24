@@ -57,3 +57,151 @@
 	margin: 0 auto;
 	margin-top: 50px;
 }
+.category__product__filter__by__category, .category__product__filter__by__publisher, .category__product__filter__by__author{
+	padding-left: 2rem;
+	padding-top: 2rem;
+}
+.category__product__filter__by__category h3, .category__product__filter__by__publisher h3, .category__product__filter__by__author h3{
+	padding-bottom: 1rem ;
+}
+
+
+
+
+
+/* Customize the label (the container) */
+.filter__by__category__container, 
+.filter__by__publisher__container, 
+.filter__by__author__container,
+.category__product__filter__by__rating {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 18px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	/* display: flex;
+	flex-direction: row;
+	justify-content: center;
+  	align-items: center; */
+  }
+  .category__product__filter__by__rating {
+	  padding-right: 40px;
+  }
+  .category__product__filter__by__rating input[type=button]{
+	  font-size: 18px;
+	  padding: 0.4rem;
+	  width: 100%;
+	  text-align: left;
+	  cursor: pointer;
+  }
+  .category__product__filter__by__rating{
+	  margin-top: 2rem;
+  }
+  .filter__by__rating__choice{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: center;
+  	align-items: flex-start;
+	border: 2px solid #ededed;
+	/* position: relative; */
+  }
+  .filter__by__rating__choice__unshown{
+	  display: none !important;
+  }
+  #filter__by__rating__choice__button{
+	  flex-basis: 100%;
+	  background-color: white;
+	  border: none;
+  }
+  #filter__by__rating__choice__button:hover{
+	  background-color: gainsboro;
+	  font-weight: bold;
+  }
+  .filter__by__category__container p, 
+  .filter__by__publisher__container p,
+  .filter__by__author__container p{
+	  padding-left: 0.2rem;
+  }
+  /* Hide the browser's default checkbox */
+  .filter__by__category__container input, 
+  .filter__by__publisher__container input,
+  .filter__by__author__container input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+  }
+  /* Create a custom checkbox */
+  .filter__by__category__checkmark, 
+  .filter__by__publisher__checkmark,
+  .filter__by__author__checkmark {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	border: 1px solid gray;
+	border-radius: 50%;
+	/* background-color: #eee; */
+  }
+  .filter__by__rating__container{
+	  display: flex;
+	  flex-direction: row;
+	  justify-content: center;
+  		align-items: center;
+		  margin-bottom: 0.1rem;
+	border-radius: 2rem;
+	padding-left: 0.6rem;
+	border: 3px solid #ededed;
+  }
+  .filter__by__rating__container .fa-caret-down{
+	  padding-right: 1rem;
+  }
+  #filter__by__rating__button{
+	background-color: white;
+	border: none;
+}
+  /* When the checkbox is checked, add a blue background */
+  .filter__by__category__container input:checked ~ .filter__by__category__checkmark, 
+  .filter__by__publisher__container input:checked ~ .filter__by__publisher__checkmark,
+  .filter__by__author__container input:checked ~ .filter__by__author__checkmark {
+	background-color: #ff1616;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .filter__by__category__checkmark:after, 
+  .filter__by__publisher__checkmark::after,
+  .filter__by__author__checkmark::after {
+	content: "";
+	position: absolute;
+	display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .filter__by__category__container input:checked ~ .filter__by__category__checkmark:after, 
+  .filter__by__publisher__container input:checked ~ .filter__by__publisher__checkmark:after,
+  .filter__by__author__container input:checked ~ .filter__by__author__checkmark:after {
+	display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .filter__by__category__container .filter__by__category__checkmark:after, 
+  .filter__by__publisher__container .filter__by__publisher__checkmark:after,
+  .filter__by__author__container .filter__by__author__checkmark:after {
+	left: 7px;
+	top: 3px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 3px 3px 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+  }
