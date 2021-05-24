@@ -2,7 +2,7 @@
     <header>
         <div class="header-logo">
             <a href="#">
-                <img src="<?php echo $actual_link; ?>/image/logo.png" alt="logo">
+                <img src="<?php echo LINK; ?>/image/logo.png" alt="logo">
             </a>
         </div>
         <div class="search-bar">
