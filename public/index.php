@@ -11,6 +11,9 @@ if (isset($_GET['url'])) {
 //require_once (ROOT . DS . 'library' . DS . 'bootstrap.php');
 require_once(ROOT . DS . 'library' . DS . 'Route.php');
 require_once(ROOT . DS . 'library' . DS . 'Controller.php');
+require_once(ROOT . DS . 'library' . DS . 'Model.php');
+require_once(ROOT . DS . 'library' . DS . 'Database.php');
+require_once(ROOT . DS . 'config' . DS . 'config.php');
 
 //$init = new Route();
 ?>
