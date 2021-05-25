@@ -13,9 +13,6 @@ function getAbsolutePath() {
 
 $directory = getAbsolutePath();
 $actual_link = "http://$_SERVER[HTTP_HOST]$directory";
-//echo $actual_link;
-//echo $_SERVER["HTTP_HOST"];  //default localhost
-//echo $_SERVER["REQUEST_URI"];	//default Webprogramming-Final-Project
 
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', dirname(dirname(__FILE__)));
