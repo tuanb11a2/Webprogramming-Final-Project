@@ -6,16 +6,16 @@
 				<input type="text" placeholder="Name" />
 				<input type="email" placeholder="Email" />
 				<input type="password" placeholder="Password" />
-				<button>Sign Up</button>
+				<button >Sign Up</button>
 			</form>
 		</div>
 		<div class="login__form-container login__sign-in-container">
-			<form action="#">
+			<form action="login/loginQuery" method="POST">
 				<h1>Sign in</h1>
-				<input type="email" placeholder="Email" />
-				<input type="password" placeholder="Password" />
+				<input type="email" placeholder="Email" id="email" name="email" />
+				<input type="password" placeholder="Password" id="password" name="password" />
 				<a href="#">Forgot your password?</a>
-				<button>Sign In</button>
+				<button type="submit">Sign In</button>
 			</form>
 		</div>
 		<div class="login__overlay-container">
