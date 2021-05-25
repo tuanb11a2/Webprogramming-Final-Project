@@ -16,7 +16,17 @@
 
 		public function index()
 		{
-			$this->view('admin');
+		    echo $_SESSION['role'];
+		    if ($_SESSION['role'] && $_SESSION['role'] == 1)
+            {
+//
+                $this->view('admin');
+            }
+		    else {
+                $directory = getAbsolutePath();
+                header("Location: http://$_SERVER[HTTP_HOST]$directory");
+            }
+
 		}
 
 		public function addBook()

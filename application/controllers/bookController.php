@@ -15,4 +15,3 @@
 			$this->view('category', $books);
 		}
 	}
-?>
