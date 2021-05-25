@@ -13,7 +13,7 @@
         </div>
         <div class="signin-logout">
             <p>Welcome, <?php echo $_SESSION["username"] ?></p>
-            <a href="" class="signin-logout-btn">Logout</a>
+            <a href="<?php echo LINK ?>/login/logout" class="signin-logout-btn">Logout</a>
         </div>
     </header>
     <nav id="navigator">
