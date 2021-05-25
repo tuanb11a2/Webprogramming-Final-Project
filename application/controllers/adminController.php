@@ -19,7 +19,7 @@
 		    echo $_SESSION['role'];
 		    if ($_SESSION['role'] && $_SESSION['role'] == 1)
             {
-//
+
                 $this->view('admin');
             }
 		    else {
@@ -28,6 +28,12 @@
             }
 
 		}
+
+		public function listBook()
+        {
+            $books = $this->userModel->getAllBook();
+            $this->view('adminListBook', $books);
+        }
 
 		public function addBook()
 		{

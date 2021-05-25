@@ -6,7 +6,7 @@
             </a>
         </div>
         <div class="search-bar">
-            <form class="search-bar-form" action="">
+            <form class="search-bar-form" action="<?php echo LINK; ?>/book/bookSearchByName" method="POST">
                 <input type="text" placeholder="Search book by author or publisher" name="search">
                 <button type="submit"><i class="fa fa-search fa-lg"></i></button>
             </form>
