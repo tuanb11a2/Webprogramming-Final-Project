@@ -51,6 +51,7 @@ require_once(ROOT . DS . 'config' . DS . 'config.php');
     <link rel="stylesheet" href="<?php echo $actual_link; ?>/css/login.css" type="text/css">
     <link rel="stylesheet" href="<?php echo $actual_link; ?>/css/card-slider-2.css" type="text/css">
     <link rel="stylesheet" href="<?php echo $actual_link; ?>/css/latest-publish-button.css" type="text/css">
+	<link rel="stylesheet" href="<?php echo $actual_link; ?>/css/details.css" type="text/css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
@@ -65,6 +66,7 @@ require_once(ROOT . DS . 'config' . DS . 'config.php');
 	<script type="text/javascript" src="<?php echo $actual_link; ?>/js/header.js"></script>
 	<script src="<?php echo $actual_link; ?>/js/login.js"></script>
     <script src="<?php echo $actual_link; ?>/js/category.js"></script>
+	<script src="<?php echo $actual_link; ?>/js/details.js"></script>
 	<script type="text/javascript" src="<?php echo $actual_link; ?>/js/card-slider.js"></script>
 </body>
 
