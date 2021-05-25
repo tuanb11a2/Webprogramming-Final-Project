@@ -55,6 +55,7 @@ require_once(ROOT . DS . 'config' . DS . 'config.php');
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/card-slider-2.css" type="text/css">
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/latest-publish-button.css" type="text/css">
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/details.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo LINK; ?>/css/admin.css" type="text/css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
