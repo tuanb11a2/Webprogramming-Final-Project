@@ -60,7 +60,7 @@ require_once(ROOT . DS . 'config' . DS . 'config.php');
 
 <body>
 	<?php
-    print_r($_SESSION);
+    //print_r($_SESSION);
 //    require_once '../application/views/header/header.php';
     if (isset($_SESSION["username"])){
 //        echo "Welcome" . $_SESSION["username"];

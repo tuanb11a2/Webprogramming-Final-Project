@@ -8,6 +8,8 @@
         private $author;
         private $description;
         private $publisher;
+        private $thumbnail;
+        private $PDF;
 
 		function __construct()
 		{
@@ -46,6 +48,22 @@
             return $this->publisher;
         }
 
+        public function setThumbnail($thumbnail){
+		    $this->thumbnail = $thumbnail;
+        }
+
+        public function getThumbnail(){
+            return $this->thumbnail;
+        }
+
+        public function setBookPDF($bookPDF){
+		    $this->bookPDF = $bookPDF;
+        }
+
+        public function getBookPDF(){
+            return $this->bookPDF;
+        }
+
 		function getAllBook() {
 			$sql = "SELECT * FROM `book`";
 			if ($this->db) {
@@ -58,7 +76,7 @@
 		    $sql = "INSERT INTO `book` 
                     (`book_id`, `title`, `author`, `description`, `rating`, `number_of_review`, `publisher`, `thumbnail_address`, `bookPDF`) 
                     VALUES 
-                    (NULL, '" . $this->title . "','" . $this->author . "','" . $this->description . "', '0', '0', '" . $this->publisher . "', '#', '#');";
+                    (NULL, '" . $this->title . "','" . $this->author . "','" . $this->description . "', '0', '0', '" . $this->publisher . "', '". $this->thumbnail . "', '".$this->bookPDF."');";
 		    //echo $sql;
             if ($this->db) {
                 return $this->db->query($sql);
