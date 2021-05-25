@@ -2,7 +2,7 @@
     <header>
         <div class="header-logo">
             <a href="#">
-                <img src="<?php echo LINK; ?>/image/logo.png" alt="logo">
+                <img src="<?php echo $actual_link; ?>/image/logo.png" alt="logo">
             </a>
         </div>
         <div class="search-bar">
@@ -12,7 +12,8 @@
             </form>
         </div>
         <div class="signin-logout">
-            <a href="#" class="signin-logout-btn">Sign In</a>
+            <p>Welcome, <?php echo $_SESSION["username"] ?></p>
+            <a href="<?php echo LINK ?>/login/logout" class="signin-logout-btn">Logout</a>
         </div>
     </header>
     <nav id="navigator">

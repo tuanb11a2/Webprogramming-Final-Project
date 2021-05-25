@@ -4,7 +4,7 @@
 
 	<div class="block-3">
 		<h1>Best Selling Books Ever</h1>
-		<?php include('slider/card_slider_2.html') ?>
+		<?php include('slider/card_slider_2.php') ?>
 	</div>
 
 	<div class="block-2">
@@ -26,5 +26,5 @@
 			</div>
 			<div class="block-4-right"><?php include('button/latest-publish-button.html') ?></div>
 		</div>
-		<?php include('card/card-div.html') ?>
+		<?php include('card/card-div.php') ?>
 	</div>
