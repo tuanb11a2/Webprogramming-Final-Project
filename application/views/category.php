@@ -6,7 +6,10 @@
 <div class="category__banner">
 	<h1>Category</h1>
 </div>
-<?php //var_dump($data) ?>
+<?php
+	//var_dump($data);
+	//echo $data[1]["Book"]["thumbnail_address"];
+ ?>
 <div class="category__product">
 	<div class="category__product__filter">
 		<div class="category__product__filter__by__category">
@@ -104,7 +107,7 @@
 				<option value="Name">Name</option>
 			</select>
 		</div>
-		<?php include('card/category-card-div.html') ?>
+		<?php include('card/category-card-div.php') ?>
 	</div>
 </div>
 

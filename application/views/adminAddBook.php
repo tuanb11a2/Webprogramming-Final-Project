@@ -10,10 +10,12 @@
   <input type="text" id="publisher" name="publisher"><br><br>
   <label>Thumbnail:</label><br>
   <input type="file" id="thumbnail" name="thumbnail"><br><br>
+  <?php  if(isset($_GET['retry']) && $_GET['retry'] == "thumbnail"){echo "<p style='color:red'>Wrong thumbnail file extension!</p>";} ?>
   <label>PDF:</label><br>
   <input type="file" id="bookPDF" name="bookPDF"><br><br>
   <input type="hidden" id="actionID" name="actionID" value="1"><br><br>
+  <?php  if(isset($_GET['retry']) && $_GET['retry'] == "bookPDF"){echo "<p style='color:red'>Wrong PDF file extension!</p>";} ?>
   <input type="submit" value="Submit">
 </form> 
 
-<?php //echo php_ini_loaded_file(); ?>
+<?php //echo $_REQUEST['retry']; ?>
