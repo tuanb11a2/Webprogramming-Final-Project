@@ -39,6 +39,11 @@ class User extends Model
         return $this->name;
     }
 
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
     public function getRole()
     {
         return $this->role;
@@ -56,6 +61,36 @@ class User extends Model
             }
             else{
                 return 0;
+            }
+        }
+        return 0;
+    }
+
+    public function getSigninStatus()
+    {
+        $sql = "SELECT * FROM `client` WHERE email='".$this->email."' ";
+        if ($this->db) {
+            if (count($this->db->query($sql))!=0){
+                return 0;
+            }else{
+                $sql_user_insert = "INSERT INTO `client`(`client_id`, `email`, `name`, `password`, `role_id`) 
+                                    VALUES (NULL, 
+                                            '".$this->email."', 
+                                            '".$this->name."', 
+                                            '".$this->password."', 
+                                            '2')";
+                if($this->db->query($sql_user_insert)){
+                    $this->role = '2';
+                    if($this->db){
+                        $sql_subcrible_insert = "INSERT INTO `subcribelist`(`email`) VALUES ('".$this->email."')";
+                        if($this->db->query($sql_subcrible_insert))
+                            return 1;
+                        return 0;
+                    }
+                    return 1;
+                }
+                else
+                    return 0;
             }
         }
         return 0;

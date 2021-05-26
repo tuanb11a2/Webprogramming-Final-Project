@@ -73,6 +73,8 @@ class Database {
             }
             mysqli_free_result($this->_result);
             return($result);
+        }else if (preg_match("/insert/i", $query)){
+            return $this->_result;
         }
     }
 

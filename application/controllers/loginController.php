@@ -29,6 +29,22 @@
             header("Location: http://$_SERVER[HTTP_HOST]$directory");
         }
 
+        public function signupQuery(){
+            $this->userModel->setEmail(trim($_POST["signup_email"]));
+            $this->userModel->setPassword(trim($_POST["signup_pswd"]));
+            $this->userModel->setName(trim($_POST["signup_name"]));
+            // echo $this->userModel->getSigninStatus();
+            // return;
+            if ($this->userModel->getSigninStatus()){
+                $_SESSION['valid'] = true;
+                $_SESSION['timeout'] = time();
+                $_SESSION['username'] = $this->userModel->getName();
+                $_SESSION['role'] = $this->userModel->getRole();
+            }
+            $directory = getAbsolutePath();
+            header("Location: http://$_SERVER[HTTP_HOST]$directory");
+        }
+
         public function logout()
         {
             session_destroy();
