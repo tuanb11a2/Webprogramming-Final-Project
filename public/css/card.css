@@ -1,6 +1,9 @@
 .card{
-    width: 100%;
+    width: 200px;
     background-color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
 }
 
 .card a{
@@ -13,13 +16,20 @@
 }
 
 .card-img img{
-    width: 100%;
+    width: 200px;
+    height: 300px;
     display: block;
 }
 
 .card-caption{
     width: 100%;
     padding: 14px 20px 10px 20px;
+    border-top: 1px solid black;
+}
+
+.card-caption h3{
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card-caption h3 a{
