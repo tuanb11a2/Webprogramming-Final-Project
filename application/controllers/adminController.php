@@ -14,25 +14,35 @@
 		    $this->userModel = $this->model('Book');
 		}
 
+		public function roleValidation($view, $data){
+//            echo $_SESSION['role'];
+            if ($_SESSION['role'] && $_SESSION['role'] == 1)
+            {
+                $this->view($view, $data);
+                return 1;
+            }
+            return 0;
+        }
+
+        public function redirectToMain(){
+            $directory = getAbsolutePath();
+            header("Location: http://$_SERVER[HTTP_HOST]$directory");
+        }
+
 		public function index()
 		{
-		    echo $_SESSION['role'];
-		    if ($_SESSION['role'] && $_SESSION['role'] == 1)
-            {
-
-                $this->view('admin');
+            if (!$this->roleValidation('admin', NULL)){
+                $this->redirectToMain();
             }
-		    else {
-                $directory = getAbsolutePath();
-                header("Location: http://$_SERVER[HTTP_HOST]$directory");
-            }
-
 		}
 
 		public function listBook()
         {
             $books = $this->userModel->getAllBook();
             $this->view('adminListBook', $books);
+            if (!$this->roleValidation('adminListBook', $books)){
+                $this->redirectToMain();
+            }
         }
 
 		public function addBook()
@@ -107,4 +117,24 @@
             $this->userModel->addBookToDb();
             header("Location: http://$_SERVER[HTTP_HOST]$directory/book");
 		}
+
+		public function editBook($id)
+        {
+            echo "----".$id;
+
+            if (!$this->roleValidation('adminEditBook', NULL))
+            {
+                $this->redirectToMain();
+            }
+        }
+
+        public function deleteBook($id)
+        {
+            echo $id;
+            $this->userModel;
+            if (!$this->roleValidation('adminEditBook', NULL))
+            {
+                $this->redirectToMain();
+            }
+        }
 	}
