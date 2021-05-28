@@ -47,7 +47,9 @@
 
 		public function addBook()
 		{
-			$this->view('adminAddBook');
+            if (!$this->roleValidation('adminAddBook', NULL)){
+                $this->redirectToMain();
+            }
 		}
 
 		public function addBookQuery()
@@ -120,9 +122,9 @@
 
 		public function editBook($id)
         {
-            echo "----".$id;
+            $book = $this->userModel->getBookById($id);
 
-            if (!$this->roleValidation('adminEditBook', NULL))
+            if (!$this->roleValidation('adminEditBook', $book))
             {
                 $this->redirectToMain();
             }
@@ -130,11 +132,9 @@
 
         public function deleteBook($id)
         {
-            echo $id;
-            $this->userModel;
-            if (!$this->roleValidation('adminEditBook', NULL))
-            {
-                $this->redirectToMain();
+            if ($_SESSION['role'] && $_SESSION['role'] == 1) {
+                $this->userModel->deleteBook($id);
             }
+            $this->redirectToMain();
         }
 	}

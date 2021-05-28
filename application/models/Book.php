@@ -57,11 +57,11 @@
         }
 
         public function setBookPDF($bookPDF){
-		    $this->bookPDF = $bookPDF;
+		    $this->PDF = $bookPDF;
         }
 
         public function getBookPDF(){
-            return $this->bookPDF;
+            return $this->PDF;
         }
 
 		function getAllBook() {
@@ -71,6 +71,15 @@
 			}
 			return NULL;
 		}
+
+        function getBookById($id) {
+            $sql = "SELECT * FROM `book` WHERE book_id = ". $id ." ";
+            echo $sql;
+            if ($this->db) {
+                return $this->db->query($sql);
+            }
+            return NULL;
+        }
 
 		function getBookByName($bookName) {
             $sql = "SELECT * FROM `book` WHERE title LIKE '%". $bookName ."%' ";
@@ -85,8 +94,16 @@
 		    $sql = "INSERT INTO `book` 
                     (`book_id`, `title`, `author`, `description`, `rating`, `number_of_review`, `publisher`, `thumbnail_address`, `bookPDF`) 
                     VALUES 
-                    (NULL, '" . $this->title . "','" . $this->author . "','" . $this->description . "', '0', '0', '" . $this->publisher . "', '". $this->thumbnail . "', '".$this->bookPDF."');";
+                    (NULL, '" . $this->title . "','" . $this->author . "','" . $this->description . "', '0', '0', '" . $this->publisher . "', '". $this->thumbnail . "', '".$this->PDF."');";
 		    //echo $sql;
+            if ($this->db) {
+                return $this->db->query($sql);
+            }
+            return NULL;
+        }
+
+        function deleteBook($id) {
+		    $sql = "DELETE FROM `book` WHERE book_id = ".$id;
             if ($this->db) {
                 return $this->db->query($sql);
             }
