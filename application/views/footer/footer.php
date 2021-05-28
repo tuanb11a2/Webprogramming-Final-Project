@@ -49,7 +49,7 @@
                 <input type="text" placeholder="Enter Your Email">
             </div>
             <div class="subscription-button">
-                <button>Subscrible</button>
+                <button>Subscribe</button>
             </div>
         </div>
     </div>
