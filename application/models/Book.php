@@ -102,6 +102,21 @@
             return NULL;
         }
 
+        function updateBook($id){
+		    $sql = "UPDATE `book` 
+                    SET `title`='".$this->title."',
+                        `author`='".$this->author."',
+                        `description`='".$this->description."',
+                        `publisher`='".$this->publisher."',
+                        `thumbnail_address`='".$this->thumbnail."',
+                        `bookPDF`='".$this->PDF."' 
+                    WHERE `book_id`=".$id;
+            if ($this->db) {
+                return $this->db->query($sql);
+            }
+            return NULL;
+        }
+
         function deleteBook($id) {
 		    $sql = "DELETE FROM `book` WHERE book_id = ".$id;
             if ($this->db) {
