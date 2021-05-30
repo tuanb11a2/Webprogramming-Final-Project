@@ -29,4 +29,37 @@
         </div>
 
     </div>
+    <div class="book_detail_section_3">
+        <div class="comment__list">
+            <div class="comment">
+                <div class="comment__header">
+                    <h6 class="comment__header__name">Jordan Singer</h6>
+                    <span class="comment__header__time">2d</span>
+                </div>
+                <div class="comment__body">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non minima ipsum at amet doloremque qui magni, placeat deserunt pariatur itaque laudantium impedit aliquam eligendi repellendus excepturi quibusdam nobis esse accusantium.
+                </div>
+
+            </div>
+            <div class="comment">
+                <div class="comment__header">
+                    <h6 class="comment__header__name">Santiago Roberts</h6>
+                    <span class="comment__header__time">4d</span>
+                </div>
+                <div class="comment__body">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto laborum in corrupti dolorum, quas delectus nobis porro accusantium molestias sequi.
+                </div>
+            </div>
+        </div>
+        <div class="comment__input">
+            <div class="comment__form">
+                <h3>What about you? Leave us what you think.</h3>
+                <p>Comment as You: </p>
+                <form action="<?php echo LINK?>/detail/addComment">
+                    <textarea name="comment" class="" rows="4" cols="100" placeholder="Start writing..." style="resize: none;"></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>

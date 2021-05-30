@@ -46,3 +46,39 @@
 .book_detail_section_2_item_show{
     display: block !important;
 }
+.book_detail_section_3 {
+    width: 85%;
+    margin: 0 auto;
+    background-color: #dddddd;
+}
+.comment__list {
+    padding: 20px;
+}
+.comment{
+    padding-top: 20px;
+}
+.comment__header__name{
+    font-size: 17px;
+}
+.comment__header__time{
+    font-weight: lighter;
+    font-size: 10px;
+}
+.comment__body{
+    font-style: italic;
+}
+.comment__form{
+    padding: 20px;
+}
+.comment__form button{
+    font-size: 18px;
+    padding: 0.7rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    background-color: white;
+    cursor: pointer;
+    border: 2px solid #eee1e0;
+    margin-left: 0.5rem;
+    border-radius: 2rem;
+    display: flex;
+}

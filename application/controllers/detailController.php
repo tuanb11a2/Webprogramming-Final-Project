@@ -14,5 +14,11 @@
 			// $books = $this->userModel->getAllBook();
 			$this->view('details');
 		}
+
+		public function detailBook($id)
+        {
+            echo $id;
+            $this->view('details');
+        }
 	}
 ?>
