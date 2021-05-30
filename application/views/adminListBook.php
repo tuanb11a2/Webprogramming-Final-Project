@@ -5,7 +5,7 @@
 ?>
 
 <div class="admin__layout">
-    <h2>HTML Table</h2>
+    <h2>Book Table</h2>
 
     <table>
         <tr>

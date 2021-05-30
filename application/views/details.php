@@ -1,6 +1,13 @@
 <div class="book_detail_section">
     <div class="book_detail_section_1">
-        <h1>THIS IS SPARTA</h1>
+        <div class="window__slider__img-container" style="padding-top: 40px;">
+            <img src="https://preview.colorlib.com/theme/abcbook/assets/img/gallery/xbest-books1.jpg.pagespeed.ic.a3LkFxg89O.webp" style="float: left; top: 20%; padding-left: 70px; padding-right: 70px;"/>
+            <div class="window__right"  style="float: left; top: 50%;">
+                <h1>The Rage of Dragons</h1>
+                <p>By Evan Winter</p>
+                <button>Read Book</button>
+            </div>
+        </div>
     </div>
     <div class="book_detail_section_2">
         <div class="book_detail_section_2_nav">

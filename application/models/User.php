@@ -49,6 +49,24 @@ class User extends Model
         return $this->role;
     }
 
+    public function getAllUser()
+    {
+        $sql = "SELECT * from client";
+        if ($this->db) {
+            return $this->db->query($sql);
+        }
+        return NULL;
+    }
+
+    public function deleteUser($id)
+    {
+        $sql = "DELETE FROM `client` WHERE client_id = " . $id;
+        if ($this->db) {
+            return $this->db->query($sql);
+        }
+        return NULL;
+    }
+
     public function getLoginStatus()
     {
         $sql = "SELECT * FROM `client` WHERE email='".$this->email."' AND password=".$this->password." ";

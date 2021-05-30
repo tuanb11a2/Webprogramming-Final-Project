@@ -6,6 +6,13 @@
     padding-left: 6rem;
     padding-right: 6rem;
 }
+.book_detail_section_1{
+    background-color: #FF1616;
+    width: 85%;
+    height: 500px;
+    margin: 0 auto;
+}
+
 .book_detail_section_2{
     padding: 6rem;
     padding-left: 8rem;
