@@ -234,4 +234,23 @@
 
             return $thumbnail["url"];
         }
+
+        public function userList()
+        {
+            $modelForUser = $this->model('User');
+            $users = $modelForUser->getAllUser();
+            if (!$this->roleValidation('adminListUser', $users))
+            {
+                $this->redirectToMain();
+            }
+        }
+
+        public function deleteUser($id)
+        {
+            echo $id;
+            $modelForUser = $this->model('User');
+            $modelForUser->deleteUser($id);
+            $directory = getAbsolutePath();
+            header("Location: http://$_SERVER[HTTP_HOST]$directory/admin/userList");
+        }
 	}
