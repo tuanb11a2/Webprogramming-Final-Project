@@ -29,6 +29,11 @@
             header("Location: http://$_SERVER[HTTP_HOST]$directory");
         }
 
+        public function redirectToAdminListBook(){
+            $directory = getAbsolutePath();
+            header("Location: http://$_SERVER[HTTP_HOST]$directory/admin/listBook");
+        }
+
 		public function index()
 		{
             if (!$this->roleValidation('admin', NULL)){
@@ -132,7 +137,6 @@
 
         public function editBookQuery()
         {
-            var_dump($_POST);
             $allowedthumbnailExtensions = array('jpg', 'png', ' jpeg');
             $allowedbookPDFExtensions = array('pdf');
             $directory = getAbsolutePath();
@@ -140,7 +144,6 @@
 
             if ($_FILES["thumbnail"]["size"] != 0)
             {
-                echo "Has thumbnail";
                 //Get thumbnail file
                 $thumbnail["tmpPath"] = $_FILES['thumbnail']['tmp_name'];
                 $thumbnail["name"] = $_FILES['thumbnail']['name'];
@@ -150,23 +153,25 @@
                 $thumbnail["extension"] = strtolower(end($thumbnailNameCmps));
                 if (!in_array($thumbnail["extension"], $allowedthumbnailExtensions)) {
                     header("Location: http://$_SERVER[HTTP_HOST]$directory/admin/addBook?retry=thumbnail");
-                    //exit(1);
+                    exit(1);
                 }
                 $thumbnail["newFileName"] = md5(time() . $thumbnail["name"]) . '.' . $thumbnail["extension"];
                 $thumbnail["url"] = "fileupload/thumbnail/" . $thumbnail["newFileName"];
                 $thumbnail["path"] = $uploadFileDir . $thumbnail["url"];
-                    if(!move_uploaded_file($thumbnail["tmpPath"], $thumbnail["path"])){
-                        echo 'There was some error moving the thumbnail file to upload directory. Please make sure the upload directory is writable by web server.';
-                        exit(1);
-                    }
+                if(!move_uploaded_file($thumbnail["tmpPath"], $thumbnail["path"])){
+                    echo 'There was some error moving the thumbnail file to upload directory. Please make sure the upload directory is writable by web server.';
+                    exit(1);
+                }
+                echo $thumbnail["url"];
+                echo $_POST["oldBookThumbnail"];
+                if (unlink($_POST["oldBookThumbnail"])){
+                    echo "succesfully deleted";
+                }
             }
-
             else
             {
-                echo "No thumbnail";
                 $thumbnail["url"] = $_POST["oldBookThumbnail"];
             }
-
             if ($_FILES["bookPDF"]["size"] != 0)
             {
                 $bookPDF["tmpPath"] = $_FILES['bookPDF']['tmp_name'];
@@ -183,10 +188,12 @@
                 $bookPDF["url"] = "fileupload/bookPDF/" . $bookPDF["newFileName"];
                 $bookPDF["path"] = $uploadFileDir . $bookPDF["url"];
                 if(!move_uploaded_file($bookPDF["tmpPath"], $bookPDF["path"])){
-                    echo 'There was some error moving the book PDF file to upload directory. Please make sure the upload directory is writable by web server.';
                     exit(1);
                 }
                 echo "\n".$bookPDF["url"];
+                if (unlink($_POST["oldBookPDF"])){
+                    echo "succesfully deleted";
+                }
             }
 
             else
@@ -201,6 +208,7 @@
             $this->userModel->setPublisher($_POST["publisher"]);
             $this->userModel->setThumbnail($thumbnail["url"]);
             $this->userModel->setBookPDF($bookPDF["url"]);
+
             $this->userModel->updateBook($_POST["book_id"]);
             header("Location: http://$_SERVER[HTTP_HOST]$directory/book");
 

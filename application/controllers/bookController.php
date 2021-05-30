@@ -12,13 +12,13 @@
 		public function index()
 		{
 			$books = $this->userModel->getAllBook();
-			var_dump($books);
+//			var_dump($books);
 			$this->view('category', $books);
 		}
 
 		public function bookSearchByName()
         {
-            var_dump($_POST);
+//            var_dump($_POST);
             $bookName = $_POST["search"];
 
             $books = $this->userModel->getBookByName($bookName);
