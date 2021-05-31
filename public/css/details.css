@@ -46,3 +46,9 @@
 .book_detail_section_2_item_show{
     display: block !important;
 }
+.card-comment-container{
+    display: flex;
+	flex-direction: column;
+	justify-content: center;
+  	align-items: flex-start;
+}
