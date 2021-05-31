@@ -8,10 +8,12 @@
          * @var mixed
          */
         private $userModel;
+        private $categoryModel;
 
         public function __construct()
 		{
 		    $this->userModel = $this->model('Book');
+            $this->categoryModel =  $this->model('Category');
 		}
 
 		public function roleValidation($view, $data){
@@ -52,20 +54,16 @@
 
 		public function addBook()
 		{
-            if (!$this->roleValidation('adminAddBook', NULL)){
+            $category = $this->categoryModel->getAllCategory();
+            $this->view('adminAddBook', $category);
+            if (!$this->roleValidation('adminAddBook', $category)){
                 $this->redirectToMain();
             }
 		}
 
 		public function addBookQuery()
 		{
-			$allowedthumbnailExtensions = array('jpg', 'png', ' jpeg');
-			$allowedbookPDFExtensions = array('pdf');
 			$directory = getAbsolutePath();
-			// if (in_array($fileExtension, $allowedfileExtensions)) {
-			// 	...
-			// }
-
 			$uploadFileDir = "../public/";
 
 			//print_r($_POST);
@@ -74,6 +72,7 @@
 			$author = $_POST["author"];
 			$description = $_POST["description"];
 			$publisher = $_POST["publisher"];
+            $category = $_POST["add-book-category"];
 			
 			//Get thumbnail file
 			$thumbnail["tmpPath"] = $_FILES['thumbnail']['tmp_name'];
@@ -82,10 +81,6 @@
 			$thumbnail["type"] = $_FILES['thumbnail']['type'];
 			$thumbnailNameCmps = explode(".",$thumbnail["name"]);
 			$thumbnail["extension"] = strtolower(end($thumbnailNameCmps));
-			if (!in_array($thumbnail["extension"], $allowedthumbnailExtensions)) {
-				header("Location: http://$_SERVER[HTTP_HOST]$directory/admin/addBook?retry=thumbnail");
-				//exit(1);
-			}
 			$thumbnail["newFileName"] = md5(time() . $thumbnail["name"]) . '.' . $thumbnail["extension"];
 			$thumbnail["url"] = "fileupload/thumbnail/" . $thumbnail["newFileName"];
 			$thumbnail["path"] = $uploadFileDir . $thumbnail["url"];
@@ -101,10 +96,6 @@
 			$bookPDF["type"] = $_FILES['bookPDF']['type'];
 			$bookPDFNameCmps = explode(".",$bookPDF["name"]);
 			$bookPDF["extension"] = strtolower(end($bookPDFNameCmps));
-			if (!in_array($bookPDF["extension"], $allowedbookPDFExtensions)) {
-				header("Location: http://$_SERVER[HTTP_HOST]$directory/admin/addBook?retry=bookPDF");
-				//exit(1);
-			}
 			$bookPDF["newFileName"] = md5(time() . $bookPDF["name"]) . '.' . $bookPDF["extension"];
 			$bookPDF["url"] = "fileupload/bookPDF/" . $bookPDF["newFileName"];
 			$bookPDF["path"] = $uploadFileDir . $bookPDF["url"];
@@ -118,9 +109,9 @@
             $this->userModel->setAuthor($author);
             $this->userModel->setDescription($description);
             $this->userModel->setPublisher($publisher);
+            $this->userModel->setCategory($category);
 			$this->userModel->setThumbnail($thumbnail["url"]);
 			$this->userModel->setBookPDF($bookPDF["url"]);
-			//print_r($this->userModel);
             $this->userModel->addBookToDb();
             header("Location: http://$_SERVER[HTTP_HOST]$directory/book");
 		}
