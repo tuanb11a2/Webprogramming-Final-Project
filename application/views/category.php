@@ -100,7 +100,7 @@
 	</div>
 	<div class="category__product__cards">
 		<div class="category__dropdown__div" tabindex="0">
-			<select name="browse_dropdown" class="category_dropdown">
+			<select name="browse_dropdown" class="category_dropdown" id="order_filter" onchange="getOrderFilter()">
 				<option value="Popularity">Browse by popularity</option>
 				<option value="Old">Old</option>
 				<option value="New">New</option>
@@ -129,3 +129,9 @@
 		</form>
 	</div>
 </div>
+
+<script>
+        window.onload = function(){
+			getAllFilter();
+		}
+</script>
