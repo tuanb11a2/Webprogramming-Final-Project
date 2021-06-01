@@ -25,4 +25,9 @@
 //            var_dump($books);
             $this->view('category', $books);
         }
+
+		public function ajaxBookByName(){
+			// $value = $_REQUEST["q"];
+			echo "hello";
+		}
 	}
