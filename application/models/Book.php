@@ -140,8 +140,10 @@
         }
 
         function deleteBook($id) {
+		    $sqlDeleteBookCategory = "DELETE FROM `bookcategory` WHERE book_id=".$id;
 		    $sql = "DELETE FROM `book` WHERE book_id = ".$id;
             if ($this->db) {
+                $this->db->query($sqlDeleteBookCategory);
                 return $this->db->query($sql);
             }
             return NULL;
