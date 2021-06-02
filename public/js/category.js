@@ -1,5 +1,31 @@
+var filter = {
+    category: [],           // empty array means all categories
+    publisher: [],          // empty array means all publishers
+    author: [],             // empty array means all authors
+    rating: 0,              // zero means all ratings
+    sort_filter: "popularity"    // "popularity", "old", "new", "name" 
+};
+function getAllFilter(){    // reset when reload
+    filter = {
+        category: [],           // empty array means all categories
+        publisher: [],          // empty array means all publishers
+        author: [],             // empty array means all authors
+        rating: 0,              // zero means all ratings
+        sort_filter: "popularity"    // "popularity", "old", "new", "name" 
+    }
+    // alert(JSON.stringify(filter));
+}
 function changeCheckbox(id){
     var n = id.startsWith("all_");
+    if(id.includes("category")){
+        filter.category = [];
+    }
+    if(id.includes("author")){
+        filter.author = [];
+    }
+    if(id.includes("publisher")){
+        filter.publisher = [];
+    }
     if(n===true){
         // id all__checkbox
         var allCheckBox = document.getElementById(id);
@@ -22,12 +48,23 @@ function changeCheckbox(id){
             if(CheckBox[i].checked == true){
                 allCheckBox.checked=false;
                 check = 1;
+                if(id.includes("category")){
+                    filter.category.push(CheckBox[i].parentElement.children[0].innerHTML);
+                }
+                if(id.includes("author")){
+                    filter.author.push(CheckBox[i].parentElement.children[0].innerHTML);
+                }
+                if(id.includes("publisher")){
+                    filter.publisher.push(CheckBox[i].parentElement.children[0].innerHTML);
+                   
+                }
             }
         }
         if(check==0){
             allCheckBox.checked=true;
         }
     }
+    // alert(JSON.stringify(filter, null, 2));
 }
 function filter__by__rating__choice(){
     var choice = document.getElementById("filter__by__rating__choice__div");
@@ -41,4 +78,33 @@ function filter__by__rating__choice__button(value){
     filter__by__rating__choice();
     var choice = document.getElementById("filter__by__rating__button");
     choice.value=value
+    // alert(value)
+    if(value.includes("5")){
+        filter.rating=5
+    }else if(value.includes("4")){
+        filter.rating=4
+    }else if(value.includes("3")){
+        filter.rating=3
+    }else if(value.includes("2")){
+        filter.rating=2
+    }else if(value.includes("1")){
+        filter.rating=1
+    }else{
+        filter.rating=0
+    }
+    // alert(JSON.stringify(filter));
+}
+function getOrderFilter(){
+    var order = document.getElementById("order_filter");
+    // alert(order.value);
+    if(order.value.includes("Popularity")){
+        filter.sort_filter = "popularity";
+    }else if(order.value.includes("New")){
+        filter.sort_filter = "new";
+    }else if(order.value.includes("Old")){
+        filter.sort_filter = "old";
+    }else if(order.value.includes("Name")){
+        filter.sort_filter = "name";
+    }
+    // alert(JSON.stringify(filter));
 }
