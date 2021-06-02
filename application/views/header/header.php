@@ -66,6 +66,10 @@
                             document.getElementById("search-result-ajax-item").style.overflow = "unset"
                             suggestion.style.marginTop = (document.getElementById("search-result-ajax-item").childNodes.length*3+3).toString() +"rem"
                             document.getElementById("search-result-ajax-item").style.height = (document.getElementById("search-result-ajax-item").childNodes.length*3).toString() +"rem"
+                        }else{
+                            document.getElementById("search-result-ajax-item").style.overflow = "auto"
+                            suggestion.style.marginTop = "17rem"
+                            document.getElementById("search-result-ajax-item").style.height = "14rem"
                         }
                     }
                 }
