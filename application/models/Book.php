@@ -99,6 +99,14 @@
             return NULL;
         }
 
+        function getBookName($name) {
+            $sql = "SELECT * FROM `book` WHERE title LIKE '%". $name ."%' ";
+            // echo $sql;
+            if ($this->db) {
+                return  $this->db->query($sql);
+            }
+            return NULL;
+        }
         function getLatestInsertedBook(){
             $sql = "SELECT book_id FROM book ORDER BY book_id DESC LIMIT 1 ";
             if ($this->db) {

@@ -174,4 +174,72 @@ ul#main-menu a:hover, .dropbtn:hover{
 .dropdown:hover .dropdown-content1 {
   display: block;
 }
-
+.search-bar{
+    /* display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: flex-start; */
+}
+.search-result{
+    position: absolute;
+    z-index: 999;
+    margin-top: 17rem;
+    background-color: white;
+    display: none;
+    width: 660px;
+    /* flex-basis: 100%; */
+    /* border-radius: 0 0 10px 10px; */
+    border: 1px solid #d4d4d4;
+    padding-top: none;
+    /* border-radius: 0 0 1rem 1rem; */
+}
+.search-result-display{
+    display: block !important;
+}
+.search-result-ajax{
+    /* border-top: none; */
+    /*position the autocomplete items to be the same width as the container:*/
+    list-style-type: none;
+    /* padding-top: 0.1rem; */
+    width: 100%;
+    /* max-height: 14rem;
+    min-height: 14rem; */
+    height: 14rem;
+    overflow: auto;
+}
+.search-result-ajax li{
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    cursor: pointer;
+    border-top: 1px solid #d4d4d4;
+}
+.search-result-ajax a{
+    width: 100%;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    padding-left: 1rem;
+    color: black;
+}
+.search-result-ajax a:hover{
+    text-decoration: underline;
+    color: red;
+}
+.search-result-ajax li:hover{
+    background-color: #e9e9e9;
+}
+.signin-logout{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+}
+.signin-logout-btn{
+    /* flex-basis: 30%; */
+}
+.signin-logout p{
+    display: block;
+    flex-basis: 70%;
+    font-size: larger;
+    text-align: center;
+}
