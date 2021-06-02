@@ -13,20 +13,11 @@
             <div class="search-result" id="search-result-id">
                 <ul class="search-result-ajax" id="search-result-ajax-item">
                     <li><a href="#">Res 1</a></li>
-                    <li><a href="#">Res 2</a></li>
-                    <li><a href="#">Res 2</a></li>
-                    <li><a href="#">Res 2</a></li>
-                    <li><a href="#">Res 2</a></li>
-                    <li><a href="#">Res 2</a></li>
-                    <li><a href="#">Res 2</a></li>
-                    <li><a href="#">Res 2</a></li>
-                    <li><a href="#">Res 2</a></li>
-                    <li><a href="#">Res 2</a></li>
                 </ul>
             </div>
         </div>
         <div class="signin-logout">
-            <a href="#" class="signin-logout-btn">Sign In</a>
+            <a href="<?php echo LINK ?>/login" class="signin-logout-btn">Sign In</a>
         </div>
     </header>
     <nav id="navigator">
@@ -48,29 +39,34 @@
     </nav>
 </div>
 <script>
-    
-function showSearchSuggestion(value){
-    var suggestion = document.getElementById("search-result-id");
-    value = value.trim();
-    if(value.length == 0){
-        suggestion.classList.remove("search-result-display")
-      return;
-    }else{
-      var suggestionWidth = document.getElementById("search-bar-id").offsetWidth;
-      // alert(suggestionWidth);
-      // return
-      suggestion.classList.remove("search-result-display")
-      var xmlhttp = new XMLHttpRequest();
-		  xmlhttp.onreadystatechange = function () {
-			if (this.readyState == 4 && this.status == 200) {
-				document.getElementById("search-result-ajax-item").innerHTML = this.responseText;
-                // alert(this.responseText);
-				suggestion.classList.add("search-result-display")
-                suggestion.style.width = suggestionWidth.toString() + "px"
-			}
-		};
-		xmlhttp.open("GET", "<?php echo LINK; ?>/book/ajaxBookByName", true);
-		xmlhttp.send();
+    function showSearchSuggestion(value) {
+        var suggestion = document.getElementById("search-result-id");
+        value = value.trim();
+        if (value.length == 0) {
+            suggestion.classList.remove("search-result-display")
+            return;
+        } else {
+            var suggestionWidth = document.getElementById("search-bar-id").offsetWidth;
+            // alert(suggestionWidth);
+            // return
+            suggestion.classList.remove("search-result-display")
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    str = this.responseText
+                    r_text = str.substring(
+                        str.lastIndexOf('ajax-result-start') + 17,
+                        str.lastIndexOf("ajax-result-end")
+                    );
+                    if (r_text != "") {
+                        document.getElementById("search-result-ajax-item").innerHTML = r_text
+                        suggestion.classList.add("search-result-display")
+                        suggestion.style.width = suggestionWidth.toString() + "px"
+                    }
+                }
+            };
+            xmlhttp.open("GET", "<?php echo LINK; ?>/ajax/ajaxBookByName/" + value, true);
+            xmlhttp.send();
+        }
     }
-}
 </script>

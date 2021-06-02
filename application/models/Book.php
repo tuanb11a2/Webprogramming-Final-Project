@@ -90,6 +90,14 @@
             return NULL;
         }
 
+        function getBookName($name) {
+            $sql = "SELECT * FROM `book` WHERE title LIKE '%". $name ."%' ";
+            // echo $sql;
+            if ($this->db) {
+                return  $this->db->query($sql);
+            }
+            return NULL;
+        }
 		function addBookToDb() {
 		    $sql = "INSERT INTO `book` 
                     (`book_id`, `title`, `author`, `description`, `rating`, `number_of_review`, `publisher`, `thumbnail_address`, `bookPDF`) 
