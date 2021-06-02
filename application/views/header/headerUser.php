@@ -63,6 +63,11 @@
                         document.getElementById("search-result-ajax-item").innerHTML = r_text
                         suggestion.classList.add("search-result-display")
                         suggestion.style.width = suggestionWidth.toString() + "px"
+                        if(document.getElementById("search-result-ajax-item").childNodes.length<=4){
+                            document.getElementById("search-result-ajax-item").style.overflow = "unset"
+                            suggestion.style.marginTop = (document.getElementById("search-result-ajax-item").childNodes.length*3+3).toString() +"rem"
+                            document.getElementById("search-result-ajax-item").style.height = (document.getElementById("search-result-ajax-item").childNodes.length*3).toString() +"rem"
+                        }
                     }
                 }
             };
