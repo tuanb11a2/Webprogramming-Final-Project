@@ -1,0 +1,247 @@
+/*****color
+Body: #222222
+Border: #a1a1a1
+Footer bg: #282828
+Link: #a1a1a1
+P: white
+*****/
+
+/* -------------------------
+    Typography Declarartions
+   -------------------------*/
+
+   body {
+    color: #222222;
+    font-size: 1em;
+    /* font-family: 'Open Sans', "Helvetica Neue", sans-serif; */
+    font-family: inherit;
+  }
+  
+  .introduction > p, 
+  .about > p,
+  .content-footer > p {
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+  
+  /* -------------------------
+        Link Styles
+     -------------------------*/
+  
+  a {
+    font-weight: bold;
+    text-decoration: none;
+    /*color: #a1a1a1;*/
+    color: #F1F1F1;
+  }
+  
+  a:visited {
+    color: #F1F1F1;
+  }
+  
+  /* -------------------------
+        Global Styles
+     -------------------------*/
+  
+  .starcontainer h2 {
+    font-size: 2.8em;
+    margin-bottom: 0.2em;
+  }
+  
+  .starcontainerportfolio > h2 {
+    text-align: center;
+    font-size: 2.8em;
+    margin-bottom: 0.5em;
+  }
+  
+  .fa-star {
+    margin-bottom: 0 auto;
+  }
+  
+  hr {
+    border: 2px solid #feddff;
+    width: 15.7em;
+    margin-top: -1em;
+    margin-bottom: 2em; 
+    background-color: white;
+  }
+  
+  hr, .fa-star {
+    background-color: #fff;
+    padding: 0 .25em
+  }
+  
+  .starcontainer .fa {
+    color: #feddff;
+  }
+  
+  .starcontainerportfolio .fa {
+    color: #a1a1a1;
+    display: inline-block;
+  }
+  
+  /* -------------------------
+        Layout Declarations
+     -------------------------*/
+  
+  .masthead-heading, 
+  .masthead-intro,
+  .content-footer,
+  .starcontainer,
+  .starcontainerportfolio {
+    text-align: center;
+  }
+  
+  .masthead {
+    background-image: url("./oldbook_1.jpg");
+    background-repeat: no-repeat;
+    border-top: solid 1em #feddff;
+    border-bottom: solid 1em #feddff;
+    background-size: cover;
+    padding: 6em 0;
+  }
+  
+  .masthead > img {
+    max-height: 6em;
+    border-radius: 150%;
+    display: block;
+    margin: 0 auto;
+    border: 4px solid #ce4098;
+  }
+  
+  .masthead-intro {
+    margin-bottom: 0.1em;
+    /* font-family: 'Shadows Into Light', cursive; */
+    font-family: inherit;
+    font-size: 2em;
+  }
+  
+  .masthead-heading {
+    margin-top: -0.2em;
+    /* font-family: 'Shadows Into Light', cursive; */
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 6em;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+  }
+  
+  .content-footer,
+  .introduction, 
+  .about {
+    max-width: 38em;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+  }
+  
+  /* -------------------------
+      Portfolio
+     -------------------------*/
+  
+  li {
+      list-style: none;
+     }
+  
+  #container {
+    background-color: #ce4098;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+      
+  }
+  .box {
+    float:left;
+    width:23%;
+    margin:1% 1% 93px 1%;
+  }
+  
+  .box img {
+    width: 100%;
+    height: 50%;
+    display: block;
+    border-style: solid;
+    border-width:1.5px;
+  }
+  
+  button {
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .btn {
+    background-color: #770041;
+    border-color: #770041;
+    border-style: none;
+    border-radius: 0.3em;
+    font-size: 1em;
+    text-shadow: none;
+    height: 3.3em;
+    width: 9.6em;
+    margin-left: 30%;
+    margin-top: 5%;
+  }
+  
+  .btn:hover {
+    background-color: #282828;
+  }
+  
+  /* -------------------------
+          Footer
+     -------------------------*/
+  .social {
+    padding: 0;
+    list-style: none;
+  }
+  
+  section > h1 {
+    margin-top: 2em;
+  }
+  
+  .social > li {
+    display: inline-block;
+    padding-right: 1em; 
+  }
+  
+  .content-footer > p {
+    color: white;
+  }
+  
+  .content-footer > a {
+    margin-right: 0.1em;
+  }
+  
+  .content-footer {
+    background-color: #282828;
+    max-width: 100%;
+    padding: 4em 0;
+  }
+  
+  /* -------------------------
+          Media query
+     -------------------------*/
+  
+  @media only screen and (max-width: 500px) {
+      .img-responsive {
+        /*margin-top: -1em;*/
+      }
+      .box:nth-child(1n+2) {
+        border-top: 3px solid #ce4098;
+        padding-top: 3em;
+      }
+      .box {
+       display: block;
+       width: 75%;
+       padding-left: 2em;
+       padding-top: 0;
+     }
+     .content-footer {
+      font-size: 0.8em;
+    }
+    .masthead {
+      padding: 3em 0; 
+    }
+    .masthead-heading {
+      font-size: 3em;
+    }
+  }
