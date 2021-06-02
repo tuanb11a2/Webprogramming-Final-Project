@@ -1,7 +1,7 @@
 <div class="header">
     <header>
         <div class="header-logo">
-            <a href="#">
+            <a href="<?php echo LINK; ?>/home">
                 <img src="<?php echo LINK; ?>/image/logo.png" alt="logo">
             </a>
         </div>
@@ -17,13 +17,13 @@
             </div>
         </div>
         <div class="signin-logout">
-            <a href="<?php echo LINK ?>/login" class="signin-logout-btn">Sign In</a>
+            <a href="<?php echo LINK; ?>/login" class="signin-logout-btn">Sign In</a>
         </div>
     </header>
     <nav id="navigator">
         <ul id="main-menu">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">BOOK</a></li>
+            <li><a href="<?php echo LINK; ?>/home">HOME</a></li>
+            <li><a href="<?php echo LINK; ?>/book">BOOK</a></li>
             <li>
                 <div class="dropdown">
                     <button class="dropbtn">CATEGORY<i class="fa fa-caret-down"></i></button>
@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </li>
-            <li><a href="#">ABOUT</a></li>
+            <li><a href="<?php echo LINK; ?>/about">ABOUT</a></li>
         </ul>
     </nav>
 </div>

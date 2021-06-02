@@ -8,6 +8,7 @@
         private $author;
         private $description;
         private $publisher;
+        private $category = array();
         private $thumbnail;
         private $PDF;
 
@@ -46,6 +47,14 @@
 
         public function getPublisher(){
             return $this->publisher;
+        }
+
+        public function setCategory($category){
+            $this->category = $category;
+        }
+
+        public function getCategory(){
+            return $this->category;
         }
 
         public function setThumbnail($thumbnail){
@@ -98,14 +107,27 @@
             }
             return NULL;
         }
+        function getLatestInsertedBook(){
+            $sql = "SELECT book_id FROM book ORDER BY book_id DESC LIMIT 1 ";
+            if ($this->db) {
+                return $this->db->query($sql);
+            }
+            return NULL;
+        }
+
 		function addBookToDb() {
 		    $sql = "INSERT INTO `book` 
                     (`book_id`, `title`, `author`, `description`, `rating`, `number_of_review`, `publisher`, `thumbnail_address`, `bookPDF`) 
                     VALUES 
                     (NULL, '" . $this->title . "','" . $this->author . "','" . $this->description . "', '0', '0', '" . $this->publisher . "', '". $this->thumbnail . "', '".$this->PDF."');";
-		    //echo $sql;
             if ($this->db) {
-                return $this->db->query($sql);
+                if($this->db->query($sql)){
+                    $book_id = $this->getLatestInsertedBook();
+                    foreach($this->category as $category_value){
+                        $sql = "INSERT INTO `bookcategory` (`book_id`, `category_id`) VALUES ('".$book_id[0]['Book']['book_id']."', '".$category_value."')";
+                        $this->db->query($sql);
+                    }
+                };
             }
             return NULL;
         }
@@ -126,8 +148,10 @@
         }
 
         function deleteBook($id) {
+		    $sqlDeleteBookCategory = "DELETE FROM `bookcategory` WHERE book_id=".$id;
 		    $sql = "DELETE FROM `book` WHERE book_id = ".$id;
             if ($this->db) {
+                $this->db->query($sqlDeleteBookCategory);
                 return $this->db->query($sql);
             }
             return NULL;
