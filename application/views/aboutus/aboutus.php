@@ -1,5 +1,4 @@
 <body>
-  <link rel="stylesheet" href="aboutus.css"> 
     <header class="masthead">
         <p class="masthead-intro">Hi! We are</p> 
         <h1 class="masthead-heading">BlackPink</h1>
@@ -35,26 +34,26 @@
 
 
     <div class="box">
-        <img src="./datpth.png" class="img-responsive img-thumbnail" alt="Responsive image" />
+        <img src="<?php echo LINK; ?>/image/datpth.png" class="img-responsive img-thumbnail" alt="Responsive image" />
              <p align="center">Dat Pham Thanh</p>
              <p>Team leader. Has the ability to cover both the sky and earth</p>
              <button class="btn"><a href="#">Visit site</a></button>
 
     </div>
     <div class="box">
-        <img src="./tuan.png" class="img-responsive img-thumbnail" alt="Responsive image" />
+        <img src="<?php echo LINK; ?>/image/tuan.png" class="img-responsive img-thumbnail" alt="Responsive image" />
             <p align="center" font-size="20">Tuan Le Anh</p>
              <p>Half-imposter. Can be both a blackhat and a whitehat, just depend on what he wants</p>
               <button class="btn"><a href="#">Visit site</a></button>
     </div>
     <div class="box">
-        <img src="./tuanlinh.png" class="img-responsive img-thumbnail" alt="Responsive image" />
+        <img src="<?php echo LINK; ?>/image/tuanlinh.png" class="img-responsive img-thumbnail" alt="Responsive image" />
             <p align="center" font-size="20">Linh Pham Tuan</p>
              <p>Rainbow God. Love animals. Sometimes does shit, but somehow he can turn it into shits</p>
               <button class="btn"><a href="#">Visit site</a></button>
     </div>
     <div class="box">
-        <img src="./chau.png" class="img-responsive img-thumbnail" alt="Responsive image" />
+        <img src="<?php echo LINK; ?>/image/chau.png" class="img-responsive img-thumbnail" alt="Responsive image" />
             <p align="center" font-size="20">Chau Nguyen Thi Minh</p>
              <p>Garbage collector. Has nothing to do more than playing around with the lockers</p>
               <button class="btn"><a href="#">Visit site</a></button>
