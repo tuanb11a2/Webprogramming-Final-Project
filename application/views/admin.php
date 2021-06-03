@@ -23,7 +23,7 @@
         </div>
         <div class="box e">
             <div class="center__box">
-                <a href="#">Guest mail manage</a>
+                <a href="<?php echo LINK; ?>/admin/guestList">Guest mail manage</a>
             </div>
         </div>
         <div class="box f">
