@@ -12,7 +12,7 @@ class guestController extends Controller
     public function index()
     {
         $directory = getAbsolutePath();
-        $this->emailModel->setCategory($_POST["guest-mail"]);
+        $this->emailModel->setEmail($_POST["guest-mail"]);
         $this->emailModel->updateEmail();
         header("Location: http://$_SERVER[HTTP_HOST]$directory/");
     }

@@ -9,11 +9,13 @@
          */
         private $userModel;
         private $categoryModel;
+        private $emailModel;
 
         public function __construct()
 		{
 		    $this->userModel = $this->model('Book');
             $this->categoryModel =  $this->model('Category');
+            $this->emailModel = $this->model('Email');
 		}
 
 		public function roleValidation($view, $data){
@@ -39,6 +41,11 @@
         public function redirectToAdminListCategory(){
             $directory = getAbsolutePath();
             header("Location: http://$_SERVER[HTTP_HOST]$directory/admin/crudCategory");
+        }
+
+        public function redirectToAdmin(){
+            $directory = getAbsolutePath();
+            header("Location: http://$_SERVER[HTTP_HOST]$directory/admin");
         }
 
 		public function index()
@@ -249,6 +256,23 @@
             {
                 $this->redirectToMain();
             }
+        }
+
+        public function guestList()
+        {
+//            echo "Hello";
+            $emails = $this->emailModel->getAllEmail();
+            if (!$this->roleValidation('adminListEmail', $emails))
+            {
+                $this->redirectToMain();
+            }
+        }
+
+        public function deleteGuestEmail($email)
+        {
+            $this->emailModel->setEmail($email);
+            $this->emailModel->deleteEmail();
+            $this->redirectToAdmin();
         }
 
         public function deleteUser($id)
