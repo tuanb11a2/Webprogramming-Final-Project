@@ -36,6 +36,11 @@
             header("Location: http://$_SERVER[HTTP_HOST]$directory/admin/listBook");
         }
 
+        public function redirectToAdminListCategory(){
+            $directory = getAbsolutePath();
+            header("Location: http://$_SERVER[HTTP_HOST]$directory/admin/crudCategory");
+        }
+
 		public function index()
 		{
             if (!$this->roleValidation('admin', NULL)){
@@ -119,7 +124,7 @@
 		public function editBook($id)
         {
             $book = $this->userModel->getBookById($id);
-
+//            $category = $this->categoryModel->getAllCategory();
             if (!$this->roleValidation('adminEditBook', $book))
             {
                 $this->redirectToMain();
@@ -243,5 +248,42 @@
             $modelForUser->deleteUser($id);
             $directory = getAbsolutePath();
             header("Location: http://$_SERVER[HTTP_HOST]$directory/admin/userList");
+        }
+
+        public function crudCategory($id = 0)
+        {
+            $category = $this->categoryModel->getAllCategory();
+            $categoryToEdit = $this->categoryModel->getCategoryById($id);
+
+            $data = array();
+            array_push($data, $category);
+            array_push($data, $categoryToEdit);
+            if (!$this->roleValidation('adminCurdCategory', $data))
+            {
+                $this->redirectToMain();
+            }
+        }
+
+        public function addCategory()
+        {
+
+            var_dump($_POST);
+            $this->categoryModel->setCategoryName($_POST["category_name"]);
+            $this->categoryModel->addCategory();
+            $this->redirectToAdminListCategory();
+        }
+
+        public function editCategory($id)
+        {
+            var_dump($_POST);
+            $this->categoryModel->setCategoryName($_POST["category_name"]);
+            $this->categoryModel->editCategory($id);
+            $this->redirectToAdminListCategory();
+        }
+
+        public function deleteCategory($id)
+        {
+            $this->categoryModel->deleteCategory($id);
+            $this->redirectToAdminListCategory();
         }
 	}
