@@ -1,7 +1,7 @@
 <h1>Admin edit book</h1>
 <?php
 //var_dump($data[0]['Book']);
-print("<pre>".print_r($data,true)."</pre>");
+//print("<pre>".print_r($data,true)."</pre>");
 ?>
 
 <h1>TODO</h1>
