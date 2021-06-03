@@ -21,7 +21,7 @@
                 <td><?php echo $category["Category"]["category_id"];?></td>
                 <td><?php echo $category["Category"]["category_name"];?></td>
                 <td><a href="<?php echo LINK; ?>/admin/crudCategory/<?php echo $category["Category"]["category_id"]?>"><button>Edit</button></a></td>
-                <td><a href="<?php echo LINK; ?>/admin/deleteCategory/<?php echo $category["Category"]["category_id"];?>"><button>Delete</button></a></td>
+                <td><a onclick="return confirm('Are you sure you want to delete this category')" href="<?php echo LINK; ?>/admin/deleteCategory/<?php echo $category["Category"]["category_id"];?>"><button>Delete</button></a></td>
             </tr>
             <?php
         }

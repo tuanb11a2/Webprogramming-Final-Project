@@ -232,7 +232,7 @@
             if ($_SESSION['role'] && $_SESSION['role'] == 1) {
                 $this->userModel->deleteBook($id);
             }
-            $this->redirectToMain();
+            $this->redirectToAdminListBook();
         }
 
         public function takeThumbnailPath($fileArray)

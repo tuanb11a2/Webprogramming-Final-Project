@@ -17,7 +17,7 @@
             <tr>
                 <td><?php echo $email["Subcribelist"]["email"];?></td>
 
-                <td><a href="<?php echo LINK; ?>/admin/deleteGuestEmail/<?php echo $email["Subcribelist"]["email"];?>"><button>Delete</button></a></td>
+                <td><a onclick="return confirm('Are you sure you want to delete this email')" href="<?php echo LINK; ?>/admin/deleteGuestEmail/<?php echo $email["Subcribelist"]["email"];?>"><button>Delete</button></a></td>
             </tr>
             <?php
         }
