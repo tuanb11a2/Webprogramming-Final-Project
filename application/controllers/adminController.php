@@ -124,8 +124,11 @@
 		public function editBook($id)
         {
             $book = $this->userModel->getBookById($id);
-//            $category = $this->categoryModel->getAllCategory();
-            if (!$this->roleValidation('adminEditBook', $book))
+            $category = $this->categoryModel->getAllCategory();
+            $data = array();
+            array_push($data, $book);
+            array_push($data, $category);
+            if (!$this->roleValidation('adminEditBook', $data))
             {
                 $this->redirectToMain();
             }
@@ -204,6 +207,13 @@
             $this->userModel->setPublisher($_POST["publisher"]);
             $this->userModel->setThumbnail($thumbnail["url"]);
             $this->userModel->setBookPDF($bookPDF["url"]);
+
+            if (isset($_POST["add-book-category"]))
+            {
+                $category = $_POST["add-book-category"];
+                $this->userModel->setCategory($category);
+                $this->userModel->updateCategory($_POST["book_id"]);
+            }
 
             $this->userModel->updateBook($_POST["book_id"]);
             header("Location: http://$_SERVER[HTTP_HOST]$directory/book");
