@@ -117,10 +117,10 @@
 		<h2>Join BlackPink!</h2>
 		<p>Subscribe to us and receive the greatest books ever!</p>
 		</div>
-		<form method="post" action="#">
+		<form method="POST" action="<?php echo LINK ?>/guest">
 		<div class="category__contact__form-row">
 			<div class="category__contact__col-auto">
-			<input type="text" class="form-control" placeholder="Enter your Email">
+			<input type="email" name="guest-mail" class="form-control" placeholder="Enter your Email">
 			</div>
 			<div class="category__contact__col-auto">
 			<button type="submit">Subscribe</button>

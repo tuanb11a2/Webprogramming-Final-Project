@@ -45,12 +45,15 @@
                 <h3>Stay Updated</h3>
                 <p>Subscribe to our newsletter to get our latest news.</p>
             </div>
-            <div class="subscription-email">
-                <input type="text" placeholder="Enter Your Email">
-            </div>
-            <div class="subscription-button">
-                <button>Subscribe</button>
-            </div>
+            <form action="<?php echo LINK ?>/guest" method="POST">
+                <div class="subscription-email">
+                    <input type="email" name="guest-mail" placeholder="Enter Your Email">
+                </div>
+                <div class="subscription-button">
+                    <button type="submit">Subscribe</button>
+                </div>
+            </form>
+
         </div>
     </div>
 </footer>
