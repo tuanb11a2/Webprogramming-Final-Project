@@ -89,7 +89,7 @@
     font-size: large;
     font-weight: bold;
 }
-.subscription-email input[type=text]{
+.subscription-email input[type=email]{
     font-size: large;
     border: 1px solid;
     border-radius: 20px;
