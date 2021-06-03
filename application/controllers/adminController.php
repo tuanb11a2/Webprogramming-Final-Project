@@ -250,15 +250,14 @@
             header("Location: http://$_SERVER[HTTP_HOST]$directory/admin/userList");
         }
 
-        public function crudCategory($id = 1)
+        public function crudCategory($id = 0)
         {
-            echo $id;
-            echo "Hello";
             $category = $this->categoryModel->getAllCategory();
-            $stringA = "Hello World";
+            $categoryToEdit = $this->categoryModel->getCategoryById($id);
+
             $data = array();
             array_push($data, $category);
-            array_push($data, $stringA);
+            array_push($data, $categoryToEdit);
             if (!$this->roleValidation('adminCurdCategory', $data))
             {
                 $this->redirectToMain();
@@ -271,6 +270,20 @@
             var_dump($_POST);
             $this->categoryModel->setCategoryName($_POST["category_name"]);
             $this->categoryModel->addCategory();
+            $this->redirectToAdminListCategory();
+        }
+
+        public function editCategory($id)
+        {
+            var_dump($_POST);
+            $this->categoryModel->setCategoryName($_POST["category_name"]);
+            $this->categoryModel->editCategory($id);
+            $this->redirectToAdminListCategory();
+        }
+
+        public function deleteCategory($id)
+        {
+            $this->categoryModel->deleteCategory($id);
             $this->redirectToAdminListCategory();
         }
 	}
