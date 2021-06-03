@@ -66,6 +66,8 @@ class Category extends Model
     public function deleteCategory($id)
     {
 
+        $sql = "DELETE FROM `bookcategory` WHERE `category_id`=".$id;
+        $this->db->query($sql);
         $sql = "DELETE FROM `category` WHERE category_id =". $id;
         if($this->db){
             return $this->db->query($sql);
