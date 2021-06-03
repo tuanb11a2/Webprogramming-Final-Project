@@ -6,13 +6,18 @@
 	{
 		public function __construct()
 		{
-			// $this->userModel = $this->model('Book');
+			$this->userModel = $this->model('Book');
 		}
 
-		public function index()
+		public function index($id)
 		{
-			// $books = $this->userModel->getAllBook();
-			$this->view('details');
+			$book = $this->userModel->getBookById($id);
+			print_r($book);
+			if( sizeof($book) == 0 ){
+				header("Location: ".LINK."/book");
+			}else{
+				$this->view('details',$book);
+			}
 		}
 	}
 ?>
