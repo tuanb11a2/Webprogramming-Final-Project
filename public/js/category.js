@@ -64,6 +64,7 @@ function changeCheckbox(id){
             allCheckBox.checked=true;
         }
     }
+    filterAjax();
     // alert(JSON.stringify(filter, null, 2));
 }
 function filter__by__rating__choice(){
@@ -92,6 +93,7 @@ function filter__by__rating__choice__button(value){
     }else{
         filter.rating=0
     }
+    filterAjax();
     // alert(JSON.stringify(filter));
 }
 function getOrderFilter(){
@@ -107,4 +109,5 @@ function getOrderFilter(){
         filter.sort_filter = "name";
     }
     // alert(JSON.stringify(filter));
+    filterAjax();
 }
