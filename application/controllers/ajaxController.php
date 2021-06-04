@@ -23,11 +23,11 @@
             $param = str_replace("leanhtuan", " ", $param);
             $split = explode("/",$param);
             $filter1 = array(
-                "category" => array(),
-                "publisher" => array(),
-                "author" => array(),
-                "rating" => "0",
-                "order" => "popularity", 
+                "category" => array(),      // (1,2,3) of ("1", "2", "3") --> see line 48
+                "publisher" => array(),     // ("NXB a", "NXB b")
+                "author" => array(),        // ("linh", "tuan", "dat")
+                "rating" => 0,              // 0.0, 1.0, 2.0, 3.0, 4.0, 5.0
+                "order" => "popularity",    // "popularity", "old", "new", "name"
             ); 
             $a = "";
             for($i = 0; $i < count($split); $i++){
@@ -42,10 +42,14 @@
                 }elseif($split[$i]=="order"){
                     $a = "order";
                 }else{
-                    if($a=="category"||$a=="publisher"||$a=="author"){
+                    if($a=="publisher"||$a=="author"){
                         array_push($filter1[$a], $split[$i]);
-                    }else{
+                    }elseif($a=="category"){
+                        array_push($filter1[$a], intval($split[$i]));   // change the type of category array here: string, int...
+                    }elseif($a=="order"){
                         $filter1[$a] = $split[$i];
+                    }else{
+                        $filter1[$a] = floatval($split[$i]);            // change the type of rating to double
                     }
                 }
             }
