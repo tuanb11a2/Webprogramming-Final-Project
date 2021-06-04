@@ -1,11 +1,52 @@
+<?php
+    function printStart($num,$flag){
+        $empty = 0;
+        for($i = 0;$i < $num-$flag;$i++){
+            echo "<i class='fas fa-star'></i>";
+        }
+        if($flag == 1){
+            echo "<i class='fas fa-star-half-alt'></i>";
+        }
+        for($empty = 0;$empty < 5 - $num - $flag ;$empty++){
+            echo "<i class='far fa-star'></i>";
+        }
+    }
+
+    function getStars($rating){
+        $num = 0;
+        if($rating >= 0 && $rating < 0.5){
+            printStart($rating,0);
+        }else if($rating >= 0.5 && $rating < 1){
+            printStart($rating,1);
+        }else if($rating >= 1 && $rating < 1.5){
+            printStart($rating,0);
+        }else if($rating >= 1.5 && $rating < 2){
+            printStart($rating,1);
+        }else if($rating >= 2 && $rating < 2.5){
+            printStart($rating,0);
+        }else if($rating >= 2.5 && $rating < 3){
+            printStart($rating,1);
+        }else if($rating >= 3 && $rating < 3.5){
+            printStart($rating,0);
+        }else if($rating >= 3.5 && $rating < 4){
+            printStart($rating,1);
+        }else if($rating >= 4 && $rating < 4.5){
+            printStart($rating,0);
+        }else if($rating >= 4.5 && $rating < 5){
+            printStart($rating,1);
+        }else{
+            echo "Error value";
+        }
+    }
+?>
 <div class="book_detail_section">
     <div class="book_detail_section_1">
-        <div class="window__slider__img-container" style="padding-top: 40px;">
-            <img src="https://preview.colorlib.com/theme/abcbook/assets/img/gallery/xbest-books1.jpg.pagespeed.ic.a3LkFxg89O.webp" style="float: left; top: 20%; padding-left: 70px; padding-right: 70px;" />
-            <div class="window__right" style="float: left; top: 50%;">
-                <h1>The Rage of Dragons</h1>
-                <p>By Evan Winter</p>
-                <button>Read Book</button>
+        <div class="window__slider__img-container">
+            <img src="<?php echo LINK."/".$data[0]["Book"]["thumbnail_address"]; ?>"/>
+            <div class="window__right">
+                <h1><?php echo $data[0]["Book"]["title"]; ?></h1>
+                <p>By <?php echo $data[0]["Book"]["author"]; ?></p>
+                <a href="<?php echo LINK."/read/".$data[0]["Book"]["book_id"]; ?>"><button>Read Book</button></a>
             </div>
         </div>
     </div>
@@ -17,22 +58,26 @@
         </div>
         <div class="book_detail_section_2_text_section">
             <div id="book_detail_2_description" class="book_detail_section_2_item book_detail_section_2_item_show">
-                <p>Beryl Cook is one of Britain’s most talented and amusing artists .Beryl’s pictures feature women of all shapes and sizes enjoying themselves .Born between the two world wars, Beryl Cook eventually left Kendrick School in Reading at the age of 15, where she went to secretarial school and then into an insurance office. After moving to London and then Hampton, she eventually married her next door neighbour from Reading, John Cook. He was an officer in the Merchant Navy and after he left the sea in 1956, they bought a pub for a year before John took a job in Southern Rhodesia with a motor company. Beryl bought their young son a box of watercolours, and when showing him how to use it, she decided that she herself quite enjoyed painting. John subsequently bought her a child’s painting set for her birthday and it was with this that she produced her first significant work, a half-length portrait of a dark-skinned lady with a vacant expression and large drooping breasts. It was aptly named ‘Hangover’ by Beryl’s husband and </p>
+                <p><?php echo $data[0]["Book"]["description"]; ?></p>
             </div>
             <div id="book_detail_2_author" class="book_detail_section_2_item">
-                <p>ABCXYZ</p>
+                <p>Author: <?php echo $data[0]["Book"]["author"]; ?></p>
+                <p>Publisher: <?php echo $data[0]["Book"]["publisher"]; ?></p>
             </div>
             <div id="book_detail_2_review" class="book_detail_section_2_item">
                 <div class="card-rating">
-                    <!-- Star rating section -->
+                    <?php
+                        getStars($data[0]["Book"]["rating"])
+                    ?>
+                    <!-- Star rating section
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+                    <i class="fas fa-star-half-alt"></i> -->
                 </div>
 
-                <p><span>120</span> Reviews</p> <!-- Number of reviews -->
+                <p><span><?php echo $data[0]["Book"]["number_of_review"]; ?></span> Reviews</p> <!-- Number of reviews -->
                 <div class="card-comment-container">
                     <div class="comment-inner-element">
                         <p class="commenter-name">Le Tuan</p>

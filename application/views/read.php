@@ -1,3 +1,44 @@
+<?php
+    function printStart($num,$flag){
+        $empty = 0;
+        for($i = 0;$i < $num-$flag;$i++){
+            echo "<i class='fas fa-star'></i>";
+        }
+        if($flag == 1){
+            echo "<i class='fas fa-star-half-alt'></i>";
+        }
+        for($empty = 0;$empty < 5 - $num - $flag ;$empty++){
+            echo "<i class='far fa-star'></i>";
+        }
+    }
+
+    function getStars($rating){
+        $num = 0;
+        if($rating >= 0 && $rating < 0.5){
+            printStart($rating,0);
+        }else if($rating >= 0.5 && $rating < 1){
+            printStart($rating,1);
+        }else if($rating >= 1 && $rating < 1.5){
+            printStart($rating,0);
+        }else if($rating >= 1.5 && $rating < 2){
+            printStart($rating,1);
+        }else if($rating >= 2 && $rating < 2.5){
+            printStart($rating,0);
+        }else if($rating >= 2.5 && $rating < 3){
+            printStart($rating,1);
+        }else if($rating >= 3 && $rating < 3.5){
+            printStart($rating,0);
+        }else if($rating >= 3.5 && $rating < 4){
+            printStart($rating,1);
+        }else if($rating >= 4 && $rating < 4.5){
+            printStart($rating,0);
+        }else if($rating >= 4.5 && $rating < 5){
+            printStart($rating,1);
+        }else{
+            echo "Error value";
+        }
+    }
+?>
 <style>
     .reading-book-title {
         background-image: url("<?php echo LINK; ?>/image/category_banner_1.jpg");
@@ -5,10 +46,10 @@
 </style>
 <div class="reading-page">
     <div class="reading-book-title">
-        <h1>To all the boi i loved before</h1>
+        <h1><?php echo $data[0]["Book"]["title"]; ?></h1>
     </div>
     <div class="reading-section">
-        <iframe src="<?php echo LINK; ?>/fileupload/bookPDF/7e51148422b0ce950e04df599d32b801.pdf"></iframe>
+        <iframe src="<?php echo LINK."/".$data[0]["Book"]["bookPDF"]; ?>"></iframe>
     </div>
     <div class="comment-section">
         <h3>Comment Section</h3>
@@ -77,7 +118,11 @@
                     </table>
                 <!-- </form> -->
             </div>
-            <?php } ?>
+            <?php }else{ ?>
+                <div class="login-to-comment-inner-element">
+                    <p><a href="<?php echo LINK."/login"; ?>">Login</a> to leave a comment!</p>
+                </div>
+            <?php }?>
         </div>
     </div>
 </div>

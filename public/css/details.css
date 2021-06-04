@@ -7,7 +7,7 @@
     padding-right: 6rem;
 }
 .book_detail_section_1{
-    background-color: #FF1616;
+    background-color: rgb(224, 26, 26);
     width: 85%;
     height: 500px;
     margin: 0 auto;
@@ -51,4 +51,20 @@
 	flex-direction: column;
 	justify-content: center;
   	align-items: flex-start;
+}
+
+.book_detail_section_1 .window__slider__img-container{
+    padding-top: 40px;
+}
+.book_detail_section_1 .window__slider__img-container img{
+    float: left; 
+    top: 20%; 
+    padding-left: 70px; 
+    padding-right: 70px;
+    padding-bottom: 70px;
+    max-height: 30rem;
+}
+.book_detail_section_1 .window__slider__img-container .window__right{
+    float: left; 
+    top: 40%;
 }

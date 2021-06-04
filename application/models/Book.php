@@ -83,7 +83,7 @@
 
         function getBookById($id) {
             $sql = "SELECT * FROM `book` WHERE book_id = ". $id ." ";
-            echo $sql;
+            // echo $sql;
             if ($this->db) {
                 return $this->db->query($sql);
             }

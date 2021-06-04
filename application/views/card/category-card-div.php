@@ -1,7 +1,7 @@
 <?php
     function printStart($num,$flag){
         $empty = 0;
-        for($i = 0;$i < $num;$i++){
+        for($i = 0;$i < $num - $flag;$i++){
             echo "<i class='fas fa-star'></i>";
         }
         if($flag == 1){
