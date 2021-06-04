@@ -1,3 +1,6 @@
+<header>
+	<title>Books</title>
+</header>
 <style>
 	.category__banner{
 		background-image: url("<?php echo LINK; ?>/image/category_banner_1.jpg");

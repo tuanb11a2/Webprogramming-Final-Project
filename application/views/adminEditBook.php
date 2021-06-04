@@ -1,3 +1,4 @@
+<title>Administrator Dashboard: Edit book</title>
 <h1>Admin edit book</h1>
 <?php
 var_dump($data[0]['Book']);

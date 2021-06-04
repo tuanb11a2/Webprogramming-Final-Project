@@ -1,3 +1,4 @@
+<title>Book detail</title>
 <div class="book_detail_section">
     <div class="book_detail_section_1">
         <div class="window__slider__img-container" style="padding-top: 40px;">

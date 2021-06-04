@@ -1,3 +1,5 @@
+<title>Sign in</title>
+
 <div class="login_signup_html_page">
 	<div class="login__container" id="login__container">
 		<div class="login__form-container login__sign-up-container">

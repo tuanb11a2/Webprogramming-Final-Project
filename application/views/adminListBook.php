@@ -1,3 +1,4 @@
+<title>Administrator Dashboard: Book manager</title>
 <h1>List Book</h1>
 <?php
 //    var_dump($data);
