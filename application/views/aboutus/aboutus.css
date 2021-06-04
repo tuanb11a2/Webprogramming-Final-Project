@@ -1,14 +1,4 @@
-/*****color
-Body: #222222
-Border: #a1a1a1
-Footer bg: #282828
-Link: #a1a1a1
-P: white
-*****/
 
-/* -------------------------
-    Typography Declarartions
-   -------------------------*/
 
    body {
     color: #222222;
@@ -24,9 +14,7 @@ P: white
     letter-spacing: 0.05em;
   }
   
-  /* -------------------------
-        Link Styles
-     -------------------------*/
+
   
   a {
     font-weight: bold;
@@ -38,10 +26,7 @@ P: white
   a:visited {
     color: #F1F1F1;
   }
-  
-  /* -------------------------
-        Global Styles
-     -------------------------*/
+
   
   .starcontainer h2 {
     font-size: 2.8em;
@@ -80,9 +65,6 @@ P: white
     display: inline-block;
   }
   
-  /* -------------------------
-        Layout Declarations
-     -------------------------*/
   
   .masthead-heading, 
   .masthead-intro,
@@ -93,7 +75,7 @@ P: white
   }
   
   .masthead {
-    background-image: url("./oldbook_1.jpg");
+    background-image: url("oldbook_1.jpg");
     background-repeat: no-repeat;
     border-top: solid 1em #feddff;
     border-bottom: solid 1em #feddff;
@@ -111,14 +93,12 @@ P: white
   
   .masthead-intro {
     margin-bottom: 0.1em;
-    /* font-family: 'Shadows Into Light', cursive; */
     font-family: inherit;
     font-size: 2em;
   }
   
   .masthead-heading {
     margin-top: -0.2em;
-    /* font-family: 'Shadows Into Light', cursive; */
     font-family: inherit;
     font-weight: bold;
     font-size: 6em;
@@ -134,10 +114,6 @@ P: white
     margin-right: auto;
     margin-top: 2em;
   }
-  
-  /* -------------------------
-      Portfolio
-     -------------------------*/
   
   li {
       list-style: none;
@@ -185,10 +161,7 @@ P: white
   .btn:hover {
     background-color: #282828;
   }
-  
-  /* -------------------------
-          Footer
-     -------------------------*/
+
   .social {
     padding: 0;
     list-style: none;
@@ -216,10 +189,6 @@ P: white
     max-width: 100%;
     padding: 4em 0;
   }
-  
-  /* -------------------------
-          Media query
-     -------------------------*/
   
   @media only screen and (max-width: 500px) {
       .img-responsive {
