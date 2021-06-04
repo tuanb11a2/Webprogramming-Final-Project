@@ -1,7 +1,7 @@
 <div class="header">
     <header>
         <div class="header-logo">
-            <a href="#">
+            <a href="<?php echo LINK; ?>/home">
                 <img src="<?php echo $actual_link; ?>/image/logo.png" alt="logo">
             </a>
         </div>
