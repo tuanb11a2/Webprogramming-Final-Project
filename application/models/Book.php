@@ -107,6 +107,7 @@
             }
             return NULL;
         }
+
         function getLatestInsertedBook(){
             $sql = "SELECT book_id FROM book ORDER BY book_id DESC LIMIT 1 ";
             if ($this->db) {
@@ -169,6 +170,66 @@
             }
             return NULL;
         }
+        
+        function getBookByFilter($filter) {
+            $sql = "SELECT * FROM `book` WHERE ";
+            if(isset($filter)){
+                if(count($filter["category"]) > 0){                                 //Category filter
+                    $tmp_sql = "(book_id IN (SELECT book_id FROM 'bookCategory' WHERE category IN (";
+                    $i = 0;                           
+                    foreach($filter["category"] as $value){
+                        $tmp_sql = $tmp_sql."'".$value."'";
+                        if(++$i != count($filter["category"]) {
+                            $tmp_sql = $tmp_sql.",";
+                        }
+                    }
+                    $tmp_sql = $tmp_sql."))) ";
+                    $sql = $sql.$tmp_sql;
+                }
 
+                if(count($filter["publisher"]) > 0){                                 //Publisher filter
+                    $tmp_sql = "AND (publisher IN (";
+                    foreach($filter["publisher"] as $value){
+                        $tmp_sql = $tmp_sql."'".$value."'";
+                        if(++$i != count($filter["publisher"]) {
+                            $tmp_sql = $tmp_sql.",";
+                        }
+                    }
+                    $tmp_sql = $tmp_sql.")) ";
+                    $sql = $sql.$tmp_sql;
+                }
 
+                if(count($filter["author"]) > 0){                                 //Author filter
+                    $tmp_sql = "AND (author IN (";
+                    foreach($filter["author"] as $value){
+                        $tmp_sql = $tmp_sql."'".$value."'";
+                        if(++$i != count($filter["author"]) {
+                            $tmp_sql = $tmp_sql.",";
+                        }
+                    }
+                    $tmp_sql = $tmp_sql.")) ";
+                    $sql = $sql.$tmp_sql;
+                }
+
+                if($filter["rating"] != 0){                                        //Rating filter
+                    $sql = $sql."AND rating >= ".$filter["rating"];
+                }
+
+                if($filter["order"] == "old"){
+                    //Default
+                }elseif($filter["order"] == "new"){
+                    $sql = $sql." ORDER BY book_id DESC";
+                }elseif($filter["order"] == "name"){
+                    $sql = $sql." ORDER BY name DESC";
+                }
+
+                if ($this->db) {
+                    return $this->db->query($sql);
+                }else{
+                    return NULL;
+                }
+            }else{
+                return NULL;
+            }
+        }
 	}
