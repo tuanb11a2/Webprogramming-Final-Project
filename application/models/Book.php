@@ -179,7 +179,7 @@
                     $i = 0;                           
                     foreach($filter["category"] as $value){
                         $tmp_sql = $tmp_sql."'".$value."'";
-                        if(++$i != count($filter["category"]) {
+                        if(++$i != count($filter["category"])) {
                             $tmp_sql = $tmp_sql.",";
                         }
                     }
@@ -191,7 +191,7 @@
                     $tmp_sql = "AND (publisher IN (";
                     foreach($filter["publisher"] as $value){
                         $tmp_sql = $tmp_sql."'".$value."'";
-                        if(++$i != count($filter["publisher"]) {
+                        if(++$i != count($filter["publisher"])) {
                             $tmp_sql = $tmp_sql.",";
                         }
                     }
@@ -203,7 +203,7 @@
                     $tmp_sql = "AND (author IN (";
                     foreach($filter["author"] as $value){
                         $tmp_sql = $tmp_sql."'".$value."'";
-                        if(++$i != count($filter["author"]) {
+                        if(++$i != count($filter["author"])) {
                             $tmp_sql = $tmp_sql.",";
                         }
                     }
