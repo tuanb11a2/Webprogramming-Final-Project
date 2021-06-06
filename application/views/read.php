@@ -94,7 +94,8 @@
             <div class="your-comment-inner-element">
                 <p class="commenter-name">You Are Nhat Linh</p>
                 <p style="font-weight: bold;">Create/Update Your Review</p>
-                <!-- <form id="submit-review"> -->
+                <?php // var_dump($_SESSION);  ?>
+                <form id="submit-review" method="POST" action="comment">
                     <table>
                         <tr>
                             <td><label for="your-rate">Rating:</label></td>
@@ -116,7 +117,7 @@
                     <td><input type="submit" value="Submit" id="submit-review-btn"></td>
                     </tr>
                     </table>
-                <!-- </form> -->
+                </form>
             </div>
             <?php }else{ ?>
                 <div class="login-to-comment-inner-element">
