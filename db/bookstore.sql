@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2021 at 06:06 PM
+-- Generation Time: Jun 06, 2021 at 05:20 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -59,6 +59,138 @@ INSERT INTO `book` (`book_id`, `title`, `author`, `description`, `rating`, `numb
 (32, 'Nobodys boy', 'Hector Malot', 'Story of a young boy who discovers, at the age of eight, that he was a foundling. When his foster father sends him away he must find a way to survive and also discover his true identity', 0, 0, ' University of Illinois Urbana-Champaign', 'fileupload/thumbnail/58165b75fbf86dc583300ea8bf75ab40.jpg', 'fileupload/bookPDF/57b4c046a2edf94c098e366c8a4cf7ce.pdf'),
 (33, 'Uncle Toms Cabin', 'Hammatt Billings', 'Uncle Toms Cabin tells the story of Uncle Tom, depicted as a saintly, dignified slave. While being transported by boat to auction in New Orleans, Tom saves the life of Little Eva, whose grateful father then purchases Tom.', 0, 0, ' Penguin Random House US', 'fileupload/thumbnail/568810374a970a61ad30846882c9c503.jpg', 'fileupload/bookPDF/e5bbafe887e189fccc70b74e9bb5ff06.pdf');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bookcategory`
+--
+
+CREATE TABLE `bookcategory` (
+  `book_id` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `bookcategory`
+--
+
+INSERT INTO `bookcategory` (`book_id`, `category_id`) VALUES
+(22, 9),
+(23, 8),
+(25, 12),
+(27, 12),
+(28, 1),
+(28, 9),
+(28, 12),
+(29, 9),
+(29, 13),
+(30, 1),
+(30, 9),
+(30, 12),
+(31, 1),
+(31, 9),
+(31, 12),
+(32, 9),
+(32, 12),
+(33, 9),
+(33, 12);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `category_id` int(11) NOT NULL,
+  `category_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`category_id`, `category_name`) VALUES
+(1, 'History'),
+(8, 'Entertainment'),
+(9, 'Social Science'),
+(10, 'Sport'),
+(12, 'Education'),
+(13, 'Romatic'),
+(14, 'Horror');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `client`
+--
+
+CREATE TABLE `client` (
+  `client_id` int(11) NOT NULL,
+  `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `client`
+--
+
+INSERT INTO `client` (`client_id`, `email`, `name`, `password`, `role_id`) VALUES
+(1, 'admin@gmail.com', 'admin', '1', 1),
+(2, 'user@gmail.com', 'user', '1', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `review`
+--
+
+CREATE TABLE `review` (
+  `book_id` int(11) NOT NULL,
+  `client_id` int(11) NOT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `time` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `role`
+--
+
+CREATE TABLE `role` (
+  `rold_id` int(11) NOT NULL,
+  `rold_name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `role`
+--
+
+INSERT INTO `role` (`rold_id`, `rold_name`) VALUES
+(1, 'admin'),
+(2, 'user');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subcribelist`
+--
+
+CREATE TABLE `subcribelist` (
+  `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `subcribelist`
+--
+
+INSERT INTO `subcribelist` (`email`) VALUES
+('dat122@gmail.com'),
+('dpth@gmail.com');
+
 --
 -- Indexes for dumped tables
 --
@@ -70,6 +202,46 @@ ALTER TABLE `book`
   ADD PRIMARY KEY (`book_id`);
 
 --
+-- Indexes for table `bookcategory`
+--
+ALTER TABLE `bookcategory`
+  ADD PRIMARY KEY (`book_id`,`category_id`),
+  ADD KEY `fk_category_book_category` (`category_id`);
+
+--
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`category_id`);
+
+--
+-- Indexes for table `client`
+--
+ALTER TABLE `client`
+  ADD PRIMARY KEY (`client_id`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD KEY `fk_client_role_id` (`role_id`);
+
+--
+-- Indexes for table `review`
+--
+ALTER TABLE `review`
+  ADD PRIMARY KEY (`book_id`,`client_id`),
+  ADD KEY `fk_client_review` (`client_id`);
+
+--
+-- Indexes for table `role`
+--
+ALTER TABLE `role`
+  ADD PRIMARY KEY (`rold_id`);
+
+--
+-- Indexes for table `subcribelist`
+--
+ALTER TABLE `subcribelist`
+  ADD PRIMARY KEY (`email`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -78,6 +250,48 @@ ALTER TABLE `book`
 --
 ALTER TABLE `book`
   MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `client`
+--
+ALTER TABLE `client`
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `role`
+--
+ALTER TABLE `role`
+  MODIFY `rold_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `bookcategory`
+--
+ALTER TABLE `bookcategory`
+  ADD CONSTRAINT `fk_book_book_category` FOREIGN KEY (`book_id`) REFERENCES `book` (`book_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_category_book_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
+-- Constraints for table `client`
+--
+ALTER TABLE `client`
+  ADD CONSTRAINT `fk_client_role_id` FOREIGN KEY (`role_id`) REFERENCES `role` (`rold_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
+-- Constraints for table `review`
+--
+ALTER TABLE `review`
+  ADD CONSTRAINT `fk_book_review` FOREIGN KEY (`book_id`) REFERENCES `book` (`book_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_client_review` FOREIGN KEY (`client_id`) REFERENCES `client` (`client_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
