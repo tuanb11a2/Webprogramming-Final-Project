@@ -76,7 +76,7 @@ class User extends Model
                 $this->role = $userInfo[0]["Client"]["role_id"];
                 $this->name = $userInfo[0]["Client"]["name"];
                 
-                $salt = $userInfo[0]["Client"]["Salt"];
+                $salt = $userInfo[0]["Client"]["salt"];
                 $savedPwd = $userInfo[0]["Client"]["password"];
                 
                 $hashedPwd = hash("sha256", $this->password . $salt);
@@ -99,9 +99,11 @@ class User extends Model
     {
         $sql = "SELECT * FROM `client` WHERE email='".$this->email."' ";
         if ($this->db) {
+            print("<pre>".print_r($this->db->query($sql),true)."</pre>");
             if (count($this->db->query($sql))!=0){
                 return 0;
             }else{
+                echo "still alive";
                 $salt = $this->generageSalt();
                 $hashedPwd = hash("sha256", $this->password . $salt);
                 $sql_user_insert = "INSERT INTO `client`(`client_id`, `email`, `name`, `password`, `role_id`, `Salt`) 
@@ -111,7 +113,6 @@ class User extends Model
                                             '".$hashedPwd."', 
                                             '2',
                                             '".$salt."')";
-                // echo "<script type='text/javascript'>alert('$salt and $hashedPwd');</script>";
                 if($this->db->query($sql_user_insert)){
                     $this->role = '2';
                     if($this->db){
