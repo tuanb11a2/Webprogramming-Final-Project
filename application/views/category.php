@@ -104,7 +104,7 @@
 	<div class="category__product__cards">
 		<div class="category__dropdown__div" tabindex="0">
 			<select name="browse_dropdown" class="category_dropdown" id="order_filter" onchange="getOrderFilter()">
-				<option value="Popularity">Browse by popularity</option>
+				<!-- <option value="Popularity">Browse by popularity</option> -->
 				<option value="Old">Old</option>
 				<option value="New">New</option>
 				<option value="Name">Name</option>
@@ -158,7 +158,7 @@
 		// link = link.split(" ").join("phamnhatlinh")
 		link = link.split("/").join("phamnhatlinh")
 		link = link.split(" ").join("leanhtuan")
-		alert("<?php echo LINK; ?>"+"/ajax/ajaxBookFilter/" + link);
+		// alert("<?php echo LINK; ?>"+"/ajax/ajaxBookFilter/" + link);
 		xmlhttp1.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 				str = this.responseText
@@ -166,7 +166,7 @@
 					str.lastIndexOf('ajax-filter-result-start') + 24,
 					str.lastIndexOf("ajax-filter-result-end")
 				);
-				alert(res)
+				document.getElementsByClassName("category-card-div-inner")[0].innerHTML = res;
 			};
 		}
 		xmlhttp1.open("GET", "<?php echo LINK; ?>"+"/ajax/ajaxBookFilter/" + link, true);

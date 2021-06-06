@@ -17,7 +17,7 @@
 			// echo "<br>".$book[0]["Book"]["author"];
 			if( sizeof($book) == 0 ){
 				header("Location: ".LINK."/book");
-			}else{
+			}else{			
 				$this->view('read',$book);
 			}
 		}
