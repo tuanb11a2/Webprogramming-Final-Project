@@ -204,7 +204,7 @@
                 $sql = $sql . " WHERE ";
             $and = 0;
             if (count($filter["category"]) > 0) {                                 //Category filter
-                $tmp_sql = "(book_id IN (SELECT book_id FROM 'bookCategory' WHERE category IN (";
+                $tmp_sql = "(book_id IN (SELECT book_id FROM bookcategory WHERE category_id IN (";
                 $i = 0;
                 foreach ($filter["category"] as $value) {
                     $tmp_sql = $tmp_sql . "'" . $value . "'";
