@@ -96,7 +96,28 @@
                 <p style="font-weight: bold;">Create/Update Your Review</p>
                 <?php // var_dump($_SESSION);  ?>
                 <form id="submit-review" method="POST" action="comment/<?php echo $data[0]["Book"]["book_id"];?>">
-                    <table>
+                    <?php if(isset($data[1]["Review"])){ ?>
+                        <table>
+                        <tr>
+                            <td><label for="your-rate">Rating:</label></td>
+                            <td><select name="your-rate" id="your-rate">
+                                    <?php for($i=5;$i>0;$i--){ ?>
+                                        <option value="<?php echo $i; ?>" <?php if($i == $data[1]["Review"]["rating"]){echo "selected";} ?>><?php echo $i; ?></option>
+                                    <?php } ?>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="your-review">Comment:</label></td>
+                            <td><textarea id="your-review" name="your-review"  rows="5"><?php echo $data[1]["Review"]["review"];?></textarea></td>
+                        </tr>
+                    <tr>
+                        <td></td>
+                    <td><input type="submit" value="Submit" id="submit-review-btn"></td>
+                    </tr>
+                    </table>
+                    <?php }else{ ?>
+                        <table>
                         <tr>
                             <td><label for="your-rate">Rating:</label></td>
                             <td><select name="your-rate" id="your-rate">
@@ -117,6 +138,7 @@
                     <td><input type="submit" value="Submit" id="submit-review-btn"></td>
                     </tr>
                     </table>
+                    <?php } ?>
                 </form>
             </div>
             <?php }else{ ?>

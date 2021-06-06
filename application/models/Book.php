@@ -283,12 +283,29 @@
         }
     }
 
-        public function comment($book_id,$user_id,$rating,$comment){
+        public function createComment($book_id,$user_id,$rating,$comment){
             $sql = "INSERT INTO `review` (`book_id`, `client_id`, `review`, `rating`) VALUES ('".$book_id."', '".$user_id."', '".$comment."', '".$rating."');";
+            //echo $sql;
+            if ($this->db) {
+                $this->db->query($sql);
+            }
+            return NULL;
+        }
+
+        public function updateComment($book_id,$user_id,$rating,$comment){
+            $sql = "UPDATE `review` SET `review` = '".$comment."', `rating` = '".$rating."' WHERE `review`.`book_id` = ".$book_id." AND `review`.`client_id` = ".$user_id;
             echo $sql;
             if ($this->db) {
                 $this->db->query($sql);
-                echo "Done";
+            }
+            return NULL;
+        }
+
+        public function getComment($book_id,$user_id){
+            $sql = "SELECT * FROM `review` WHERE book_id = '".$book_id."' AND client_id = '".$user_id."'";
+            echo $sql;
+            if ($this->db) {
+                return $this->db->query($sql);
             }
             return NULL;
         }
