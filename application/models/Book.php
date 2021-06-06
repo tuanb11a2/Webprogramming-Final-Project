@@ -4,6 +4,7 @@
 	 */
 	class Book extends Model
 	{
+        private $book_id;
         private $title;
         private $author;
         private $description;
@@ -16,6 +17,14 @@
 		{
 			parent::__construct();
 		}
+
+        public function setBookId($book_id){
+		    $this->book_id = $book_id;
+        }
+
+        public function getBookId(){
+            return $this->book_id;
+        }
 
 		public function setTitle($title){
 		    $this->title = $title;
@@ -231,5 +240,15 @@
             }else{
                 return NULL;
             }
+        }
+
+        public function comment($book_id,$user_id,$rating,$comment){
+            $sql = "INSERT INTO `review` (`book_id`, `client_id`, `review`, `rating`) VALUES ('".$book_id."', '".$user_id."', '".$comment."', '".$rating."');";
+            echo $sql;
+            if ($this->db) {
+                $this->db->query($sql);
+                echo "Done";
+            }
+            return NULL;
         }
 	}
