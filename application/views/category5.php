@@ -53,7 +53,7 @@
 		link = link.split("/").join("phamnhatlinh")
 		link = link.split(" ").join("leanhtuan")
 		link = encodeURI(link);
-		alert("<?php echo LINK; ?>"+"/ajax/ajaxBookFilter/" + link)
+		// alert("<?php echo LINK; ?>"+"/ajax/ajaxBookFilter/" + link)
 		xmlhttp1.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 				str = this.responseText
