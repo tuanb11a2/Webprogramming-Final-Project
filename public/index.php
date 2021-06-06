@@ -39,7 +39,7 @@ require_once(ROOT . DS . 'config' . DS . 'config.php');
 
 <head>
 
-	<title>Home page</title>
+	<!-- <title>Home page</title> -->
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -57,6 +57,7 @@ require_once(ROOT . DS . 'config' . DS . 'config.php');
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/details.css" type="text/css">
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/admin.css" type="text/css">
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/read.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo LINK; ?>/css/aboutus.css" type="text/css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
