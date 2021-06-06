@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 26, 2021 lúc 06:09 AM
+-- Thời gian đã tạo: Th6 06, 2021 lúc 09:45 AM
 -- Phiên bản máy phục vụ: 10.4.17-MariaDB
 -- Phiên bản PHP: 8.0.2
 
@@ -44,9 +44,19 @@ CREATE TABLE `book` (
 --
 
 INSERT INTO `book` (`book_id`, `title`, `author`, `description`, `rating`, `number_of_review`, `publisher`, `thumbnail_address`, `bookPDF`) VALUES
-(1, 'The Rage of Dragons', 'Evan Winter', 'Beryl Cook is one of Britain’s most talented and amusing artists .Beryl’s pictures feature women of all shapes and sizes enjoying themselves .Born between the two world wars, Beryl Cook eventually left Kendrick School in Reading at the age of 15, where she went to secretarial school and then into an insurance office. After moving to London and then Hampton, she eventually married her next door neighbour from Reading, John Cook. He was an officer in the Merchant Navy and after he left the sea in 1956, they bought a pub for a year before John took a job in Southern Rhodesia with a motor company. Beryl bought their young son a box of watercolours, and when showing him how to use it, she decided that she herself quite enjoyed painting. John subsequently bought her a child’s painting set for her birthday and it was with this that she produced her first significant work, a half-length portrait of a dark-skinned lady with a vacant expression and large drooping breasts. It was aptly named ‘Hangover’ by Beryl’s husband and\r\n\r\nIt is often frustrating to attempt to plan meals that are designed for one. Despite this fact, we are seeing more and more recipe books and Internet websites that are dedicated to the act of cooking for one. Divorce and the death of spouses or grown children leaving for college are all reasons that someone accustomed to cooking for more than one would suddenly need to learn how to adjust all the cooking practices utilized before into a streamlined plan of cooking that is more efficient for one person creating less.', 4, 0, 'NXB Kim Dong', '#', '#'),
-(12, 'Linh con', 'Tuấn con', 'Sách về Linh óc chó', 0, 0, 'NXB Kim Đồng', 'fileupload/thumbnail/d4d11c86b511eda92f3d26514f68f038.png', 'fileupload/bookPDF/c3e8990f9cec919f8a707292dd84e45d.png'),
-(13, 'Linh con', 'Tuấn con', 'đâsd', 0, 0, 'NXB Kim Đồng', 'fileupload/thumbnail/9d1384efe4a366212a063fa0a1625d41.png', 'fileupload/bookPDF/d926de850a7bbcfc85ef9bcfde9cdb0f.jpg');
+(14, 'Sapiens: A Brief History of Humankind', 'Yuval Noah Harari', 'A Summer Reading Pick for President Barack Obama, Bill Gates, and Mark Zuckerberg', 0, 0, 'Harper', 'fileupload/thumbnail/841ede7008f16592c073384acf61dbc2.jpg', 'fileupload/bookPDF/7e51148422b0ce950e04df599d32b801.pdf'),
+(15, '21 Lessons for the 21st Century', 'Yuval Noah Harari', 'An Amazon Best Book of September 2018', 0, 0, 'Harper', 'fileupload/thumbnail/84ed450b396794192a21d0cbc9692464.jpg', 'fileupload/bookPDF/66af5399873d1e78f2fb1dc5f8dc88d5.pdf'),
+(16, 'The Alchemist', ' Paulo Coelho', 'This story, dazzling in its simplicity and wisdom, is about an Andalusian shepherd boy named Santiago who travels from his homeland in Spain to the Egyptian desert in search of treasure buried in the Pyramids. ', 0, 0, 'Harper', 'fileupload/thumbnail/41ad675002ef81596d27a0ac86bef59d.jpg', 'fileupload/bookPDF/7817cfcf186a9437565570e7473dfa6f.pdf'),
+(22, 'SAPIENS: A GRAPHIC HISTORY, VOLUME I', 'Yuval Noah Harari', 'Sapiens: A Graphic History is an epic, radical adaptation of Yuval Noah Harari’s bestselling book, bursting with wit, humor, and colorful illustrations.', 0, 0, 'Albin Michel Publishing', 'fileupload/thumbnail/bb79d13fb89687c3504e457eec940ea3.jpg', 'fileupload/bookPDF/f6c2e0ab503298ad003e076c1ceb4391.pdf'),
+(23, 'The Subtle Art of Not Giving a Fuck', 'Mark Manson', 'In my life, I have given a fuck about many people and many things. I have also not given a fuck about many people and many things. ', 0, 0, 'Albin Michel Publishing', 'fileupload/thumbnail/cd2b31156bcd3351dee98215aca10e89.jpg', 'fileupload/bookPDF/e71f192b6be1bf13beadeae889848f4d.pdf'),
+(25, 'Mastering Bitcoin', 'Andreas M. Antonopoulos', 'Join the technological revolution that’s taking the world of finance by storm. Mastering Bitcoin is your guide through the seemingly complex world of bitcoin, providing the knowledge you need to participate in the internet of money.', 0, 0, 'OReilly', 'fileupload/thumbnail/1255df0792a731a64d20fd43c0c32f01.jpg', 'fileupload/bookPDF/0a0977bf20a05367aff422d8ec929518.pdf'),
+(27, 'Mastering Ethereum', 'Gavin Wood', 'Mastering Ethereum is a book for developers, offering a guide to the operation and use of the Ethereum, Ethereum Classic, RootStock (RSK) and other compatible EVM-based open blockchains', 0, 0, 'OReilly', 'fileupload/thumbnail/11b545e54dfa4fe3fc13ffd0906e7e45.png', 'fileupload/bookPDF/7d11bdb535345e63c77630a569f6a175.pdf'),
+(28, ' Guide to Stoicism: Tools for Emotional Resilience', 'Matthew Van Natta', 'Being a stoic means embracing positivity and self-control through the ability to accept the uncertainty of outcomes.', 0, 0, 'Harper', 'fileupload/thumbnail/1361718c13a1e04fc08d396ff2bcbc78.jpg', 'fileupload/bookPDF/075b5dffd466f32a63c1da329ea2419b.pdf'),
+(29, '13 Reasons Why', 'JAY ASHER', 'The theme behind the book is bullying and in some ways also the stigma related to suicide.', 0, 0, 'Harper', 'fileupload/thumbnail/7cd8a4c6cfb6cc439b0280c934bca51a.jpeg', 'fileupload/bookPDF/e880c5caaaf14a1e50a4b27bccc2bd60.pdf'),
+(30, 'The Old Man And The Sea', 'Ernest Hemingway', 'This tale of an aged Cuban fisherman going head-to-head (or hand-to-fin) with a magnificent marlin encapsulates Hemingway’s favorite motifs of physical and moral challenge.', 0, 0, 'Penguin Random House US', 'fileupload/thumbnail/887e208f078beac4e69987340f8a8fb8.jpg', 'fileupload/bookPDF/4356ae3cbbf0ad7cc07375fb050be23c.pdf'),
+(31, 'Twenty Thousand Leagues Under The Sea', 'Jules Verne ', 'Vingt mille lieues sous les mers. English', 0, 0, '	 Penguin Random House US', 'fileupload/thumbnail/6dfe4a5976111c09d7bdcf37deb36101.jpg', 'fileupload/bookPDF/006e2d1a1ebd587acb58ed3fcc9e9ac2.pdf'),
+(32, 'Nobodys boy', 'Hector Malot', 'Story of a young boy who discovers, at the age of eight, that he was a foundling. When his foster father sends him away he must find a way to survive and also discover his true identity', 0, 0, ' University of Illinois Urbana-Champaign', 'fileupload/thumbnail/58165b75fbf86dc583300ea8bf75ab40.jpg', 'fileupload/bookPDF/57b4c046a2edf94c098e366c8a4cf7ce.pdf'),
+(33, 'Uncle Toms Cabin', 'Hammatt Billings', 'Uncle Toms Cabin tells the story of Uncle Tom, depicted as a saintly, dignified slave. While being transported by boat to auction in New Orleans, Tom saves the life of Little Eva, whose grateful father then purchases Tom.', 0, 0, ' Penguin Random House US', 'fileupload/thumbnail/568810374a970a61ad30846882c9c503.jpg', 'fileupload/bookPDF/e5bbafe887e189fccc70b74e9bb5ff06.pdf');
 
 -- --------------------------------------------------------
 
@@ -58,6 +68,31 @@ CREATE TABLE `bookcategory` (
   `book_id` int(11) NOT NULL,
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `bookcategory`
+--
+
+INSERT INTO `bookcategory` (`book_id`, `category_id`) VALUES
+(22, 9),
+(23, 8),
+(25, 12),
+(27, 12),
+(28, 1),
+(28, 9),
+(28, 12),
+(29, 9),
+(29, 13),
+(30, 1),
+(30, 9),
+(30, 12),
+(31, 1),
+(31, 9),
+(31, 12),
+(32, 9),
+(32, 12),
+(33, 9),
+(33, 12);
 
 -- --------------------------------------------------------
 
@@ -76,7 +111,12 @@ CREATE TABLE `category` (
 
 INSERT INTO `category` (`category_id`, `category_name`) VALUES
 (1, 'History'),
-(2, 'Science Fiction');
+(8, 'Entertainment'),
+(9, 'Social Science'),
+(10, 'Sport'),
+(12, 'Education'),
+(13, 'Romatic'),
+(14, 'Horror');
 
 -- --------------------------------------------------------
 
@@ -108,8 +148,19 @@ INSERT INTO `client` (`client_id`, `email`, `name`, `password`, `role_id`) VALUE
 
 CREATE TABLE `review` (
   `book_id` int(11) NOT NULL,
-  `client_id` int(11) NOT NULL
+  `client_id` int(11) NOT NULL,
+  `review` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `rating` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `review`
+--
+
+INSERT INTO `review` (`book_id`, `client_id`, `review`, `rating`) VALUES
+(14, 1, 'dasdasd', 1),
+(14, 2, 'asdasd', 123),
+(29, 2, 'Test', 1);
 
 -- --------------------------------------------------------
 
@@ -139,6 +190,14 @@ INSERT INTO `role` (`rold_id`, `rold_name`) VALUES
 CREATE TABLE `subcribelist` (
   `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `subcribelist`
+--
+
+INSERT INTO `subcribelist` (`email`) VALUES
+('dat122@gmail.com'),
+('dpth@gmail.com');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -198,19 +257,19 @@ ALTER TABLE `subcribelist`
 -- AUTO_INCREMENT cho bảng `book`
 --
 ALTER TABLE `book`
-  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `client`
 --
 ALTER TABLE `client`
-  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `role`
