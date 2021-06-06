@@ -25,7 +25,7 @@
                 <td><?php echo $user["Client"]["name"];?></td>
                 <td><?php echo $user["Client"]["password"];?></td>
                 <td><?php echo $user["Client"]["role_id"];?></td>
-                <td><a href="<?php echo LINK; ?>/admin/deleteUser/<?php echo $user["Client"]["client_id"];?>"><button>Delete</button></a></td>
+                <td><a onclick="return confirm('Are you sure you want to delete this user')" href="<?php echo LINK; ?>/admin/deleteUser/<?php echo $user["Client"]["client_id"];?>"><button>Delete</button></a></td>
             </tr>
             <?php
         }

@@ -99,6 +99,14 @@
             return NULL;
         }
 
+        function getBookName($name) {
+            $sql = "SELECT * FROM `book` WHERE title LIKE '%". $name ."%' ";
+            // echo $sql;
+            if ($this->db) {
+                return  $this->db->query($sql);
+            }
+            return NULL;
+        }
         function getLatestInsertedBook(){
             $sql = "SELECT book_id FROM book ORDER BY book_id DESC LIMIT 1 ";
             if ($this->db) {
@@ -139,9 +147,24 @@
             return NULL;
         }
 
+        function updateCategory($book_id)
+        {
+            echo $book_id;
+            $sql = "DELETE FROM `bookcategory` WHERE `book_id`=".$book_id;
+            $this->db->query($sql);
+            foreach($this->category as $category_key => $value){
+                print("<pre>".print_r($category_key,true)."</pre>");
+                $sql = "INSERT INTO `bookcategory` (`book_id`, `category_id`) VALUES ('".$book_id."', '".$value."')";
+                $this->db->query($sql);
+            }
+            return;
+        }
+
         function deleteBook($id) {
+		    $sqlDeleteBookCategory = "DELETE FROM `bookcategory` WHERE book_id=".$id;
 		    $sql = "DELETE FROM `book` WHERE book_id = ".$id;
             if ($this->db) {
+                $this->db->query($sqlDeleteBookCategory);
                 return $this->db->query($sql);
             }
             return NULL;

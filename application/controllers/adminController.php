@@ -9,11 +9,13 @@
          */
         private $userModel;
         private $categoryModel;
+        private $emailModel;
 
         public function __construct()
 		{
 		    $this->userModel = $this->model('Book');
             $this->categoryModel =  $this->model('Category');
+            $this->emailModel = $this->model('Email');
 		}
 
 		public function roleValidation($view, $data){
@@ -34,6 +36,16 @@
         public function redirectToAdminListBook(){
             $directory = getAbsolutePath();
             header("Location: http://$_SERVER[HTTP_HOST]$directory/admin/listBook");
+        }
+
+        public function redirectToAdminListCategory(){
+            $directory = getAbsolutePath();
+            header("Location: http://$_SERVER[HTTP_HOST]$directory/admin/crudCategory");
+        }
+
+        public function redirectToAdmin(){
+            $directory = getAbsolutePath();
+            header("Location: http://$_SERVER[HTTP_HOST]$directory/admin");
         }
 
 		public function index()
@@ -119,8 +131,11 @@
 		public function editBook($id)
         {
             $book = $this->userModel->getBookById($id);
-
-            if (!$this->roleValidation('adminEditBook', $book))
+            $category = $this->categoryModel->getAllCategory();
+            $data = array();
+            array_push($data, $book);
+            array_push($data, $category);
+            if (!$this->roleValidation('adminEditBook', $data))
             {
                 $this->redirectToMain();
             }
@@ -200,6 +215,13 @@
             $this->userModel->setThumbnail($thumbnail["url"]);
             $this->userModel->setBookPDF($bookPDF["url"]);
 
+            if (isset($_POST["add-book-category"]))
+            {
+                $category = $_POST["add-book-category"];
+                $this->userModel->setCategory($category);
+                $this->userModel->updateCategory($_POST["book_id"]);
+            }
+
             $this->userModel->updateBook($_POST["book_id"]);
             header("Location: http://$_SERVER[HTTP_HOST]$directory/book");
 
@@ -210,7 +232,7 @@
             if ($_SESSION['role'] && $_SESSION['role'] == 1) {
                 $this->userModel->deleteBook($id);
             }
-            $this->redirectToMain();
+            $this->redirectToAdminListBook();
         }
 
         public function takeThumbnailPath($fileArray)
@@ -236,6 +258,23 @@
             }
         }
 
+        public function guestList()
+        {
+//            echo "Hello";
+            $emails = $this->emailModel->getAllEmail();
+            if (!$this->roleValidation('adminListEmail', $emails))
+            {
+                $this->redirectToMain();
+            }
+        }
+
+        public function deleteGuestEmail($email)
+        {
+            $this->emailModel->setEmail($email);
+            $this->emailModel->deleteEmail();
+            $this->redirectToAdmin();
+        }
+
         public function deleteUser($id)
         {
             echo $id;
@@ -243,5 +282,42 @@
             $modelForUser->deleteUser($id);
             $directory = getAbsolutePath();
             header("Location: http://$_SERVER[HTTP_HOST]$directory/admin/userList");
+        }
+
+        public function crudCategory($id = 0)
+        {
+            $category = $this->categoryModel->getAllCategory();
+            $categoryToEdit = $this->categoryModel->getCategoryById($id);
+
+            $data = array();
+            array_push($data, $category);
+            array_push($data, $categoryToEdit);
+            if (!$this->roleValidation('adminCurdCategory', $data))
+            {
+                $this->redirectToMain();
+            }
+        }
+
+        public function addCategory()
+        {
+
+            var_dump($_POST);
+            $this->categoryModel->setCategoryName($_POST["category_name"]);
+            $this->categoryModel->addCategory();
+            $this->redirectToAdminListCategory();
+        }
+
+        public function editCategory($id)
+        {
+            var_dump($_POST);
+            $this->categoryModel->setCategoryName($_POST["category_name"]);
+            $this->categoryModel->editCategory($id);
+            $this->redirectToAdminListCategory();
+        }
+
+        public function deleteCategory($id)
+        {
+            $this->categoryModel->deleteCategory($id);
+            $this->redirectToAdminListCategory();
         }
 	}

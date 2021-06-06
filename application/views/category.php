@@ -100,7 +100,7 @@
 	</div>
 	<div class="category__product__cards">
 		<div class="category__dropdown__div" tabindex="0">
-			<select name="browse_dropdown" class="category_dropdown">
+			<select name="browse_dropdown" class="category_dropdown" id="order_filter" onchange="getOrderFilter()">
 				<option value="Popularity">Browse by popularity</option>
 				<option value="Old">Old</option>
 				<option value="New">New</option>
@@ -117,10 +117,10 @@
 		<h2>Join BlackPink!</h2>
 		<p>Subscribe to us and receive the greatest books ever!</p>
 		</div>
-		<form method="post" action="#">
+		<form method="POST" action="<?php echo LINK ?>/guest">
 		<div class="category__contact__form-row">
 			<div class="category__contact__col-auto">
-			<input type="text" class="form-control" placeholder="Enter your Email">
+			<input type="email" name="guest-mail" class="form-control" placeholder="Enter your Email">
 			</div>
 			<div class="category__contact__col-auto">
 			<button type="submit">Subscribe</button>
@@ -129,3 +129,9 @@
 		</form>
 	</div>
 </div>
+
+<script>
+        window.onload = function(){
+			getAllFilter();
+		}
+</script>
