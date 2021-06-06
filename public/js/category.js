@@ -3,15 +3,17 @@ var filter = {
     publisher: [],          // empty array means all publishers
     author: [],             // empty array means all authors
     rating: 0,              // zero means all ratings
-    sort_filter: "old"    // "popularity", "old", "new", "name" 
+    sort_filter: "old",    // "popularity", "old", "new", "name" 
+    search_suggest: ""
 };
-function getAllFilter(){    // reset when reload
+function getAllFilter(searchSuggest){    // reset when reload
     filter = {
         category: [],           // empty array means all categories
         publisher: [],          // empty array means all publishers
         author: [],             // empty array means all authors
         rating: 0,              // zero means all ratings
-        sort_filter: "old"    // "popularity", "old", "new", "name" 
+        sort_filter: "old",     // "popularity", "old", "new", "name" 
+        search_suggest: searchSuggest
     }
     // alert(JSON.stringify(filter));
 }

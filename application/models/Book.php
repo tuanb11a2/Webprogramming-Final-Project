@@ -179,12 +179,28 @@
             }
             return NULL;
         }
+
+        function getAllPublisher(){
+            $sql = "SELECT DISTINCT publisher FROM book";
+            if ($this->db) {
+                return $this->db->query($sql);
+            }
+            return NULL;
+        }
+
+        function getAllAuthor(){
+            $sql = "SELECT DISTINCT author FROM book";
+            if ($this->db) {
+                return $this->db->query($sql);
+            }
+            return NULL;
+        }
         
     function getBookByFilter($filter)
     {
         $sql = "SELECT * FROM `book`";
         if (isset($filter)) {
-            if (count($filter["category"]) > 0 || count($filter["publisher"]) > 0 || count($filter["author"]) > 0 || $filter["rating"] > 0)
+            if (count($filter["category"]) > 0 || count($filter["publisher"]) > 0 || count($filter["author"]) > 0 || $filter["rating"] > 0 || $filter["suggestion"] != "")
                 $sql = $sql . " WHERE ";
             $and = 0;
             if (count($filter["category"]) > 0) {                                 //Category filter
@@ -240,6 +256,14 @@
                     $sql = $sql . "AND rating >= " . $filter["rating"];
                 else if ($and == 0)
                     $sql = $sql . " rating >= " . $filter["rating"];
+                $and = 1;
+            }
+
+            if ($filter["suggestion"] != "") {                                        //Rating filter
+                if ($and == 1)
+                    $sql = $sql . "AND title like '%". $filter["suggestion"] ."%' ";
+                else if ($and == 0)
+                     $sql = $sql . "title like '%". $filter["suggestion"] ."%' ";
             }
 
             if ($filter["order"] == "old") {

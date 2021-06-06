@@ -71,6 +71,7 @@ class ajaxController extends Controller
             "author" => array(),        // ("linh", "tuan", "dat")
             "rating" => 0,              // 0.0, 1.0, 2.0, 3.0, 4.0, 5.0
             "order" => "old",    // "old", "new", "name"
+            "suggestion" => ""
         );
         $a = "";
         for ($i = 0; $i < count($split); $i++) {
@@ -84,12 +85,14 @@ class ajaxController extends Controller
                 $a = "rating";
             } elseif ($split[$i] == "order") {
                 $a = "order";
+            }elseif ($split[$i] == "suggestion") {
+                $a = "suggestion";
             } else {
                 if ($a == "publisher" || $a == "author") {
                     array_push($filter1[$a], $split[$i]);
                 } elseif ($a == "category") {
                     array_push($filter1[$a], intval($split[$i]));   // change the type of category array here: string, int...
-                } elseif ($a == "order") {
+                } elseif ($a == "order" || $a == "suggestion") {
                     $filter1[$a] = $split[$i];
                 } else {
                     $filter1[$a] = floatval($split[$i]);            // change the type of rating to double
@@ -137,6 +140,7 @@ class ajaxController extends Controller
                 }
             }
         }
+        // var_dump($filter1);
         echo "ajax-filter-result-end";
     }
 }

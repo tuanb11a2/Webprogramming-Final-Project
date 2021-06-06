@@ -19,24 +19,7 @@
 				<input type="checkbox" checked="check" id="all_category_checkbox" onclick='changeCheckbox("all_category_checkbox")'>
 				<span class="filter__by__category__checkmark"></span>
 			</label>
-			<label class="filter__by__category__container">
-				<p style="display: none;">12</p>
-				<p>Category 1</p>
-				<input type="checkbox" class="category_checkbox" onclick='changeCheckbox("category_checkbox")'>
-				<span class="filter__by__category__checkmark"></span>
-			</label>
-			<label class="filter__by__category__container">
-				<p style="display: none;">12</p>
-				<p>Category 2</p>
-				<input type="checkbox" class="category_checkbox" onclick='changeCheckbox("category_checkbox")'>
-				<span class="filter__by__category__checkmark"></span>
-			</label>
-			<label class="filter__by__category__container">
-				<p style="display: none;">12</p>
-				<p>Category 3</p>
-				<input type="checkbox" class="category_checkbox" onclick='changeCheckbox("category_checkbox")'>
-				<span class="filter__by__category__checkmark"></span>
-			</label>
+			<?php include('category/category.php') ?>
 		</div>
 		<div class="category__product__filter__by__publisher">
 			<h3>Filter By Publisher</h3>
@@ -45,21 +28,7 @@
 				<input type="checkbox" checked="check" id="all_publisher_checkbox" onclick='changeCheckbox("all_publisher_checkbox")'>
 				<span class="filter__by__publisher__checkmark"></span>
 			</label>
-			<label class="filter__by__publisher__container">
-				<p>NXB Kim Dong</p>
-				<input type="checkbox" class="publisher_checkbox" onclick='changeCheckbox("publisher_checkbox")'>
-				<span class="filter__by__publisher__checkmark"></span>
-			</label>
-			<label class="filter__by__publisher__container">
-				<p>NXB Ha Noi</p>
-				<input type="checkbox" class="publisher_checkbox" onclick='changeCheckbox("publisher_checkbox")'>
-				<span class="filter__by__publisher__checkmark"></span>
-			</label>
-			<label class="filter__by__publisher__container">
-				<p>NXB Tuan Le</p>
-				<input type="checkbox" class="publisher_checkbox" onclick='changeCheckbox("publisher_checkbox")'>
-				<span class="filter__by__publisher__checkmark"></span>
-			</label>
+			<?php include('category/publisher.php') ?>
 		</div>
 
 		<div class="category__product__filter__by__author">
@@ -69,21 +38,7 @@
 				<input type="checkbox" checked="check" id="all_author_checkbox" onclick='changeCheckbox("all_author_checkbox")'>
 				<span class="filter__by__author__checkmark"></span>
 			</label>
-			<label class="filter__by__author__container">
-				<p>Pham Nhat Linh</p>
-				<input type="checkbox" class="author_checkbox" onclick='changeCheckbox("author_checkbox")'>
-				<span class="filter__by__author__checkmark"></span>
-			</label>
-			<label class="filter__by__author__container">
-				<p>Le Anh Tuan</p>
-				<input type="checkbox" class="author_checkbox" onclick='changeCheckbox("author_checkbox")'>
-				<span class="filter__by__author__checkmark"></span>
-			</label>
-			<label class="filter__by__author__container">
-				<p>Pham Thanh Dat</p>
-				<input type="checkbox" class="author_checkbox" onclick='changeCheckbox("author_checkbox")'>
-				<span class="filter__by__author__checkmark"></span>
-			</label>
+			<?php include('category/author.php') ?>
 		</div>
 
 		<div class="category__product__filter__by__rating">
@@ -135,7 +90,11 @@
 
 <script>
         window.onload = function(){
-			getAllFilter();
+			var data = <?php echo json_encode($_POST) ?>;
+			var searchSuggest = "";
+			if(data.search!==undefined)
+			searchSuggest = data.search
+			getAllFilter(searchSuggest);
 		}
 
 	function filterAjax() {
@@ -156,9 +115,10 @@
 		link += "/order"
 		link += "/" + filter["sort_filter"];
 		// link = link.split(" ").join("phamnhatlinh")
+		link += "/suggestion"
+		link += "/" + filter["search_suggest"];
 		link = link.split("/").join("phamnhatlinh")
 		link = link.split(" ").join("leanhtuan")
-		// alert("<?php echo LINK; ?>"+"/ajax/ajaxBookFilter/" + link);
 		xmlhttp1.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 				str = this.responseText
