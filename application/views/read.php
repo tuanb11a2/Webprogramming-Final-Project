@@ -95,7 +95,7 @@
                 <p class="commenter-name">You Are Nhat Linh</p>
                 <p style="font-weight: bold;">Create/Update Your Review</p>
                 <?php // var_dump($_SESSION);  ?>
-                <form id="submit-review" method="POST" action="comment">
+                <form id="submit-review" method="POST" action="comment/<?php echo $data[0]["Book"]["book_id"];?>">
                     <table>
                         <tr>
                             <td><label for="your-rate">Rating:</label></td>

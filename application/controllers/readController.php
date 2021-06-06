@@ -24,13 +24,11 @@
 			}
 		}
 
-		public function comment(){
+		public function comment($book_id){
 			if(isset($_SESSION["client_id"])){
 				if(isset($_POST["your-rate"])){
-					echo $this->userModel->getBookId();
-					echo "cc";
-					//$this->userModel->comment($this->userModel->getBookId(),$_SESSION["client_id"],$_POST["your-rate"],$_POST["your-review"]);
-					//header("Location: ".LINK."/detail/".$this->userModel->getBookId());
+					$this->userModel->comment($book_id,$_SESSION["client_id"],$_POST["your-rate"],$_POST["your-review"]);
+					header("Location: ".LINK."/detail/".$book_id);
 				}else{
 					echo "Error";
 					//header("Location: ".LINK."/book");
