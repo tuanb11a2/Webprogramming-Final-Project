@@ -51,16 +51,16 @@
                         foreach($bookData as $value){  ?>
                             <div class="card-item" id="card-item-0">
                                 <div class="pad15">
-                                    <div class="card card-div-item">
+                                    <div class="card card-div-item" onclick='location.href="<?php echo LINK."/detail/".$value["book_id"] ?>";'>
                                         <div class="card-img">
-                                            <a href="#">
+                                            <a href="<?php echo LINK."/detail/".$value["book_id"] ?>">
                                                 <img src="<?php echo LINK."/".$value["thumbnail_address"]; ?>" alt="Card example">
                                             </a>
                                         </div>
                     
                                         <div class="card-caption">
                                             <h3>
-                                                <a href="#"><?php echo $value["title"]; ?></a>
+                                                <a href="<?php echo LINK."/detail/".$value["book_id"] ?>"><?php echo $value["title"]; ?></a>
                                             </h3>
                                             <p><?php echo $value["author"]; ?></p>
                                             <div class="card-review-div">

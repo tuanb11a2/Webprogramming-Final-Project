@@ -3,7 +3,7 @@ var filter = {
     publisher: [],          // empty array means all publishers
     author: [],             // empty array means all authors
     rating: 0,              // zero means all ratings
-    sort_filter: "popularity"    // "popularity", "old", "new", "name" 
+    sort_filter: "old"    // "popularity", "old", "new", "name" 
 };
 function getAllFilter(){    // reset when reload
     filter = {
@@ -11,7 +11,7 @@ function getAllFilter(){    // reset when reload
         publisher: [],          // empty array means all publishers
         author: [],             // empty array means all authors
         rating: 0,              // zero means all ratings
-        sort_filter: "popularity"    // "popularity", "old", "new", "name" 
+        sort_filter: "old"    // "popularity", "old", "new", "name" 
     }
     // alert(JSON.stringify(filter));
 }
@@ -99,9 +99,10 @@ function filter__by__rating__choice__button(value){
 function getOrderFilter(){
     var order = document.getElementById("order_filter");
     // alert(order.value);
-    if(order.value.includes("Popularity")){
-        filter.sort_filter = "popularity";
-    }else if(order.value.includes("New")){
+    // if(order.value.includes("Popularity")){
+    //     filter.sort_filter = "popularity";
+    // }else 
+    if(order.value.includes("New")){
         filter.sort_filter = "new";
     }else if(order.value.includes("Old")){
         filter.sort_filter = "old";
