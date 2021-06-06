@@ -4,7 +4,7 @@
 			header("Location: http://$_SERVER[HTTP_HOST]$directory");
 		}
 ?>
-
+<title>Login | Sign up</title>
 <div class="login_signup_html_page">
 	<div class="login__container" id="login__container">
 		<div class="login__form-container login__sign-up-container">
@@ -21,7 +21,6 @@
 				<h1>Sign in</h1>
 				<input type="email" placeholder="Email" id="email" name="email" />
 				<input type="password" placeholder="Password" id="password" name="password" />
-				<a href="#">Forgot your password?</a>
 				<button type="submit">Sign In</button>
 			</form>
 		</div>
