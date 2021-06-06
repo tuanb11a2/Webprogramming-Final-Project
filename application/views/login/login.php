@@ -1,3 +1,10 @@
+<?php
+		if(isset($_SESSION['username'])){
+			$directory = getAbsolutePath();
+			header("Location: http://$_SERVER[HTTP_HOST]$directory");
+		}
+?>
+
 <div class="login_signup_html_page">
 	<div class="login__container" id="login__container">
 		<div class="login__form-container login__sign-up-container">

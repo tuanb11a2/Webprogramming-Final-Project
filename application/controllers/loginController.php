@@ -24,11 +24,9 @@
                 $_SESSION['timeout'] = time();
                 $_SESSION['username'] = $this->userModel->getName();
                 $_SESSION['role'] = $this->userModel->getRole();
-
+                $directory = getAbsolutePath();
+                header("Location: http://$_SERVER[HTTP_HOST]$directory");
             }
-            echo $_SESSION['username'];
-            $directory = getAbsolutePath();
-            header("Location: http://$_SERVER[HTTP_HOST]$directory");
         }
 
         public function signupQuery(){
@@ -45,10 +43,12 @@
                 $_SESSION['timeout'] = time();
                 $_SESSION['username'] = $this->userModel->getName();
                 $_SESSION['role'] = $this->userModel->getRole();
-                echo "Hello";
+                // echo "Hello";
                 $directory = getAbsolutePath();
                 header("Location: http://$_SERVER[HTTP_HOST]$directory");
-            }              
+            } else {
+                // sign up failed notification
+            }   
         }
 
         public function logout()
