@@ -34,10 +34,10 @@
                 <p>blackpink@yg.com.vn</p>
             </div>
             <div class="contact-social">
-                <a href="#"><i class="fab fa-facebook fa-2x" aria-hidden="true"></i></a>
-                <a href="#"><i class="fab fa-instagram fa-2x" aria-hidden="true"></i></a>
-                <a href="#"><i class="fab fa-github fa-2x" aria-hidden="true"></i></i></a>
-                <a href="#"><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i></a>
+                <a href="https://www.facebook.com/BLACKPINKOFFICIAL" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook fa-2x" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/blackpinkofficial/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram fa-2x" aria-hidden="true"></i></a>
+                <a href="https://github.com/tuanb11a2/Webprogramming-Final-Project" target="_blank" rel="noopener noreferrer"><i class="fab fa-github fa-2x" aria-hidden="true"></i></i></a>
+                <a href="https://www.linkedin.com/in/blackpink-blink" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin fa-2x" aria-hidden="true"></i></a>
             </div>
         </div>
         <div class="subscription">

@@ -101,7 +101,7 @@
 
 		function getBookByName($bookName) {
             $sql = "SELECT * FROM `book` WHERE title LIKE '%". $bookName ."%' ";
-            echo $sql;
+            // echo $sql;
             if ($this->db) {
                 return $this->db->query($sql);
             }

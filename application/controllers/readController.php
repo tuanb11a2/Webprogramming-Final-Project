@@ -45,10 +45,10 @@
 					$comment = $this->userModel->getComment($book_id,$_SESSION["client_id"]);
 					if($comment == NULL){
 						$this->userModel->createComment($book_id,$_SESSION["client_id"],$_POST["your-rate"],$_POST["your-review"]);
-						header("Location: ".LINK."/detail/".$book_id);
+						header("Location: ".LINK."/read/".$book_id);
 					}else{
 						//echo "Error";
-						header("Location: ".LINK."/detail/".$book_id);
+						header("Location: ".LINK."/read/".$book_id);
 					}
 				}else{
 					//echo "Error";
@@ -66,10 +66,10 @@
 					$comment = $this->userModel->getComment($book_id,$_SESSION["client_id"]);
 					if($comment != NULL){
 						$this->userModel->updateComment($book_id,$_SESSION["client_id"],$_POST["your-rate"],$_POST["your-review"]);
-						header("Location: ".LINK."/detail/".$book_id);
+						header("Location: ".LINK."/read/".$book_id);
 					}else{
 						//echo "Error";
-						header("Location: ".LINK."/detail/".$book_id);
+						header("Location: ".LINK."/read/".$book_id);
 					}
 				}else{
 					//echo "Error";
@@ -86,10 +86,10 @@
 				$comment = $this->userModel->getComment($book_id,$_SESSION["client_id"]);
 				if($comment != NULL){
 					$this->userModel->deleteComment($book_id,$_SESSION["client_id"]);
-					header("Location: ".LINK."/detail/".$book_id);
+					header("Location: ".LINK."/read/".$book_id);
 				}else{
 					//echo "Error";
-					header("Location: ".LINK."/detail/".$book_id);
+					header("Location: ".LINK."/read/".$book_id);
 				}
 			}else{
 				//echo "Error";
