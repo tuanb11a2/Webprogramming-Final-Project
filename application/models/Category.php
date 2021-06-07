@@ -55,7 +55,6 @@ class Category extends Model
 
     public function addCategory()
     {
-
         $sql = "INSERT INTO `category`(`category_id`, `category_name`) VALUES (NULL, '".$this->name."')";
         if($this->db){
             return $this->db->query($sql);

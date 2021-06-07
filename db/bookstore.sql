@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 06, 2021 lúc 12:32 PM
+-- Thời gian đã tạo: Th5 26, 2021 lúc 06:09 AM
 -- Phiên bản máy phục vụ: 10.4.17-MariaDB
 -- Phiên bản PHP: 8.0.2
 
@@ -70,7 +70,7 @@ CREATE TABLE `bookcategory` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `bookcategory`
+-- Dumping data for table `bookcategory`
 --
 
 INSERT INTO `bookcategory` (`book_id`, `category_id`) VALUES
@@ -97,7 +97,7 @@ INSERT INTO `bookcategory` (`book_id`, `category_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -106,7 +106,7 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`category_id`, `category_name`) VALUES
@@ -121,7 +121,7 @@ INSERT INTO `category` (`category_id`, `category_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `client`
+-- Table structure for table `client`
 --
 
 CREATE TABLE `client` (
@@ -134,7 +134,7 @@ CREATE TABLE `client` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `client`
+-- Dumping data for table `client`
 --
 
 INSERT INTO `client` (`client_id`, `email`, `name`, `password`, `role_id`, `salt`) VALUES
@@ -146,7 +146,7 @@ INSERT INTO `client` (`client_id`, `email`, `name`, `password`, `role_id`, `salt
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `review`
+-- Table structure for table `review`
 --
 
 CREATE TABLE `review` (
@@ -159,7 +159,7 @@ CREATE TABLE `review` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `role`
+-- Table structure for table `role`
 --
 
 CREATE TABLE `role` (
@@ -168,7 +168,7 @@ CREATE TABLE `role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `role`
+-- Dumping data for table `role`
 --
 
 INSERT INTO `role` (`rold_id`, `rold_name`) VALUES
@@ -178,7 +178,7 @@ INSERT INTO `role` (`rold_id`, `rold_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `subcribelist`
+-- Table structure for table `subcribelist`
 --
 
 CREATE TABLE `subcribelist` (
@@ -198,26 +198,26 @@ INSERT INTO `subcribelist` (`email`) VALUES
 --
 
 --
--- Chỉ mục cho bảng `book`
+-- Indexes for table `book`
 --
 ALTER TABLE `book`
   ADD PRIMARY KEY (`book_id`);
 
 --
--- Chỉ mục cho bảng `bookcategory`
+-- Indexes for table `bookcategory`
 --
 ALTER TABLE `bookcategory`
   ADD PRIMARY KEY (`book_id`,`category_id`),
   ADD KEY `fk_category_book_category` (`category_id`);
 
 --
--- Chỉ mục cho bảng `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Chỉ mục cho bảng `client`
+-- Indexes for table `client`
 --
 ALTER TABLE `client`
   ADD PRIMARY KEY (`client_id`),
@@ -225,71 +225,71 @@ ALTER TABLE `client`
   ADD KEY `fk_client_role_id` (`role_id`);
 
 --
--- Chỉ mục cho bảng `review`
+-- Indexes for table `review`
 --
 ALTER TABLE `review`
   ADD PRIMARY KEY (`book_id`,`client_id`),
   ADD KEY `fk_client_review` (`client_id`);
 
 --
--- Chỉ mục cho bảng `role`
+-- Indexes for table `role`
 --
 ALTER TABLE `role`
   ADD PRIMARY KEY (`rold_id`);
 
 --
--- Chỉ mục cho bảng `subcribelist`
+-- Indexes for table `subcribelist`
 --
 ALTER TABLE `subcribelist`
   ADD PRIMARY KEY (`email`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `book`
+-- AUTO_INCREMENT for table `book`
 --
 ALTER TABLE `book`
   MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT cho bảng `category`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
   MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT cho bảng `client`
+-- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
   MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `role`
+-- AUTO_INCREMENT for table `role`
 --
 ALTER TABLE `role`
   MODIFY `rold_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `bookcategory`
+-- Constraints for table `bookcategory`
 --
 ALTER TABLE `bookcategory`
   ADD CONSTRAINT `fk_book_book_category` FOREIGN KEY (`book_id`) REFERENCES `book` (`book_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_category_book_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `client`
+-- Constraints for table `client`
 --
 ALTER TABLE `client`
   ADD CONSTRAINT `fk_client_role_id` FOREIGN KEY (`role_id`) REFERENCES `role` (`rold_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `review`
+-- Constraints for table `review`
 --
 ALTER TABLE `review`
   ADD CONSTRAINT `fk_book_review` FOREIGN KEY (`book_id`) REFERENCES `book` (`book_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
