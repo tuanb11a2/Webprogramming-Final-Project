@@ -58,6 +58,7 @@ require_once(ROOT . DS . 'config' . DS . 'config.php');
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/admin.css" type="text/css">
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/read.css" type="text/css">
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/aboutus.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo LINK; ?>/css/loginsignupfailed.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 

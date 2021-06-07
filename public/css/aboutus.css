@@ -14,14 +14,14 @@
     letter-spacing: 0.05em;
   }
   
-  a {
+  .box__about a {
     font-weight: bold;
     text-decoration: none;
     /*color: #a1a1a1;*/
     color: #F1F1F1;
   }
   
-  a:visited {
+  .box__about a:visited {
     color: #F1F1F1;
   }
 
@@ -139,19 +139,19 @@
     overflow: hidden;
       
   }
-  .box {
+  .box__about {
     float:left;
     width:23%;
     margin:1% 1% 93px 1%;
 
   }
 
-  .box p {
+  .box__about p {
     height: 50px;
     margin: 5px 5px 5px 5px;
   }
 
-  .box .membername {
+  .box__about .membername {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -159,7 +159,7 @@
     font-weight: bold;
   }
   
-  .box img {
+  .box__about img {
     width: 300px;
     height: 350px;
     display: block;
@@ -218,16 +218,16 @@
     max-width: 100%;
     padding: 4em 0;
   }
-  
+
   @media only screen and (max-width: 500px) {
       .img-responsive {
         /*margin-top: -1em;*/
       }
-      .box:nth-child(1n+2) {
+      .box__about:nth-child(1n+2) {
         border-top: 3px solid #ce4098;
         padding-top: 3em;
       }
-      .box {
+      .box__about {
        display: block;
        width: 75%;
        padding-left: 2em;
@@ -237,7 +237,7 @@
       font-size: 0.8em;
     }
     .masthead {
-      padding: 3em 0; 
+      padding: 3em 0;
     }
     .masthead-heading {
       font-size: 3em;

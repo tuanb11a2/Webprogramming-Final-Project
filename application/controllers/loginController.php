@@ -4,9 +4,13 @@
 	 */
 	class loginController extends Controller
 	{
-		public function __construct()
-		{
-			$this->userModel = $this->model('User');
+		public function __construct(){
+            if(isset($_SESSION['username'])){
+            $directory = getAbsolutePath();
+            header("Location: http://$_SERVER[HTTP_HOST]$directory");
+            } else {
+                $this->userModel = $this->model('User');
+            }
 		}
 
 		public function index()
@@ -27,17 +31,17 @@
                 $directory = getAbsolutePath();
                 header("Location: http://$_SERVER[HTTP_HOST]$directory");
             }
+            else {
+                $this->view('login/loginfailed');
+            }
         }
 
         public function signupQuery(){
             $this->userModel->setEmail(trim($_POST["signup_email"]));
             $this->userModel->setPassword(trim($_POST["signup_pswd"]));
             $this->userModel->setName(trim($_POST["signup_name"]));
-//            $result = $this->userModel->getSigninStatus();
-//            echo "<script type='text/javascript'>alert('$result;');</script>";
+            // echo $this->userModel->getSigninStatus();
             // return;
-            // $result = $this->userModel->getSigninStatus();
-            // echo "<script type='text/javascript'>alert('$result');</script>";
             if ($this->userModel->getSigninStatus()){
                 $_SESSION['valid'] = true;
                 $_SESSION['timeout'] = time();
@@ -48,7 +52,8 @@
                 header("Location: http://$_SERVER[HTTP_HOST]$directory");
             } else {
                 // sign up failed notification
-            }   
+                $this->view('login/signupfailed');
+            }
         }
 
         public function logout()

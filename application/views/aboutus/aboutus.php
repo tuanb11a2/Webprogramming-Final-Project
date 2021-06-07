@@ -30,26 +30,26 @@
  <div id="container">
 
 
-    <div class="box">
+    <div class="box__about">
         <img src="<?php echo LINK; ?>/image/datpth.png" class="img-responsive img-thumbnail" alt="Responsive image" />
              <p class="membername">Dat Pham Thanh</p>
              <p>Team leader. Has the ability to cover both the sky and earth</p>
              <button class="btn"><a href="#">Visit site</a></button>
 
     </div>
-    <div class="box">
+    <div class="box__about">
         <img src="<?php echo LINK; ?>/image/tuan.png" class="img-responsive img-thumbnail" alt="Responsive image" />
             <p class="membername">Tuan Le Anh</p>
              <p>Half-imposter. Can be both a blackhat and a whitehat, just depend on what he wants</p>
               <button class="btn"><a href="#">Visit site</a></button>
     </div>
-    <div class="box">
+    <div class="box__about">
         <img src="<?php echo LINK; ?>/image/tuanlinh.png" class="img-responsive img-thumbnail" alt="Responsive image" />
-            <p class="membername">Linh Pham Tuan</p>
+            <p class="membername">Linh Pham Nhat</p>
              <p>Rainbow God. Love animals. Sometimes does shit, but somehow he can turn it into shits</p>
               <button class="btn"><a href="#">Visit site</a></button>
     </div>
-    <div class="box">
+    <div class="box__about">
         <img src="<?php echo LINK; ?>/image/chau.png" class="img-responsive img-thumbnail" alt="Responsive image" />
             <p class="membername">Chau Nguyen Thi Minh</p>
              <p>Garbage collector. Has nothing to do more than playing around with the lockers</p>
