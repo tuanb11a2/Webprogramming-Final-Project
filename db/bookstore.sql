@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 06, 2021 at 05:20 AM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.10
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th5 26, 2021 lúc 06:09 AM
+-- Phiên bản máy phục vụ: 10.4.17-MariaDB
+-- Phiên bản PHP: 8.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `bookstore`
+-- Cơ sở dữ liệu: `bookstore`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `book`
+-- Cấu trúc bảng cho bảng `book`
 --
 
 CREATE TABLE `book` (
@@ -41,7 +40,7 @@ CREATE TABLE `book` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `book`
+-- Đang đổ dữ liệu cho bảng `book`
 --
 
 INSERT INTO `book` (`book_id`, `title`, `author`, `description`, `rating`, `number_of_review`, `publisher`, `thumbnail_address`, `bookPDF`) VALUES
@@ -62,7 +61,7 @@ INSERT INTO `book` (`book_id`, `title`, `author`, `description`, `rating`, `numb
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bookcategory`
+-- Cấu trúc bảng cho bảng `bookcategory`
 --
 
 CREATE TABLE `bookcategory` (
@@ -129,17 +128,20 @@ CREATE TABLE `client` (
   `client_id` int(11) NOT NULL,
   `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role_id` int(11) NOT NULL
+  `password` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role_id` int(11) NOT NULL,
+  `salt` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `client`
 --
 
-INSERT INTO `client` (`client_id`, `email`, `name`, `password`, `role_id`) VALUES
-(1, 'admin@gmail.com', 'admin', '1', 1),
-(2, 'user@gmail.com', 'user', '1', 2);
+INSERT INTO `client` (`client_id`, `email`, `name`, `password`, `role_id`, `salt`) VALUES
+(1, 'admin@gmail.com', 'admin', '7ca5f60595c92613c127995592c1a7abd2a925e7493d77b8ae7536bd769b6571', 1, 'IdxVcp05vp5m8GktioBwIdxVcp05vp5m'),
+(2, 'user@gmail.com', 'user', '53a96b198cf0c22fc034fe7c5156b6ff418ba014adacced2fa44b8a79bd6abf9', 2, 'cJPH7lhD9ZE0iKzXTy5jcJPH7lhD9ZE0'),
+(3, 'dpth@gmail.com', 'dpth', 'c0ca52f231e9ce67f8036990b091864b6d0eca9e6829b37c6dc305e471beaac4', 2, '7557a3b6572174c406d8fa177ec30ad0'),
+(4, 'ntmchau2202@gmail.com', 'Minh Chau', 'd2c8132d80acad85ea03653e4ed63f31a738e2dfaead21f9e375e73f8a58975d', 2, '3055bb562bf22cf19ea49a09d1e0e3ac');
 
 -- --------------------------------------------------------
 
@@ -184,7 +186,7 @@ CREATE TABLE `subcribelist` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `subcribelist`
+-- Đang đổ dữ liệu cho bảng `subcribelist`
 --
 
 INSERT INTO `subcribelist` (`email`) VALUES
@@ -192,7 +194,7 @@ INSERT INTO `subcribelist` (`email`) VALUES
 ('dpth@gmail.com');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --

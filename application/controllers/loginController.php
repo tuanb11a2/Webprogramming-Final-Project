@@ -24,25 +24,31 @@
                 $_SESSION['timeout'] = time();
                 $_SESSION['username'] = $this->userModel->getName();
                 $_SESSION['role'] = $this->userModel->getRole();
+                $directory = getAbsolutePath();
+                header("Location: http://$_SERVER[HTTP_HOST]$directory");
             }
-            $directory = getAbsolutePath();
-            header("Location: http://$_SERVER[HTTP_HOST]$directory");
         }
 
         public function signupQuery(){
             $this->userModel->setEmail(trim($_POST["signup_email"]));
             $this->userModel->setPassword(trim($_POST["signup_pswd"]));
             $this->userModel->setName(trim($_POST["signup_name"]));
-            // echo $this->userModel->getSigninStatus();
+//            $result = $this->userModel->getSigninStatus();
+//            echo "<script type='text/javascript'>alert('$result;');</script>";
             // return;
+            // $result = $this->userModel->getSigninStatus();
+            // echo "<script type='text/javascript'>alert('$result');</script>";
             if ($this->userModel->getSigninStatus()){
                 $_SESSION['valid'] = true;
                 $_SESSION['timeout'] = time();
                 $_SESSION['username'] = $this->userModel->getName();
                 $_SESSION['role'] = $this->userModel->getRole();
-            }
-            $directory = getAbsolutePath();
-            header("Location: http://$_SERVER[HTTP_HOST]$directory");
+                // echo "Hello";
+                $directory = getAbsolutePath();
+                header("Location: http://$_SERVER[HTTP_HOST]$directory");
+            } else {
+                // sign up failed notification
+            }   
         }
 
         public function logout()
