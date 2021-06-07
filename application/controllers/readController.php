@@ -13,22 +13,33 @@
 		{
 			// $books = $this->userModel->getAllBook();
 			$book = $this->userModel->getBookById($id);
-			$comment = $this->userModel->getComment($id,$_SESSION["client_id"]);
-			if( sizeof($book) == 0 ){
+			$comment = $this->userModel->getAllComment($id);
+
+			if($book == NULL){
 				header("Location: ".LINK."/book");
+			}
+
+			if($comment != NULL){
+				array_push($book,$comment);
 			}else{
-				if($comment == NULL){
+				$comment = 'NULL';
+				array_push($book,$comment);
+			}
+
+			if(isset($_SESSION["client_id"])){
+				$userComment = $this->userModel->getComment($id,$_SESSION["client_id"]);
+				if($userComment == NULL){
 					$this->view('read',$book);
 				}else{
-					array_push($book,$comment[0]);
+					array_push($book,$userComment[0]);
 					$this->view('read',$book);
-				}				
+				}
+			}else{
+				$this->view('read',$book);
 			}
-			// print_r($book);
-			// echo "<br>".$book[0]["Book"]["author"];	
 		}
 
-		public function comment($book_id){
+		public function createComment($book_id){
 			if(isset($_SESSION["client_id"])){
 				if(isset($_POST["your-rate"])){
 					$comment = $this->userModel->getComment($book_id,$_SESSION["client_id"]);
@@ -36,12 +47,49 @@
 						$this->userModel->createComment($book_id,$_SESSION["client_id"],$_POST["your-rate"],$_POST["your-review"]);
 						header("Location: ".LINK."/detail/".$book_id);
 					}else{
-						$this->userModel->updateComment($book_id,$_SESSION["client_id"],$_POST["your-rate"],$_POST["your-review"]);
+						//echo "Error";
 						header("Location: ".LINK."/detail/".$book_id);
 					}
 				}else{
 					//echo "Error";
 					header("Location: ".LINK."/book");
+				}
+			}else{
+				//echo "Error";
+				header("Location: ".LINK."/book");
+			}
+		}
+
+		public function updateComment($book_id){
+			if(isset($_SESSION["client_id"])){
+				if(isset($_POST["your-rate"])){
+					$comment = $this->userModel->getComment($book_id,$_SESSION["client_id"]);
+					if($comment != NULL){
+						$this->userModel->updateComment($book_id,$_SESSION["client_id"],$_POST["your-rate"],$_POST["your-review"]);
+						header("Location: ".LINK."/detail/".$book_id);
+					}else{
+						//echo "Error";
+						header("Location: ".LINK."/detail/".$book_id);
+					}
+				}else{
+					//echo "Error";
+					header("Location: ".LINK."/book");
+				}
+			}else{
+				//echo "Error";
+				header("Location: ".LINK."/book");
+			}
+		}
+
+		public function deleteComment($book_id){
+			if(isset($_SESSION["client_id"])){
+				$comment = $this->userModel->getComment($book_id,$_SESSION["client_id"]);
+				if($comment != NULL){
+					$this->userModel->deleteComment($book_id,$_SESSION["client_id"]);
+					header("Location: ".LINK."/detail/".$book_id);
+				}else{
+					//echo "Error";
+					header("Location: ".LINK."/detail/".$book_id);
 				}
 			}else{
 				//echo "Error";

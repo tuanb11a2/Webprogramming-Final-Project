@@ -79,30 +79,23 @@
 
                 <p><span><?php echo $data[0]["Book"]["number_of_review"]; ?></span> Reviews</p> <!-- Number of reviews -->
                 <div class="card-comment-container">
-                    <div class="comment-inner-element">
-                        <p class="commenter-name">Le Tuan</p>
-                        <div class="commenter-rating">
-                            <!-- Star rating section -->
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </div>
-                        <p class="commenter-review">Book Very Hay</p>
+                    
+                <?php if(isset($data[1])){
+                    if($data[1] == 'NULL'){ ?>
+                <div class="comment-inner-element">
+                    <p class="commenter-name">There are no comment on this book. Give us your thought now. </p>
+                </div>
+            <?php }else{
+                    for($i = 0;$i < count($data[1]);$i++){ ?>
+                <div class="comment-inner-element">
+                    <p class="commenter-name"><?php echo $data[1][$i]["C"]["name"]; ?></p>
+                    <div class="commenter-rating">
+                        <!-- Star rating section -->
+                        <?php getStars($data[1][$i]["R"]["rating"]); ?>
                     </div>
-                    <div class="comment-inner-element">
-                        <p class="commenter-name">Thanh Dat</p>
-                        <div class="commenter-rating">
-                            <!-- Star rating section -->
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <p class="commenter-review">Book Not Very Hay</p>
-                    </div>
+                    <p class="commenter-review"><?php echo $data[1][$i]["R"]["review"]; ?></p>
+                </div>
+            <?php }}} ?>
                 </div>
             </div>
         </div>

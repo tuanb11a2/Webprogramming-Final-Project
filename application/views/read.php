@@ -64,59 +64,56 @@
             <p id="reading-book-review">120 Reviews</p> 
         </div> -->
         <div class="comment-container">
-            <div class="comment-inner-element">
-                <p class="commenter-name">Le Tuan</p>
-                <div class="commenter-rating">
-                    <!-- Star rating section -->
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+            <?php if(isset($data[1])){
+                    if($data[1] == 'NULL'){ ?>
+                <div class="comment-inner-element">
+                    <p class="commenter-name">There are no comment on this book. Give us your thought now. </p>
                 </div>
-                <p class="commenter-review">Book Very Hay</p>
-            </div>
-            <div class="comment-inner-element">
-                <p class="commenter-name">Thanh Dat</p>
-                <div class="commenter-rating">
-                    <!-- Star rating section -->
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
-                    <i class="far fa-star"></i>
+            <?php }else{
+                    for($i = 0;$i < count($data[1]);$i++){ ?>
+                <div class="comment-inner-element">
+                    <p class="commenter-name"><?php echo $data[1][$i]["C"]["name"]; ?></p>
+                    <div class="commenter-rating">
+                        <!-- Star rating section -->
+                        <?php getStars($data[1][$i]["R"]["rating"]); ?>
+                    </div>
+                    <p class="commenter-review"><?php echo $data[1][$i]["R"]["review"]; ?></p>
                 </div>
-                <p class="commenter-review">Book Not Very Hay</p>
-            </div>
+            <?php }}} ?>
+
             <?php
             // var_dump($_SESSION);
                 if(isset($_SESSION["valid"])){ ?>
             <div class="your-comment-inner-element">
-                <p class="commenter-name">You Are Nhat Linh</p>
-                <p style="font-weight: bold;">Create/Update Your Review</p>
+                <p class="commenter-name">Welcome <?php echo $_SESSION["username"]; ?></p>
                 <?php // var_dump($_SESSION);  ?>
-                <form id="submit-review" method="POST" action="comment/<?php echo $data[0]["Book"]["book_id"];?>">
-                    <?php if(isset($data[1]["Review"])){ ?>
+                    <?php if(isset($data[2]["Review"])){ ?>
+                    
+                    <form id="submit-review" method="POST" action="updateComment/<?php echo $data[0]["Book"]["book_id"];?>">
+                        <p style="font-weight: bold;">Update Your Review</p>
                         <table>
                         <tr>
                             <td><label for="your-rate">Rating:</label></td>
                             <td><select name="your-rate" id="your-rate">
                                     <?php for($i=5;$i>0;$i--){ ?>
-                                        <option value="<?php echo $i; ?>" <?php if($i == $data[1]["Review"]["rating"]){echo "selected";} ?>><?php echo $i; ?></option>
+                                        <option value="<?php echo $i; ?>" <?php if($i == $data[2]["Review"]["rating"]){echo "selected";} ?>><?php echo $i; ?></option>
                                     <?php } ?>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <td><label for="your-review">Comment:</label></td>
-                            <td><textarea id="your-review" name="your-review"  rows="5"><?php echo $data[1]["Review"]["review"];?></textarea></td>
+                            <td><textarea id="your-review" name="your-review"  rows="5"><?php echo $data[2]["Review"]["review"];?></textarea></td>
                         </tr>
                     <tr>
                         <td></td>
-                    <td><input type="submit" value="Submit" id="submit-review-btn"></td>
+                    <td><input type="submit" value="Submit" id="submit-review-btn"><a href="deleteComment/<?php echo $data[0]["Book"]["book_id"];?>" onclick="return confirm('Are you sure you want to delete your comment?')">Delete</a></td>
                     </tr>
                     </table>
                     <?php }else{ ?>
+                    
+                    <form id="submit-review" method="POST" action="createComment/<?php echo $data[0]["Book"]["book_id"];?>">
+                        <p style="font-weight: bold;">Create Your Review</p>
                         <table>
                         <tr>
                             <td><label for="your-rate">Rating:</label></td>

@@ -12,13 +12,19 @@
 		public function index($id=0)
 		{
 			$book = $this->userModel->getBookById($id);
-			// print_r($book);
-			// echo "<br>".$book[0]["Book"]["author"];
-			if( sizeof($book) == 0 ){
+			$comment = $this->userModel->getAllComment($id);
+
+			if($book == NULL){
 				header("Location: ".LINK."/book");
-			}else{
-				$this->view('details',$book);
 			}
+
+			if($comment != NULL){
+				array_push($book,$comment);
+			}else{
+				$comment = 'NULL';
+				array_push($book,$comment);
+			}
+			$this->view('detail',$book);
 		}
 	}
 ?>

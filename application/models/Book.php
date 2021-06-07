@@ -294,7 +294,16 @@
 
         public function updateComment($book_id,$user_id,$rating,$comment){
             $sql = "UPDATE `review` SET `review` = '".$comment."', `rating` = '".$rating."' WHERE `review`.`book_id` = ".$book_id." AND `review`.`client_id` = ".$user_id;
-            echo $sql;
+            //echo $sql;
+            if ($this->db) {
+                $this->db->query($sql);
+            }
+            return NULL;
+        }
+
+        public function deleteComment($book_id,$user_id){
+            $sql = "DELETE FROM `review` WHERE book_id = '".$book_id."' AND client_id = '".$user_id."'";
+            //echo $sql;
             if ($this->db) {
                 $this->db->query($sql);
             }
@@ -303,7 +312,16 @@
 
         public function getComment($book_id,$user_id){
             $sql = "SELECT * FROM `review` WHERE book_id = '".$book_id."' AND client_id = '".$user_id."'";
-            echo $sql;
+            //echo $sql;
+            if ($this->db) {
+                return $this->db->query($sql);
+            }
+            return NULL;
+        }
+
+        public function getAllComment($book_id){
+            $sql = "SELECT r.*,c.name FROM `review` as  r,`client` as c WHERE r.client_id = c.client_id AND r.book_id = '".$book_id."'";
+            //echo $sql;
             if ($this->db) {
                 return $this->db->query($sql);
             }

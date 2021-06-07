@@ -40,6 +40,7 @@ require_once(ROOT . DS . 'config' . DS . 'config.php');
 <head>
 
 	<title>Home page</title>
+    <link rel="icon" href="<?php echo LINK; ?>/image/logo.png">
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
