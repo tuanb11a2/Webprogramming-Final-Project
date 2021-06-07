@@ -14,14 +14,14 @@
     letter-spacing: 0.05em;
   }
   
-  a {
+  .box__about a {
     font-weight: bold;
     text-decoration: none;
     /*color: #a1a1a1;*/
     color: #F1F1F1;
   }
   
-  a:visited {
+  .box__about a:visited {
     color: #F1F1F1;
   }
 
