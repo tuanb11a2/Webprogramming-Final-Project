@@ -44,9 +44,19 @@ CREATE TABLE `book` (
 --
 
 INSERT INTO `book` (`book_id`, `title`, `author`, `description`, `rating`, `number_of_review`, `publisher`, `thumbnail_address`, `bookPDF`) VALUES
-(1, 'The Rage of Dragons', 'Evan Winter', 'Beryl Cook is one of Britain’s most talented and amusing artists .Beryl’s pictures feature women of all shapes and sizes enjoying themselves .Born between the two world wars, Beryl Cook eventually left Kendrick School in Reading at the age of 15, where she went to secretarial school and then into an insurance office. After moving to London and then Hampton, she eventually married her next door neighbour from Reading, John Cook. He was an officer in the Merchant Navy and after he left the sea in 1956, they bought a pub for a year before John took a job in Southern Rhodesia with a motor company. Beryl bought their young son a box of watercolours, and when showing him how to use it, she decided that she herself quite enjoyed painting. John subsequently bought her a child’s painting set for her birthday and it was with this that she produced her first significant work, a half-length portrait of a dark-skinned lady with a vacant expression and large drooping breasts. It was aptly named ‘Hangover’ by Beryl’s husband and\r\n\r\nIt is often frustrating to attempt to plan meals that are designed for one. Despite this fact, we are seeing more and more recipe books and Internet websites that are dedicated to the act of cooking for one. Divorce and the death of spouses or grown children leaving for college are all reasons that someone accustomed to cooking for more than one would suddenly need to learn how to adjust all the cooking practices utilized before into a streamlined plan of cooking that is more efficient for one person creating less.', 4, 0, 'NXB Kim Dong', '#', '#'),
-(12, 'Linh con', 'Tuấn con', 'Sách về Linh óc chó', 0, 0, 'NXB Kim Đồng', 'fileupload/thumbnail/d4d11c86b511eda92f3d26514f68f038.png', 'fileupload/bookPDF/c3e8990f9cec919f8a707292dd84e45d.png'),
-(13, 'Linh con', 'Tuấn con', 'đâsd', 0, 0, 'NXB Kim Đồng', 'fileupload/thumbnail/9d1384efe4a366212a063fa0a1625d41.png', 'fileupload/bookPDF/d926de850a7bbcfc85ef9bcfde9cdb0f.jpg');
+(14, 'Sapiens: A Brief History of Humankind', 'Yuval Noah Harari', 'A Summer Reading Pick for President Barack Obama, Bill Gates, and Mark Zuckerberg', 0, 0, 'Harper', 'fileupload/thumbnail/841ede7008f16592c073384acf61dbc2.jpg', 'fileupload/bookPDF/7e51148422b0ce950e04df599d32b801.pdf'),
+(15, '21 Lessons for the 21st Century', 'Yuval Noah Harari', 'An Amazon Best Book of September 2018', 0, 0, 'Harper', 'fileupload/thumbnail/84ed450b396794192a21d0cbc9692464.jpg', 'fileupload/bookPDF/66af5399873d1e78f2fb1dc5f8dc88d5.pdf'),
+(16, 'The Alchemist', ' Paulo Coelho', 'This story, dazzling in its simplicity and wisdom, is about an Andalusian shepherd boy named Santiago who travels from his homeland in Spain to the Egyptian desert in search of treasure buried in the Pyramids. ', 0, 0, 'Harper', 'fileupload/thumbnail/41ad675002ef81596d27a0ac86bef59d.jpg', 'fileupload/bookPDF/7817cfcf186a9437565570e7473dfa6f.pdf'),
+(22, 'SAPIENS: A GRAPHIC HISTORY, VOLUME I', 'Yuval Noah Harari', 'Sapiens: A Graphic History is an epic, radical adaptation of Yuval Noah Harari’s bestselling book, bursting with wit, humor, and colorful illustrations.', 0, 0, 'Albin Michel Publishing', 'fileupload/thumbnail/bb79d13fb89687c3504e457eec940ea3.jpg', 'fileupload/bookPDF/f6c2e0ab503298ad003e076c1ceb4391.pdf'),
+(23, 'The Subtle Art of Not Giving a Fuck', 'Mark Manson', 'In my life, I have given a fuck about many people and many things. I have also not given a fuck about many people and many things. ', 0, 0, 'Albin Michel Publishing', 'fileupload/thumbnail/cd2b31156bcd3351dee98215aca10e89.jpg', 'fileupload/bookPDF/e71f192b6be1bf13beadeae889848f4d.pdf'),
+(25, 'Mastering Bitcoin', 'Andreas M. Antonopoulos', 'Join the technological revolution that’s taking the world of finance by storm. Mastering Bitcoin is your guide through the seemingly complex world of bitcoin, providing the knowledge you need to participate in the internet of money.', 0, 0, 'OReilly', 'fileupload/thumbnail/1255df0792a731a64d20fd43c0c32f01.jpg', 'fileupload/bookPDF/0a0977bf20a05367aff422d8ec929518.pdf'),
+(27, 'Mastering Ethereum', 'Gavin Wood', 'Mastering Ethereum is a book for developers, offering a guide to the operation and use of the Ethereum, Ethereum Classic, RootStock (RSK) and other compatible EVM-based open blockchains', 0, 0, 'OReilly', 'fileupload/thumbnail/11b545e54dfa4fe3fc13ffd0906e7e45.png', 'fileupload/bookPDF/7d11bdb535345e63c77630a569f6a175.pdf'),
+(28, ' Guide to Stoicism: Tools for Emotional Resilience', 'Matthew Van Natta', 'Being a stoic means embracing positivity and self-control through the ability to accept the uncertainty of outcomes.', 0, 0, 'Harper', 'fileupload/thumbnail/1361718c13a1e04fc08d396ff2bcbc78.jpg', 'fileupload/bookPDF/075b5dffd466f32a63c1da329ea2419b.pdf'),
+(29, '13 Reasons Why', 'JAY ASHER', 'The theme behind the book is bullying and in some ways also the stigma related to suicide.', 0, 0, 'Harper', 'fileupload/thumbnail/7cd8a4c6cfb6cc439b0280c934bca51a.jpeg', 'fileupload/bookPDF/e880c5caaaf14a1e50a4b27bccc2bd60.pdf'),
+(30, 'The Old Man And The Sea', 'Ernest Hemingway', 'This tale of an aged Cuban fisherman going head-to-head (or hand-to-fin) with a magnificent marlin encapsulates Hemingway’s favorite motifs of physical and moral challenge.', 0, 0, 'Penguin Random House US', 'fileupload/thumbnail/887e208f078beac4e69987340f8a8fb8.jpg', 'fileupload/bookPDF/4356ae3cbbf0ad7cc07375fb050be23c.pdf'),
+(31, 'Twenty Thousand Leagues Under The Sea', 'Jules Verne ', 'Vingt mille lieues sous les mers. English', 0, 0, '	 Penguin Random House US', 'fileupload/thumbnail/6dfe4a5976111c09d7bdcf37deb36101.jpg', 'fileupload/bookPDF/006e2d1a1ebd587acb58ed3fcc9e9ac2.pdf'),
+(32, 'Nobodys boy', 'Hector Malot', 'Story of a young boy who discovers, at the age of eight, that he was a foundling. When his foster father sends him away he must find a way to survive and also discover his true identity', 0, 0, ' University of Illinois Urbana-Champaign', 'fileupload/thumbnail/58165b75fbf86dc583300ea8bf75ab40.jpg', 'fileupload/bookPDF/57b4c046a2edf94c098e366c8a4cf7ce.pdf'),
+(33, 'Uncle Toms Cabin', 'Hammatt Billings', 'Uncle Toms Cabin tells the story of Uncle Tom, depicted as a saintly, dignified slave. While being transported by boat to auction in New Orleans, Tom saves the life of Little Eva, whose grateful father then purchases Tom.', 0, 0, ' Penguin Random House US', 'fileupload/thumbnail/568810374a970a61ad30846882c9c503.jpg', 'fileupload/bookPDF/e5bbafe887e189fccc70b74e9bb5ff06.pdf');
 
 -- --------------------------------------------------------
 
@@ -59,10 +69,35 @@ CREATE TABLE `bookcategory` (
   `category_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `bookcategory`
+--
+
+INSERT INTO `bookcategory` (`book_id`, `category_id`) VALUES
+(22, 9),
+(23, 8),
+(25, 12),
+(27, 12),
+(28, 1),
+(28, 9),
+(28, 12),
+(29, 9),
+(29, 13),
+(30, 1),
+(30, 9),
+(30, 12),
+(31, 1),
+(31, 9),
+(31, 12),
+(32, 9),
+(32, 12),
+(33, 9),
+(33, 12);
+
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `category`
+-- Table structure for table `category`
 --
 
 CREATE TABLE `category` (
@@ -71,50 +106,60 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `category`
+-- Dumping data for table `category`
 --
 
 INSERT INTO `category` (`category_id`, `category_name`) VALUES
 (1, 'History'),
-(2, 'Science Fiction');
+(8, 'Entertainment'),
+(9, 'Social Science'),
+(10, 'Sport'),
+(12, 'Education'),
+(13, 'Romatic'),
+(14, 'Horror');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `client`
+-- Table structure for table `client`
 --
 
 CREATE TABLE `client` (
   `client_id` int(11) NOT NULL,
   `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `role_id` int(11) NOT NULL
+  `password` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role_id` int(11) NOT NULL,
+  `salt` varchar(1000) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `client`
+-- Dumping data for table `client`
 --
 
-INSERT INTO `client` (`client_id`, `email`, `name`, `password`, `role_id`) VALUES
-(1, 'admin@gmail.com', 'admin', '1', 1),
-(2, 'user@gmail.com', 'user', '1', 2);
+INSERT INTO `client` (`client_id`, `email`, `name`, `password`, `role_id`, `salt`) VALUES
+(1, 'admin@gmail.com', 'admin', '7ca5f60595c92613c127995592c1a7abd2a925e7493d77b8ae7536bd769b6571', 1, 'IdxVcp05vp5m8GktioBwIdxVcp05vp5m'),
+(2, 'user@gmail.com', 'user', '53a96b198cf0c22fc034fe7c5156b6ff418ba014adacced2fa44b8a79bd6abf9', 2, 'cJPH7lhD9ZE0iKzXTy5jcJPH7lhD9ZE0'),
+(3, 'dpth@gmail.com', 'dpth', 'c0ca52f231e9ce67f8036990b091864b6d0eca9e6829b37c6dc305e471beaac4', 2, '7557a3b6572174c406d8fa177ec30ad0'),
+(4, 'ntmchau2202@gmail.com', 'Minh Chau', 'd2c8132d80acad85ea03653e4ed63f31a738e2dfaead21f9e375e73f8a58975d', 2, '3055bb562bf22cf19ea49a09d1e0e3ac');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `review`
+-- Table structure for table `review`
 --
 
 CREATE TABLE `review` (
   `book_id` int(11) NOT NULL,
-  `client_id` int(11) NOT NULL
+  `client_id` int(11) NOT NULL,
+  `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `time` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `role`
+-- Table structure for table `role`
 --
 
 CREATE TABLE `role` (
@@ -123,7 +168,7 @@ CREATE TABLE `role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `role`
+-- Dumping data for table `role`
 --
 
 INSERT INTO `role` (`rold_id`, `rold_name`) VALUES
@@ -133,7 +178,7 @@ INSERT INTO `role` (`rold_id`, `rold_name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `subcribelist`
+-- Table structure for table `subcribelist`
 --
 
 CREATE TABLE `subcribelist` (
@@ -141,30 +186,38 @@ CREATE TABLE `subcribelist` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Đang đổ dữ liệu cho bảng `subcribelist`
+--
+
+INSERT INTO `subcribelist` (`email`) VALUES
+('dat122@gmail.com'),
+('dpth@gmail.com');
+
+--
 -- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Chỉ mục cho bảng `book`
+-- Indexes for table `book`
 --
 ALTER TABLE `book`
   ADD PRIMARY KEY (`book_id`);
 
 --
--- Chỉ mục cho bảng `bookcategory`
+-- Indexes for table `bookcategory`
 --
 ALTER TABLE `bookcategory`
   ADD PRIMARY KEY (`book_id`,`category_id`),
   ADD KEY `fk_category_book_category` (`category_id`);
 
 --
--- Chỉ mục cho bảng `category`
+-- Indexes for table `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`category_id`);
 
 --
--- Chỉ mục cho bảng `client`
+-- Indexes for table `client`
 --
 ALTER TABLE `client`
   ADD PRIMARY KEY (`client_id`),
@@ -172,71 +225,71 @@ ALTER TABLE `client`
   ADD KEY `fk_client_role_id` (`role_id`);
 
 --
--- Chỉ mục cho bảng `review`
+-- Indexes for table `review`
 --
 ALTER TABLE `review`
   ADD PRIMARY KEY (`book_id`,`client_id`),
   ADD KEY `fk_client_review` (`client_id`);
 
 --
--- Chỉ mục cho bảng `role`
+-- Indexes for table `role`
 --
 ALTER TABLE `role`
   ADD PRIMARY KEY (`rold_id`);
 
 --
--- Chỉ mục cho bảng `subcribelist`
+-- Indexes for table `subcribelist`
 --
 ALTER TABLE `subcribelist`
   ADD PRIMARY KEY (`email`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `book`
+-- AUTO_INCREMENT for table `book`
 --
 ALTER TABLE `book`
-  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `book_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT cho bảng `category`
+-- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT cho bảng `client`
+-- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `role`
+-- AUTO_INCREMENT for table `role`
 --
 ALTER TABLE `role`
   MODIFY `rold_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `bookcategory`
+-- Constraints for table `bookcategory`
 --
 ALTER TABLE `bookcategory`
   ADD CONSTRAINT `fk_book_book_category` FOREIGN KEY (`book_id`) REFERENCES `book` (`book_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_category_book_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`category_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `client`
+-- Constraints for table `client`
 --
 ALTER TABLE `client`
   ADD CONSTRAINT `fk_client_role_id` FOREIGN KEY (`role_id`) REFERENCES `role` (`rold_id`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
--- Các ràng buộc cho bảng `review`
+-- Constraints for table `review`
 --
 ALTER TABLE `review`
   ADD CONSTRAINT `fk_book_review` FOREIGN KEY (`book_id`) REFERENCES `book` (`book_id`) ON DELETE NO ACTION ON UPDATE CASCADE,

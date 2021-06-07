@@ -1,3 +1,4 @@
+<title>Home page</title>	
 	<div class="block-1">
 		<?php include('slider/slider.html') ?>
 	</div>

@@ -30,10 +30,10 @@
                 $_SESSION['role'] = $this->userModel->getRole();
                 $directory = getAbsolutePath();
                 header("Location: http://$_SERVER[HTTP_HOST]$directory");
-            } else {
-                // show failed msg here
             }
-
+            else {
+                $this->view('login/loginfailed');
+            }
         }
 
         public function signupQuery(){
@@ -47,19 +47,17 @@
                 $_SESSION['timeout'] = time();
                 $_SESSION['username'] = $this->userModel->getName();
                 $_SESSION['role'] = $this->userModel->getRole();
+                // echo "Hello";
                 $directory = getAbsolutePath();
                 header("Location: http://$_SERVER[HTTP_HOST]$directory");
             } else {
-                // show failed msg here
+                // sign up failed notification
+                $this->view('login/signupfailed');
             }
         }
 
         public function logout()
         {
-            session_unset($_SESSION['valid']);
-            session_unset($_SESSION['timeout']);
-            session_unset($_SESSION['username']);
-            session_unset($_SESSION['role']);
             session_destroy();
             session_start();
             $directory = getAbsolutePath();
