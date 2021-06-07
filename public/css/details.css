@@ -66,7 +66,7 @@
 }
 .book_detail_section_1 .window__slider__img-container .window__right{
     float: left; 
-    top: 40%;
+    top: auto;
 }
 .book_detail_section_1 .window__slider__img-container .window__right h1{
     max-width: 35rem;

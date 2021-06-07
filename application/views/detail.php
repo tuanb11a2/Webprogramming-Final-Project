@@ -34,6 +34,8 @@
             printStart($rating,0);
         }else if($rating >= 4.5 && $rating < 5){
             printStart($rating,1);
+        }else if($rating == 5){
+            printStart($rating, 0);
         }else{
             echo "Error value";
         }

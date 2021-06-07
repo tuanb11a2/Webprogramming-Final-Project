@@ -98,6 +98,9 @@
     width: 70%;
     margin-bottom: 10px;
 }
+.subscription-email input[type=email]:focus{
+    outline: none;
+}
 .subscription-button button{
     font-size: large;
     font-weight: bold;

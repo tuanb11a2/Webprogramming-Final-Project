@@ -18,6 +18,11 @@
         </div>
         <div class="signin-logout">
             <p>Welcome, <?php echo $_SESSION["username"] ?></p>
+            <?php if($_SESSION["role"] == "1"){
+                echo '<a href="';
+                echo LINK;
+                echo '/admin" class="admin-page-btn">Admin Page</a>';
+            } ?>
             <a href="<?php echo LINK ?>/login/logout" class="signin-logout-btn">Logout</a>
         </div>
     </header>

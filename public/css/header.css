@@ -234,8 +234,23 @@ ul#main-menu a:hover, .dropbtn:hover{
     /* justify-content: center; */
     align-items: center;
 }
-.signin-logout-btn{
-    /* flex-basis: 30%; */
+.admin-page-btn{
+    flex-basis: 40%;
+    padding: 15px 20px;
+    margin-right: 0.5rem;
+    font-size: 16px;
+    background-color: palevioletred;
+    color: black;
+    font-size: larger;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.admin-page-btn:hover{
+    text-decoration: underline;
+}
+.admin-page-btn:visited{
+    color: black;
 }
 .signin-logout p{
     display: block;
