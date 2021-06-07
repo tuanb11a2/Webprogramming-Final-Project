@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 26, 2021 lúc 06:09 AM
+-- Thời gian đã tạo: Th6 06, 2021 lúc 09:45 AM
 -- Phiên bản máy phục vụ: 10.4.17-MariaDB
 -- Phiên bản PHP: 8.0.2
 
@@ -70,7 +70,7 @@ CREATE TABLE `bookcategory` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `bookcategory`
+-- Đang đổ dữ liệu cho bảng `bookcategory`
 --
 
 INSERT INTO `bookcategory` (`book_id`, `category_id`) VALUES
@@ -152,9 +152,18 @@ INSERT INTO `client` (`client_id`, `email`, `name`, `password`, `role_id`, `salt
 CREATE TABLE `review` (
   `book_id` int(11) NOT NULL,
   `client_id` int(11) NOT NULL,
-  `content` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `time` date NOT NULL
+  `review` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `rating` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `review`
+--
+
+INSERT INTO `review` (`book_id`, `client_id`, `review`, `rating`) VALUES
+(14, 1, 'dasdasd', 1),
+(14, 2, 'asdasd', 123),
+(29, 2, 'Test', 1);
 
 -- --------------------------------------------------------
 

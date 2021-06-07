@@ -3,15 +3,17 @@ var filter = {
     publisher: [],          // empty array means all publishers
     author: [],             // empty array means all authors
     rating: 0,              // zero means all ratings
-    sort_filter: "popularity"    // "popularity", "old", "new", "name" 
+    sort_filter: "old",    // "popularity", "old", "new", "name" 
+    search_suggest: ""
 };
-function getAllFilter(){    // reset when reload
+function getAllFilter(searchSuggest){    // reset when reload
     filter = {
         category: [],           // empty array means all categories
         publisher: [],          // empty array means all publishers
         author: [],             // empty array means all authors
         rating: 0,              // zero means all ratings
-        sort_filter: "popularity"    // "popularity", "old", "new", "name" 
+        sort_filter: "old",     // "popularity", "old", "new", "name" 
+        search_suggest: searchSuggest
     }
     // alert(JSON.stringify(filter));
 }
@@ -64,6 +66,7 @@ function changeCheckbox(id){
             allCheckBox.checked=true;
         }
     }
+    filterAjax();
     // alert(JSON.stringify(filter, null, 2));
 }
 function filter__by__rating__choice(){
@@ -92,14 +95,16 @@ function filter__by__rating__choice__button(value){
     }else{
         filter.rating=0
     }
+    filterAjax();
     // alert(JSON.stringify(filter));
 }
 function getOrderFilter(){
     var order = document.getElementById("order_filter");
     // alert(order.value);
-    if(order.value.includes("Popularity")){
-        filter.sort_filter = "popularity";
-    }else if(order.value.includes("New")){
+    // if(order.value.includes("Popularity")){
+    //     filter.sort_filter = "popularity";
+    // }else 
+    if(order.value.includes("New")){
         filter.sort_filter = "new";
     }else if(order.value.includes("Old")){
         filter.sort_filter = "old";
@@ -107,4 +112,5 @@ function getOrderFilter(){
         filter.sort_filter = "name";
     }
     // alert(JSON.stringify(filter));
+    filterAjax();
 }

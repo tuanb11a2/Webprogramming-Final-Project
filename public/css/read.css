@@ -127,3 +127,19 @@ td:nth-child(2){
 td{
     padding-top: 0.5rem;
 }
+
+.login-to-comment-inner-element{
+    margin-top: 1.5rem;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+.login-to-comment-inner-element a{
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+.login-to-comment-inner-element a:hover{
+    color: red !important;
+}
+.login-to-comment-inner-element a:visited{
+    color: black;
+}

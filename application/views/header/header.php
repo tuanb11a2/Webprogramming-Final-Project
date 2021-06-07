@@ -23,8 +23,7 @@
     <nav id="navigator">
         <ul id="main-menu">
             <li><a href="<?php echo LINK; ?>/home">HOME</a></li>
-            <li><a href="<?php echo LINK; ?>/book">BOOKS</a></li>
-            <!-- <li><a href="<?php echo LINK; ?>/category">CATEGORY</a></li> -->
+            <li><a href="<?php echo LINK; ?>/book">BOOK</a></li>            
             <li><a href="<?php echo LINK; ?>/about">ABOUT</a></li>
         </ul>
     </nav>

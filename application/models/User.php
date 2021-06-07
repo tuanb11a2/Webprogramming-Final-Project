@@ -8,6 +8,7 @@ class User extends Model
     private $password;
     private $role;
     private $name;
+    private $id;
 
     function __construct()
     {
@@ -22,6 +23,16 @@ class User extends Model
     public function getEmail()
     {
         return $this->email;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 
     public function setPassword($password)
@@ -75,7 +86,7 @@ class User extends Model
                 $userInfo = $this->db->query($sql);
                 $this->role = $userInfo[0]["Client"]["role_id"];
                 $this->name = $userInfo[0]["Client"]["name"];
-                
+                $this->id = $userInfo[0]["Client"]["client_id"];      
                 $salt = $userInfo[0]["Client"]["salt"];
                 $savedPwd = $userInfo[0]["Client"]["password"];
                 
@@ -93,6 +104,14 @@ class User extends Model
             }
         }
         return 0;
+    }
+
+    public function getLatestUser(){
+        $sql = "SELECT * FROM client ORDER BY client_id DESC LIMIT 1 ";
+        if ($this->db) {
+            return $this->db->query($sql);
+        }
+        return NULL;
     }
 
     public function getSigninStatus()
@@ -115,6 +134,8 @@ class User extends Model
                                             '".$salt."')";
                 if($this->db->query($sql_user_insert)){
                     $this->role = '2';
+                    $newestClient = $this->getLatestUser();
+                    $this->id = $newestClient[0]["Client"]["client_id"];
                     if($this->db){
                         $sql_subcrible_insert = "INSERT INTO `subcribelist`(`email`) VALUES ('".$this->email."')";
                         if($this->db->query($sql_subcrible_insert))

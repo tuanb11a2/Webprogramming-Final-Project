@@ -95,14 +95,14 @@ header{
 #main-menu li {
     display: inline-block;
     padding: 20px 20px 20px 20px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 7rem;
+    margin-right: 7rem;
 }
 ul#main-menu a, .dropbtn {
     color: #232F55;
     /* font-family: sans-serif; */
     font-family: inherit;
-    font-size: 16px;
+    font-size: larger;
     font-weight: bold;
     text-decoration: none;
     background-color: inherit;
@@ -234,12 +234,29 @@ ul#main-menu a:hover, .dropbtn:hover{
     /* justify-content: center; */
     align-items: center;
 }
-.signin-logout-btn{
-    /* flex-basis: 30%; */
+.admin-page-btn{
+    flex-basis: 40%;
+    padding: 15px 20px;
+    margin-right: 0.5rem;
+    font-size: 16px;
+    background-color: palevioletred;
+    color: black;
+    font-size: larger;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.admin-page-btn:hover{
+    text-decoration: underline;
+}
+.admin-page-btn:visited{
+    color: black;
 }
 .signin-logout p{
     display: block;
     flex-basis: 70%;
     font-size: larger;
     text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }

@@ -28,6 +28,7 @@
                 $_SESSION['timeout'] = time();
                 $_SESSION['username'] = $this->userModel->getName();
                 $_SESSION['role'] = $this->userModel->getRole();
+                $_SESSION['client_id'] = $this->userModel->getId();
                 $directory = getAbsolutePath();
                 header("Location: http://$_SERVER[HTTP_HOST]$directory");
             }
@@ -47,6 +48,7 @@
                 $_SESSION['timeout'] = time();
                 $_SESSION['username'] = $this->userModel->getName();
                 $_SESSION['role'] = $this->userModel->getRole();
+                $_SESSION['client_id'] = $this->userModel->getId();
                 // echo "Hello";
                 $directory = getAbsolutePath();
                 header("Location: http://$_SERVER[HTTP_HOST]$directory");
