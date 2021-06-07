@@ -4,9 +4,13 @@
 	 */
 	class loginController extends Controller
 	{
-		public function __construct()
-		{
-			$this->userModel = $this->model('User');
+		public function __construct(){
+            if(isset($_SESSION['username'])){
+            $directory = getAbsolutePath();
+            header("Location: http://$_SERVER[HTTP_HOST]$directory");
+            } else {
+                $this->userModel = $this->model('User');
+            }
 		}
 
 		public function index()
@@ -25,9 +29,12 @@
                 $_SESSION['username'] = $this->userModel->getName();
                 $_SESSION['role'] = $this->userModel->getRole();
                 $_SESSION['client_id'] = $this->userModel->getId();
+                $directory = getAbsolutePath();
+                header("Location: http://$_SERVER[HTTP_HOST]$directory");
             }
-            $directory = getAbsolutePath();
-            header("Location: http://$_SERVER[HTTP_HOST]$directory");
+            else {
+                $this->view('login/loginfailed');
+            }
         }
 
         public function signupQuery(){
@@ -42,9 +49,13 @@
                 $_SESSION['username'] = $this->userModel->getName();
                 $_SESSION['role'] = $this->userModel->getRole();
                 $_SESSION['client_id'] = $this->userModel->getId();
+                // echo "Hello";
+                $directory = getAbsolutePath();
+                header("Location: http://$_SERVER[HTTP_HOST]$directory");
+            } else {
+                // sign up failed notification
+                $this->view('login/signupfailed');
             }
-            $directory = getAbsolutePath();
-            header("Location: http://$_SERVER[HTTP_HOST]$directory");
         }
 
         public function logout()

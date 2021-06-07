@@ -1,3 +1,4 @@
+<title>Administrator Dashboard: User Manager</title>
 <?php
 //var_dump($data);
 ?>

@@ -80,14 +80,24 @@ class User extends Model
 
     public function getLoginStatus()
     {
-        $sql = "SELECT * FROM `client` WHERE email='".$this->email."' AND password=".$this->password." ";
+        $sql = "SELECT * FROM `client` WHERE email='".$this->email."'";/* AND password=".$this->password." ";*/
         if ($this->db) {
             if ($this->db->query($sql)){
                 $userInfo = $this->db->query($sql);
                 $this->role = $userInfo[0]["Client"]["role_id"];
                 $this->name = $userInfo[0]["Client"]["name"];
-                $this->id = $userInfo[0]["Client"]["client_id"];
-                return 1;
+                $this->id = $userInfo[0]["Client"]["client_id"];      
+                $salt = $userInfo[0]["Client"]["salt"];
+                $savedPwd = $userInfo[0]["Client"]["password"];
+                
+                $hashedPwd = hash("sha256", $this->password . $salt);
+                // reset password to blank for security
+                $this->setPassword("");
+                if(strcmp($hashedPwd, $savedPwd) == 0) {
+                    return 1;
+                } else {
+                    return 0;
+                }
             }
             else{
                 return 0;
@@ -108,15 +118,20 @@ class User extends Model
     {
         $sql = "SELECT * FROM `client` WHERE email='".$this->email."' ";
         if ($this->db) {
+            print("<pre>".print_r($this->db->query($sql),true)."</pre>");
             if (count($this->db->query($sql))!=0){
                 return 0;
             }else{
-                $sql_user_insert = "INSERT INTO `client`(`client_id`, `email`, `name`, `password`, `role_id`) 
+                echo "still alive";
+                $salt = $this->generageSalt();
+                $hashedPwd = hash("sha256", $this->password . $salt);
+                $sql_user_insert = "INSERT INTO `client`(`client_id`, `email`, `name`, `password`, `role_id`, `Salt`) 
                                     VALUES (NULL, 
                                             '".$this->email."', 
                                             '".$this->name."', 
-                                            '".$this->password."', 
-                                            '2')";
+                                            '".$hashedPwd."', 
+                                            '2',
+                                            '".$salt."')";
                 if($this->db->query($sql_user_insert)){
                     $this->role = '2';
                     $newestClient = $this->getLatestUser();
@@ -136,5 +151,8 @@ class User extends Model
         return 0;
     }
 
+    private function generageSalt(){
+        return substr(md5(rand()), 0, 100);  
+    }
 
 }

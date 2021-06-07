@@ -1,3 +1,4 @@
+<title>Administrator Dashboard: Add book</title>
 <h1>Admin add book</h1>
 <form action="addBookQuery" method="POST" enctype="multipart/form-data">
   <label>Book title:</label><br>

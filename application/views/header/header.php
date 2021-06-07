@@ -23,17 +23,7 @@
     <nav id="navigator">
         <ul id="main-menu">
             <li><a href="<?php echo LINK; ?>/home">HOME</a></li>
-            <li><a href="<?php echo LINK; ?>/book">BOOK</a></li>
-            <!-- <li>
-                <div class="dropdown">
-                    <button class="dropbtn">CATEGORY<i class="fa fa-caret-down"></i></button>
-                    <div class="dropdown-content1" id="dropdown-content-id">
-                        <a href="category.php">CATEGORY 1</a>
-                        <a href="#">TUAN CON</a>
-                        <a href="#">Science Fiction</a>
-                    </div>
-                </div>
-            </li> -->
+            <li><a href="<?php echo LINK; ?>/book">BOOK</a></li>            
             <li><a href="<?php echo LINK; ?>/about">ABOUT</a></li>
         </ul>
     </nav>

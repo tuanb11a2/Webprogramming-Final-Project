@@ -41,6 +41,7 @@ require_once(ROOT . DS . 'config' . DS . 'config.php');
 
 	<title>Home page</title>
     <link rel="icon" href="<?php echo LINK; ?>/image/logo.png">
+	<!-- <title>Home page</title> -->
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -53,11 +54,14 @@ require_once(ROOT . DS . 'config' . DS . 'config.php');
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/header.css" type="text/css">
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/footer.css" type="text/css">
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/login.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo LINK; ?>/css/loginsignupfailed.css" type="text/css">
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/card-slider-2.css" type="text/css">
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/latest-publish-button.css" type="text/css">
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/details.css" type="text/css">
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/admin.css" type="text/css">
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/read.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo LINK; ?>/css/aboutus.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo LINK; ?>/css/loginsignupfailed.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
