@@ -289,10 +289,49 @@
             if ($this->db) {
                 $this->db->query($sql);
             }
+            $sql1 = "SELECT number_of_review, rating FROM `book` WHERE book_id = ".$book_id;
+            if($this->db) {
+                $res = $this->db->query($sql1);
+                $number_of_review = (int)$res[0]['Book']['number_of_review'];
+                $book_rating = (double)$res[0]['Book']['rating'];
+                $client_rating = (double)$rating;
+                $new_number_of_review = $number_of_review + 1;
+                $new_book_rating = ($number_of_review*$book_rating+$client_rating)/$new_number_of_review;
+                $new_number_of_review = strval($new_number_of_review);
+                $new_book_rating = strval($new_book_rating);
+                $sql2 = "UPDATE `book` 
+                        SET `rating`='".$new_book_rating."',`number_of_review`='".$new_number_of_review."'
+                        WHERE `book_id` = ".$book_id;
+                if($this->db){
+                    $this->db->query($sql2);
+                }
+            }
             return NULL;
         }
 
         public function updateComment($book_id,$user_id,$rating,$comment){
+            $sql1 = "SELECT number_of_review, rating FROM `book` WHERE book_id = ".$book_id;
+            if($this->db) {
+                $res = $this->db->query($sql1);
+                $sql3 = "SELECT rating FROM `review` WHERE book_id = '".$book_id."' AND client_id = '".$user_id."'";
+                if($this->db){
+                    $res1 = $this->db->query($sql3);
+                    $number_of_review = (int)$res[0]['Book']['number_of_review'];
+                    $book_rating = (double)$res[0]['Book']['rating'];
+                    $old_client_rating = (double)$res1[0]['Review']['rating'];
+                    $new_client_rating = (double)$rating;
+                    $new_number_of_review = $number_of_review + 0;
+                    $new_book_rating = ($number_of_review*$book_rating+$new_client_rating-$old_client_rating)/$new_number_of_review;
+                    $new_number_of_review = strval($new_number_of_review);
+                    $new_book_rating = strval($new_book_rating);
+                    $sql2 = "UPDATE `book` 
+                        SET `rating`='".$new_book_rating."',`number_of_review`='".$new_number_of_review."'
+                        WHERE `book_id` = ".$book_id;
+                    if($this->db){
+                        $this->db->query($sql2);
+                    }
+                }
+            }
             $sql = "UPDATE `review` SET `review` = '".$comment."', `rating` = '".$rating."' WHERE `review`.`book_id` = ".$book_id." AND `review`.`client_id` = ".$user_id;
             //echo $sql;
             if ($this->db) {
@@ -302,6 +341,32 @@
         }
 
         public function deleteComment($book_id,$user_id){
+            $sql1 = "SELECT number_of_review, rating FROM `book` WHERE book_id = ".$book_id;
+            if($this->db) {
+                $res = $this->db->query($sql1);
+                $sql3 = "SELECT rating FROM `review` WHERE book_id = '".$book_id."' AND client_id = '".$user_id."'";
+                if($this->db){
+                    $res1 = $this->db->query($sql3);
+                    $number_of_review = (int)$res[0]['Book']['number_of_review'];
+                    $book_rating = (double)$res[0]['Book']['rating'];
+                    $old_client_rating = (double)$res1[0]['Review']['rating'];
+                    $new_number_of_review = $number_of_review - 1;
+                    if($new_number_of_review>0){
+                    $new_book_rating = ($number_of_review*$book_rating-$old_client_rating)/$new_number_of_review;
+                    }
+                    else{
+                    $new_book_rating = 0;
+                    }
+                    $new_number_of_review = strval($new_number_of_review);
+                    $new_book_rating = strval($new_book_rating);
+                    $sql2 = "UPDATE `book` 
+                        SET `rating`='".$new_book_rating."',`number_of_review`='".$new_number_of_review."'
+                        WHERE `book_id` = ".$book_id;
+                    if($this->db){
+                        $this->db->query($sql2);
+                    }
+                }
+            }
             $sql = "DELETE FROM `review` WHERE book_id = '".$book_id."' AND client_id = '".$user_id."'";
             //echo $sql;
             if ($this->db) {
