@@ -52,6 +52,7 @@ require_once(ROOT . DS . 'config' . DS . 'config.php');
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/header.css" type="text/css">
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/footer.css" type="text/css">
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/login.css" type="text/css">
+    <link rel="stylesheet" href="<?php echo LINK; ?>/css/loginsignupfailed.css" type="text/css">
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/card-slider-2.css" type="text/css">
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/latest-publish-button.css" type="text/css">
     <link rel="stylesheet" href="<?php echo LINK; ?>/css/details.css" type="text/css">
