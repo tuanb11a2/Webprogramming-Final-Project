@@ -33,7 +33,18 @@
             $bookName = $_POST["search"];
 
             $books = $this->userModel->getBookByName($bookName);
+			$author = $this->userModel->getAllAuthor();
+			$publisher = $this->userModel->getAllPublisher();
+			$category = $this->model('Category')->getAllCategory();
 //            var_dump($books);
-            $this->view('category', $books);
+			$this->view('category1');
+			$this->view('category/category', $category);
+			$this->view('category2');
+			$this->view('category/publisher', $publisher);
+			$this->view('category3');
+			$this->view('category/author', $author);
+			$this->view('category4');
+			$this->view('card/category-card-div', $books);
+			$this->view('category5');
         }
 	}
