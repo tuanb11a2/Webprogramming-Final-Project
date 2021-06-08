@@ -20,6 +20,12 @@
             $this->commentModel = $this->model('Comment');
 		}
 
+		private function validHTMLEntities($inputString)
+        {
+            $outputString = htmlentities($inputString);
+            return !strcmp($inputString, $outputString);
+        }
+
 		public function roleValidation($view, $data){
 //            echo $_SESSION['role'];
             if ($_SESSION['role'] && $_SESSION['role'] == 1)
@@ -302,16 +308,22 @@
         public function addCategory()
         {
             var_dump($_POST);
-            $this->categoryModel->setCategoryName($_POST["category_name"]);
-            $this->categoryModel->addCategory();
+            if ($this->validHTMLEntities($_POST["category_name"]))
+            {
+                $this->categoryModel->setCategoryName($_POST["category_name"]);
+                $this->categoryModel->addCategory();
+            }
             $this->redirectToAdminListCategory();
         }
 
         public function editCategory($id)
         {
             var_dump($_POST);
-            $this->categoryModel->setCategoryName($_POST["category_name"]);
-            $this->categoryModel->editCategory($id);
+            if ($this->validHTMLEntities($_POST["category_name"]))
+            {
+                $this->categoryModel->setCategoryName($_POST["category_name"]);
+                $this->categoryModel->editCategory($id);
+            }
             $this->redirectToAdminListCategory();
         }
 
