@@ -118,11 +118,11 @@ class User extends Model
     {
         $sql = "SELECT * FROM `client` WHERE email='".$this->email."' ";
         if ($this->db) {
-            print("<pre>".print_r($this->db->query($sql),true)."</pre>");
+            // print("<pre>".print_r($this->db->query($sql),true)."</pre>");
             if (count($this->db->query($sql))!=0){
                 return 0;
             }else{
-                echo "still alive";
+                // echo "still alive";
                 $salt = $this->generageSalt();
                 $hashedPwd = hash("sha256", $this->password . $salt);
                 $sql_user_insert = "INSERT INTO `client`(`client_id`, `email`, `name`, `password`, `role_id`, `Salt`) 
