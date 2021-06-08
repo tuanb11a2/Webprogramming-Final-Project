@@ -17,7 +17,7 @@
 
     <p>Le Anh Tuan is in charge mainly of the backend. He has good intuition at the core design on the server side and knows how to make it as simple as posible, but still adapt to the basic requirements of a general web project. He also understands how to prevent the system from being attacked by some easy exploitation.</p>
 
-    <p>Pham Tuan Linh, on the other side, takes up the front end. He built the main user interface of the website and implementing functionalities on the client side. However, for some reasons, he sometimes made up things that we do not understand. We call it magic, though sometimes it might be dark one. In the end, there is nothing to worry because most of these magic turns out cool</p>
+    <p>Pham Nhat Linh, on the other side, takes up the front end. He built the main user interface of the website and implementing functionalities on the client side. However, for some reasons, he sometimes made up things that we do not understand. We call it magic, though sometimes it might be dark one. In the end, there is nothing to worry because most of these magic turns out cool</p>
 
     <p>Nguyen Thi Minh Chau has her main job is to ensure the client and server always work properly, and there is no serious fault in the whole system. By some (many) tests, errors are reported by her, which sometimes annoys her accompanies. She does some pentests on different criteria and introduces improvements to save the website from attackers. Also, she works on some other small tasks on both frontend and backend to clean up the bugs in the system.</p>
 </section>
