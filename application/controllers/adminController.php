@@ -93,46 +93,52 @@
 			$description = $_POST["description"];
 			$publisher = $_POST["publisher"];
             $category = $_POST["add-book-category"];
+            if ($this->validHTMLEntities($title) &&
+                $this->validHTMLEntities($author) &&
+                $this->validHTMLEntities($description) &&
+                $this->validHTMLEntities($publisher) )
+            {
 			
-			//Get thumbnail file
-			$thumbnail["tmpPath"] = $_FILES['thumbnail']['tmp_name'];
-			$thumbnail["name"] = $_FILES['thumbnail']['name'];
-			$thumbnail["size"] = $_FILES['thumbnail']['size'];
-			$thumbnail["type"] = $_FILES['thumbnail']['type'];
-			$thumbnailNameCmps = explode(".",$thumbnail["name"]);
-			$thumbnail["extension"] = strtolower(end($thumbnailNameCmps));
-			$thumbnail["newFileName"] = md5(time() . $thumbnail["name"]) . '.' . $thumbnail["extension"];
-			$thumbnail["url"] = "fileupload/thumbnail/" . $thumbnail["newFileName"];
-			$thumbnail["path"] = $uploadFileDir . $thumbnail["url"];
-			if(!move_uploaded_file($thumbnail["tmpPath"], $thumbnail["path"])){
-  				echo 'There was some error moving the thumbnail file to upload directory. Please make sure the upload directory is writable by web server.';
-				exit(1);
-			}
+                //Get thumbnail file
+                $thumbnail["tmpPath"] = $_FILES['thumbnail']['tmp_name'];
+                $thumbnail["name"] = $_FILES['thumbnail']['name'];
+                $thumbnail["size"] = $_FILES['thumbnail']['size'];
+                $thumbnail["type"] = $_FILES['thumbnail']['type'];
+                $thumbnailNameCmps = explode(".",$thumbnail["name"]);
+                $thumbnail["extension"] = strtolower(end($thumbnailNameCmps));
+                $thumbnail["newFileName"] = md5(time() . $thumbnail["name"]) . '.' . $thumbnail["extension"];
+                $thumbnail["url"] = "fileupload/thumbnail/" . $thumbnail["newFileName"];
+                $thumbnail["path"] = $uploadFileDir . $thumbnail["url"];
+                if(!move_uploaded_file($thumbnail["tmpPath"], $thumbnail["path"])){
+                    echo 'There was some error moving the thumbnail file to upload directory. Please make sure the upload directory is writable by web server.';
+                    exit(1);
+                }
 
-			//Get PDF file
-			$bookPDF["tmpPath"] = $_FILES['bookPDF']['tmp_name'];
-			$bookPDF["name"] = $_FILES['bookPDF']['name'];
-			$bookPDF["size"] = $_FILES['bookPDF']['size'];
-			$bookPDF["type"] = $_FILES['bookPDF']['type'];
-			$bookPDFNameCmps = explode(".",$bookPDF["name"]);
-			$bookPDF["extension"] = strtolower(end($bookPDFNameCmps));
-			$bookPDF["newFileName"] = md5(time() . $bookPDF["name"]) . '.' . $bookPDF["extension"];
-			$bookPDF["url"] = "fileupload/bookPDF/" . $bookPDF["newFileName"];
-			$bookPDF["path"] = $uploadFileDir . $bookPDF["url"];
-			if(!move_uploaded_file($bookPDF["tmpPath"], $bookPDF["path"])){
-  				echo 'There was some error moving the book PDF file to upload directory. Please make sure the upload directory is writable by web server.';
-				exit(1);
-			}
-			//print_r($bookPDF);
+                //Get PDF file
+                $bookPDF["tmpPath"] = $_FILES['bookPDF']['tmp_name'];
+                $bookPDF["name"] = $_FILES['bookPDF']['name'];
+                $bookPDF["size"] = $_FILES['bookPDF']['size'];
+                $bookPDF["type"] = $_FILES['bookPDF']['type'];
+                $bookPDFNameCmps = explode(".",$bookPDF["name"]);
+                $bookPDF["extension"] = strtolower(end($bookPDFNameCmps));
+                $bookPDF["newFileName"] = md5(time() . $bookPDF["name"]) . '.' . $bookPDF["extension"];
+                $bookPDF["url"] = "fileupload/bookPDF/" . $bookPDF["newFileName"];
+                $bookPDF["path"] = $uploadFileDir . $bookPDF["url"];
+                if(!move_uploaded_file($bookPDF["tmpPath"], $bookPDF["path"])){
+                    echo 'There was some error moving the book PDF file to upload directory. Please make sure the upload directory is writable by web server.';
+                    exit(1);
+                }
 
-            $this->userModel->setTitle($title);
-            $this->userModel->setAuthor($author);
-            $this->userModel->setDescription($description);
-            $this->userModel->setPublisher($publisher);
-            $this->userModel->setCategory($category);
-			$this->userModel->setThumbnail($thumbnail["url"]);
-			$this->userModel->setBookPDF($bookPDF["url"]);
-            $this->userModel->addBookToDb();
+                $this->userModel->setTitle($title);
+                $this->userModel->setAuthor($author);
+                $this->userModel->setDescription($description);
+                $this->userModel->setPublisher($publisher);
+                $this->userModel->setCategory($category);
+                $this->userModel->setThumbnail($thumbnail["url"]);
+                $this->userModel->setBookPDF($bookPDF["url"]);
+
+                $this->userModel->addBookToDb();
+            }
             header("Location: http://$_SERVER[HTTP_HOST]$directory/book");
 		}
 
