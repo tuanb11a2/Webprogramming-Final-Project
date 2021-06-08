@@ -1,43 +1,43 @@
 <div class="window">
   <div class="window__slider">
     <div class="window__slider__img-container window__slider__img-container--opacity">
-      <img src="https://preview.colorlib.com/theme/abcbook/assets/img/gallery/xbest-books1.jpg.pagespeed.ic.a3LkFxg89O.webp" style="float: left; top: 20%; padding-left: 70px; padding-right: 70px;"  />
+      <img src="<?php echo LINK."/".$data[0]["Book"]["thumbnail_address"]; ?>" style="float: left; top: 20%; padding-left: 70px; padding-right: 70px;"  />
       <div class="window__right"  style="float: left;">
-        <h1>The Rage of Dragons</h1>
-        <p>By Evan Winter</p>
-        <button>View Details</button>
+        <h1><?php echo $data[0]["Book"]["title"]; ?></h1>
+        <p>By <?php echo $data[0]["Book"]["author"]; ?></p>
+        <button onclick="window.location.href='<?php echo LINK.'/detail/'.$data[0]['Book']['book_id'] ?>';">View Details</button>
       </div>
     </div>
     <div class="window__slider__img-container">
-      <img src="https://preview.colorlib.com/theme/abcbook/assets/img/gallery/xbest-books1.jpg.pagespeed.ic.a3LkFxg89O.webp" style="float: left; top: 20%; padding-left: 70px; padding-right: 70px;"/>
+      <img src="<?php echo LINK."/".$data[1]["Book"]["thumbnail_address"]; ?>" style="float: left; top: 20%; padding-left: 70px; padding-right: 70px;"  />
       <div class="window__right"  style="float: left;">
-        <h1>The Rage of Dragons</h1>
-        <p>By Evan Winter</p>
-        <button>View Details</button>
+        <h1><?php echo $data[1]["Book"]["title"]; ?></h1>
+        <p>By <?php echo $data[1]["Book"]["author"]; ?></p>
+        <button onclick="window.location.href='<?php echo LINK.'/detail/'.$data[1]['Book']['book_id'] ?>';">View Details</button>
       </div>
     </div>
     <div class="window__slider__img-container">
-      <img src="https://preview.colorlib.com/theme/abcbook/assets/img/gallery/xbest-books1.jpg.pagespeed.ic.a3LkFxg89O.webp" style="float: left; top: 20%; padding-left: 70px; padding-right: 70px;"/>
+      <img src="<?php echo LINK."/".$data[2]["Book"]["thumbnail_address"]; ?>" style="float: left; top: 20%; padding-left: 70px; padding-right: 70px;"  />
       <div class="window__right"  style="float: left;">
-        <h1>The Rage of Dragons</h1>
-        <p>By Evan Winter</p>
-        <button>View Details</button>
+        <h1><?php echo $data[2]["Book"]["title"]; ?></h1>
+        <p>By <?php echo $data[2]["Book"]["author"]; ?></p>
+        <button onclick="window.location.href='<?php echo LINK.'/detail/'.$data[2]['Book']['book_id'] ?>';">View Details</button>
       </div>
     </div>
     <div class="window__slider__img-container">
-      <img src="https://preview.colorlib.com/theme/abcbook/assets/img/gallery/xbest-books1.jpg.pagespeed.ic.a3LkFxg89O.webp" style="float: left; top: 20%; padding-left: 70px; padding-right: 70px;"/>
+      <img src="<?php echo LINK."/".$data[3]["Book"]["thumbnail_address"]; ?>" style="float: left; top: 20%; padding-left: 70px; padding-right: 70px;"  />
       <div class="window__right"  style="float: left;">
-        <h1>The Rage of Dragons</h1>
-        <p>By Evan Winter</p>
-        <button>View Details</button>
+        <h1><?php echo $data[3]["Book"]["title"]; ?></h1>
+        <p>By <?php echo $data[3]["Book"]["author"]; ?></p>
+        <button onclick="window.location.href='<?php echo LINK.'/detail/'.$data[3]['Book']['book_id'] ?>';">View Details</button>
       </div>
     </div>
     <div class="window__slider__img-container">
-      <img src="https://preview.colorlib.com/theme/abcbook/assets/img/gallery/xbest-books1.jpg.pagespeed.ic.a3LkFxg89O.webp" style="float: left; top: 20%; padding-left: 70px; padding-right: 70px;"/>
+      <img src="<?php echo LINK."/".$data[4]["Book"]["thumbnail_address"]; ?>" style="float: left; top: 20%; padding-left: 70px; padding-right: 70px;"  />
       <div class="window__right"  style="float: left;">
-        <h1>The Rage of Dragons</h1>
-        <p>By Evan Winter</p>
-        <button>View Details</button>
+        <h1><?php echo $data[4]["Book"]["title"]; ?></h1>
+        <p>By <?php echo $data[4]["Book"]["author"]; ?></p>
+        <button onclick="window.location.href='<?php echo LINK.'/detail/'.$data[4]['Book']['book_id'] ?>';">View Details</button>
       </div>
     </div>
   </div>
