@@ -3,7 +3,7 @@
 ?>
 <title>Administrator Dashboard: Email Management</title>
 <div class="admin__layout">
-    <h2>User Table</h2>
+    <h2>Guest Table</h2>
 
     <table>
         <tr>

@@ -10,9 +10,9 @@
 		<div class="login__form-container login__sign-up-container">
 			<form action="login/signupQuery" method="POST">
 				<h1>Create Account</h1>
-				<input type="text" placeholder="Name" id="signup_name" name="signup_name"/>
-				<input type="email" placeholder="Email" id="signup_email" name="signup_email"/>
-				<input type="password" placeholder="Password" id="signup_pswd" name="signup_pswd"/>
+				<input type="text" placeholder="Name" id="signup_name" name="signup_name" required/>
+				<input type="email" placeholder="Email" id="signup_email" name="signup_email" required/>
+				<input type="password" placeholder="Password" id="signup_pswd" name="signup_pswd" required/>
 				<button type="submit">Sign Up</button>
 			</form>
 		</div>
