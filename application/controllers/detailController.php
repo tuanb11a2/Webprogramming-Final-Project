@@ -11,6 +11,9 @@
 
 		public function index($id=0)
 		{
+			if(intval($id) == 0){
+				header("Location: ".LINK."/book");
+			}
 			$book = $this->userModel->getBookById($id);
 			$comment = $this->userModel->getAllComment($id);
 
