@@ -21,6 +21,7 @@
             <th>bookPDF</th>
             <th>editButton</th>
             <th>deleteButton</th>
+            <th>see comment</th>
         </tr>
         <?php
         foreach ($data as $book)
@@ -39,6 +40,7 @@
             <td><?php echo $book["Book"]["bookPDF"];?></td>
             <td><a href="<?php echo LINK; ?>/admin/editBook/<?php echo $book["Book"]["book_id"];?>"><button>Edit</button></a></td>
             <td><a onclick="return confirm('Are you sure you want to delete this book')" href="<?php echo LINK; ?>/admin/deleteBook/<?php echo $book["Book"]["book_id"];?>"><button>Delete</button></a></td>
+            <td><a href="<?php echo LINK; ?>/admin/commentManage/<?php echo $book["Book"]["book_id"];?>"><button>See comment</button></a></td>
         </tr>
         <?php
         }

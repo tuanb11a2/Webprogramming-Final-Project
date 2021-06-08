@@ -10,12 +10,14 @@
         private $userModel;
         private $categoryModel;
         private $emailModel;
+        private $commentModel;
 
         public function __construct()
 		{
 		    $this->userModel = $this->model('Book');
             $this->categoryModel =  $this->model('Category');
             $this->emailModel = $this->model('Email');
+            $this->commentModel = $this->model('Comment');
 		}
 
 		public function roleValidation($view, $data){
@@ -260,7 +262,6 @@
 
         public function guestList()
         {
-//            echo "Hello";
             $emails = $this->emailModel->getAllEmail();
             if (!$this->roleValidation('adminListEmail', $emails))
             {
@@ -300,7 +301,6 @@
 
         public function addCategory()
         {
-
             var_dump($_POST);
             $this->categoryModel->setCategoryName($_POST["category_name"]);
             $this->categoryModel->addCategory();
@@ -319,5 +319,21 @@
         {
             $this->categoryModel->deleteCategory($id);
             $this->redirectToAdminListCategory();
+        }
+
+        public function commentManage($id)
+        {
+            $reviews = $this->commentModel->getCommentByBookId($id);
+            if (!$this->roleValidation('adminManageComment', $reviews))
+            {
+                $this->redirectToMain();
+            }
+        }
+
+        public function deleteComment($id_book, $id_client)
+        {
+            echo $id_book . " and " . $id_client;
+            $this->commentModel->deleteComment($id_book, $id_client);
+            $this->redirectToAdminListBook();
         }
 	}
