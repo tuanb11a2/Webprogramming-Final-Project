@@ -1,4 +1,5 @@
 <html>
+    <title>Login Failed!</title>
     <!-- <link rel="stylesheet" href="loginsignupfailed.css"> -->
     <div class="login__failed">
         <div class="login__failed__section-header">

@@ -41,7 +41,7 @@
         }
     }
 ?>
-<title>Read book</title>
+<title>Read <?php echo $data[0]["Book"]["title"]; ?></title>
 <style>
     .reading-book-title {
         background-image: url("<?php echo LINK; ?>/image/category_banner_1.jpg");

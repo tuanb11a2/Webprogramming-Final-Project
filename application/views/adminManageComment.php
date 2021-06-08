@@ -1,5 +1,6 @@
 <?php
 ?>
+<title>Administrator Dashboard: Comment Management</title>
 <a href="<?php echo LINK; ?>/admin/listBook"><- BACK TO LIST BOOK PAGE</a>
 <?php
     if ($data)

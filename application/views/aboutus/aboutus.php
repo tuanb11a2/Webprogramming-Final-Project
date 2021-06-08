@@ -1,4 +1,4 @@
-<title>About us</title>
+<title>About Us</title>
 <body>
     <header class="masthead">
         <title>About us</title>
