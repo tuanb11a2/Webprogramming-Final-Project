@@ -11,7 +11,6 @@
             <th>client_id</th>
             <th>email</th>
             <th>name</th>
-            <th>password</th>
             <th>role_id</th>
             <th>deleteButton</th>
         </tr>
@@ -24,7 +23,6 @@
                 <td><?php echo $user["Client"]["client_id"];?></td>
                 <td><?php echo $user["Client"]["email"];?></td>
                 <td><?php echo $user["Client"]["name"];?></td>
-                <td><?php echo $user["Client"]["password"];?></td>
                 <td><?php echo $user["Client"]["role_id"];?></td>
                 <td><a onclick="return confirm('Are you sure you want to delete this user')" href="<?php echo LINK; ?>/admin/deleteUser/<?php echo $user["Client"]["client_id"];?>"><button>Delete</button></a></td>
             </tr>

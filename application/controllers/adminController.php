@@ -144,7 +144,7 @@
 
                 $this->userModel->addBookToDb();
             }
-            header("Location: http://$_SERVER[HTTP_HOST]$directory/book");
+            header("Location: http://$_SERVER[HTTP_HOST]$directory/admin/listBook");
 		}
 
 		public function editBook($id)
