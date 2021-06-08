@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 06, 2021 lúc 09:45 AM
--- Phiên bản máy phục vụ: 10.4.17-MariaDB
--- Phiên bản PHP: 8.0.2
+-- Host: 127.0.0.1
+-- Generation Time: Jun 08, 2021 at 04:11 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `bookstore`
+-- Database: `bookstore`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `book`
+-- Table structure for table `book`
 --
 
 CREATE TABLE `book` (
@@ -40,7 +40,7 @@ CREATE TABLE `book` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `book`
+-- Dumping data for table `book`
 --
 
 INSERT INTO `book` (`book_id`, `title`, `author`, `description`, `rating`, `number_of_review`, `publisher`, `thumbnail_address`, `bookPDF`) VALUES
@@ -54,14 +54,14 @@ INSERT INTO `book` (`book_id`, `title`, `author`, `description`, `rating`, `numb
 (28, ' Guide to Stoicism: Tools for Emotional Resilience', 'Matthew Van Natta', 'Being a stoic means embracing positivity and self-control through the ability to accept the uncertainty of outcomes.', 0, 0, 'Harper', 'fileupload/thumbnail/1361718c13a1e04fc08d396ff2bcbc78.jpg', 'fileupload/bookPDF/075b5dffd466f32a63c1da329ea2419b.pdf'),
 (29, '13 Reasons Why', 'JAY ASHER', 'The theme behind the book is bullying and in some ways also the stigma related to suicide.', 0, 0, 'Harper', 'fileupload/thumbnail/7cd8a4c6cfb6cc439b0280c934bca51a.jpeg', 'fileupload/bookPDF/e880c5caaaf14a1e50a4b27bccc2bd60.pdf'),
 (30, 'The Old Man And The Sea', 'Ernest Hemingway', 'This tale of an aged Cuban fisherman going head-to-head (or hand-to-fin) with a magnificent marlin encapsulates Hemingway’s favorite motifs of physical and moral challenge.', 0, 0, 'Penguin Random House US', 'fileupload/thumbnail/887e208f078beac4e69987340f8a8fb8.jpg', 'fileupload/bookPDF/4356ae3cbbf0ad7cc07375fb050be23c.pdf'),
-(31, 'Twenty Thousand Leagues Under The Sea', 'Jules Verne ', 'Vingt mille lieues sous les mers. English', 0, 0, '	 Penguin Random House US', 'fileupload/thumbnail/6dfe4a5976111c09d7bdcf37deb36101.jpg', 'fileupload/bookPDF/006e2d1a1ebd587acb58ed3fcc9e9ac2.pdf'),
+(31, 'Twenty Thousand Leagues Under The Sea', 'Jules Verne ', 'Vingt mille lieues sous les mers. English', 0, 0, 'Penguin Random House US', 'fileupload/thumbnail/6dfe4a5976111c09d7bdcf37deb36101.jpg', 'fileupload/bookPDF/006e2d1a1ebd587acb58ed3fcc9e9ac2.pdf'),
 (32, 'Nobodys boy', 'Hector Malot', 'Story of a young boy who discovers, at the age of eight, that he was a foundling. When his foster father sends him away he must find a way to survive and also discover his true identity', 0, 0, ' University of Illinois Urbana-Champaign', 'fileupload/thumbnail/58165b75fbf86dc583300ea8bf75ab40.jpg', 'fileupload/bookPDF/57b4c046a2edf94c098e366c8a4cf7ce.pdf'),
-(33, 'Uncle Toms Cabin', 'Hammatt Billings', 'Uncle Toms Cabin tells the story of Uncle Tom, depicted as a saintly, dignified slave. While being transported by boat to auction in New Orleans, Tom saves the life of Little Eva, whose grateful father then purchases Tom.', 0, 0, ' Penguin Random House US', 'fileupload/thumbnail/568810374a970a61ad30846882c9c503.jpg', 'fileupload/bookPDF/e5bbafe887e189fccc70b74e9bb5ff06.pdf');
+(33, 'Uncle Toms Cabin', 'Hammatt Billings', 'Uncle Toms Cabin tells the story of Uncle Tom, depicted as a saintly, dignified slave. While being transported by boat to auction in New Orleans, Tom saves the life of Little Eva, whose grateful father then purchases Tom.', 0, 0, 'Penguin Random House US', 'fileupload/thumbnail/568810374a970a61ad30846882c9c503.jpg', 'fileupload/bookPDF/e5bbafe887e189fccc70b74e9bb5ff06.pdf');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `bookcategory`
+-- Table structure for table `bookcategory`
 --
 
 CREATE TABLE `bookcategory` (
@@ -70,7 +70,7 @@ CREATE TABLE `bookcategory` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `bookcategory`
+-- Dumping data for table `bookcategory`
 --
 
 INSERT INTO `bookcategory` (`book_id`, `category_id`) VALUES
@@ -141,7 +141,8 @@ INSERT INTO `client` (`client_id`, `email`, `name`, `password`, `role_id`, `salt
 (1, 'admin@gmail.com', 'admin', '7ca5f60595c92613c127995592c1a7abd2a925e7493d77b8ae7536bd769b6571', 1, 'IdxVcp05vp5m8GktioBwIdxVcp05vp5m'),
 (2, 'user@gmail.com', 'user', '53a96b198cf0c22fc034fe7c5156b6ff418ba014adacced2fa44b8a79bd6abf9', 2, 'cJPH7lhD9ZE0iKzXTy5jcJPH7lhD9ZE0'),
 (3, 'dpth@gmail.com', 'dpth', 'c0ca52f231e9ce67f8036990b091864b6d0eca9e6829b37c6dc305e471beaac4', 2, '7557a3b6572174c406d8fa177ec30ad0'),
-(4, 'ntmchau2202@gmail.com', 'Minh Chau', 'd2c8132d80acad85ea03653e4ed63f31a738e2dfaead21f9e375e73f8a58975d', 2, '3055bb562bf22cf19ea49a09d1e0e3ac');
+(4, 'ntmchau2202@gmail.com', 'Minh Chau', 'd2c8132d80acad85ea03653e4ed63f31a738e2dfaead21f9e375e73f8a58975d', 2, '3055bb562bf22cf19ea49a09d1e0e3ac'),
+(5, 'linh@gmail.com', 'linh', '0c59a0527c6114bb20f12624d5e591964866280c4bf1e0a15e884455de6f2e66', 2, '621553c7281b9743ffebdbd1ebd13cda');
 
 -- --------------------------------------------------------
 
@@ -155,15 +156,6 @@ CREATE TABLE `review` (
   `review` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `rating` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `review`
---
-
-INSERT INTO `review` (`book_id`, `client_id`, `review`, `rating`) VALUES
-(14, 1, 'dasdasd', 1),
-(14, 2, 'asdasd', 123),
-(29, 2, 'Test', 1);
 
 -- --------------------------------------------------------
 
@@ -195,15 +187,16 @@ CREATE TABLE `subcribelist` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `subcribelist`
+-- Dumping data for table `subcribelist`
 --
 
 INSERT INTO `subcribelist` (`email`) VALUES
 ('dat122@gmail.com'),
-('dpth@gmail.com');
+('dpth@gmail.com'),
+('linh@gmail.com');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
@@ -272,7 +265,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `role`
