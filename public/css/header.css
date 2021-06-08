@@ -245,6 +245,7 @@ ul#main-menu a:hover, .dropbtn:hover{
     border-radius: 40px;
     text-decoration: none;
     font-weight: bold;
+    text-align: center;
 }
 .admin-page-btn:hover{
     text-decoration: underline;
