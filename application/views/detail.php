@@ -41,6 +41,7 @@
         }
     }
 ?>
+<title><?php echo $data[0]["Book"]["title"]; ?></title>
 <div class="book_detail_section">
     <div class="book_detail_section_1">
         <div class="window__slider__img-container">

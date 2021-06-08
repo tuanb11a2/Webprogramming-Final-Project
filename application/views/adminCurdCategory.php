@@ -1,7 +1,7 @@
 <?php
 //print("<pre>".print_r($data,true)."</pre>");
 ?>
-
+<title>Administrator Dashboard: Category Management</title>
 <div style="width: 50%; float: left">
     Update and Delete category
     <table>

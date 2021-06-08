@@ -138,9 +138,8 @@ class User extends Model
                     $this->id = $newestClient[0]["Client"]["client_id"];
                     if($this->db){
                         $sql_subcrible_insert = "INSERT INTO `subcribelist`(`email`) VALUES ('".$this->email."')";
-                        if($this->db->query($sql_subcrible_insert))
+                        $this->db->query($sql_subcrible_insert);
                             return 1;
-                        return 0;
                     }
                     return 1;
                 }

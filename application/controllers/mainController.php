@@ -7,11 +7,13 @@
 		public function __construct()
 		{
 			// echo "main";
+			$this->userModel = $this->model('Book');
 		}
 
 		public function index()
 		{
-			$this->view('home');
+			$books = $this->userModel->getAllBook();
+			$this->view('home', $books);
 		}
 	}
 ?>

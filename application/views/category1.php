@@ -3,8 +3,9 @@
 		background-image: url("<?php echo LINK; ?>/image/category_banner_1.jpg");
 	}
 </style>
+<title>Book List</title>
 <div class="category__banner">
-	<h1>Category</h1>
+	<h1>Our Books</h1>
 </div>
 <div class="category__product">
 	<div class="category__product__filter">

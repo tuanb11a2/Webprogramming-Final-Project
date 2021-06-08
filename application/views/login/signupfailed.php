@@ -1,5 +1,6 @@
 <html>
     <!-- <link rel="stylesheet" href="loginsignupfailed.css"> -->
+    <title>Sign Up Failed!</title>
     <div class="login__failed">
         <div class="login__failed__section-header">
 		<h2>Signup failed :(</h2>

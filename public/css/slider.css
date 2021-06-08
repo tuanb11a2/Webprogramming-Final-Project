@@ -45,18 +45,6 @@
     height:100%;
     background-color: rgba(0,0,0,.5);
 }
-.Abdelzaher-slider .item:nth-child(1){
-    background-image: url(https://preview.colorlib.com/theme/abcbook/assets/img/hero/h1_hero1.jpg.webp);
-    /*background-color: orange;*/
-}
-.Abdelzaher-slider .item:nth-child(2){
-    background-image: url(https://preview.colorlib.com/theme/abcbook/assets/img/hero/h1_hero2.jpg.webp);
-    background-color: orange;
-}
-.Abdelzaher-slider .item:nth-child(3){
-    background-image: url(https://preview.colorlib.com/theme/abcbook/assets/img/hero/h1_hero3.jpg.webp);
-    background-color: orange;
-}
 .Abdelzaher-slider .item.top{
     transition: .5s ease transform;
     z-index:3
@@ -154,4 +142,7 @@
     position: absolute;
     display:none
 }
-
+.Abdelzaher-slider .item.active button a{
+    text-decoration: none;
+    color: white;
+}

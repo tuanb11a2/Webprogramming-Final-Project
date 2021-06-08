@@ -71,3 +71,22 @@
 .book_detail_section_1 .window__slider__img-container .window__right h1{
     max-width: 35rem;
 }
+
+.window__slider .window__slider__img-container{
+    padding-top: 40px;
+}
+.window__slider .window__slider__img-container img{
+    float: left; 
+    top: 20%; 
+    padding-left: 70px; 
+    padding-right: 70px;
+    padding-bottom: 70px;
+    max-height: 30rem;
+}
+.window__slider .window__slider__img-container .window__right{
+    float: left; 
+    top: auto;
+}
+.window__slider .window__slider__img-container .window__right h1{
+    max-width: 35rem;
+}

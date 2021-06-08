@@ -7,7 +7,7 @@
         </div>
         <div class="search-bar" id="search-bar-id">
             <form class="search-bar-form" action="<?php echo LINK; ?>/book/bookSearchByName" method="POST">
-                <input autocomplete="off" id="search-suggestion" type="text" placeholder="Search book by name" name="search" onkeyup="showSearchSuggestion(this.value)">
+                <input autocomplete="off" id="search-suggestion" type="text" placeholder="Search book by name" name="search" onkeyup="showSearchSuggestion()">
                 <button type="submit"><i class="fa fa-search fa-lg"></i></button>
             </form>
             <div class="search-result" id="search-result-id">
@@ -35,7 +35,9 @@
     </nav>
 </div>
 <script>
-    function showSearchSuggestion(value) {
+    function showSearchSuggestion() {
+        value = encodeURIComponent(document.getElementById("search-suggestion").value).replace(/%20/g," ").replace(/3A/g, ":").replace(/2C/g, ",")
+        value = value.replace(/[^A-Za-z0-9:,\s]/gi,' ');
         var suggestion = document.getElementById("search-result-id");
         value = value.trim();
         if (value.length == 0) {

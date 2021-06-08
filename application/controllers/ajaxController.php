@@ -13,6 +13,8 @@ class ajaxController extends Controller
     
     public function ajaxBookByName($param)
     {
+        $param = preg_replace('/[^A-Za-z0-9:,\s]/', ' ', $param);
+		$param = trim($param);
         echo 'ajax-result-start';
         $result = $this->userModel->getBookName($param);
         if ($result == NULL) echo "";
