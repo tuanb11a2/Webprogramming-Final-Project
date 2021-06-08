@@ -56,6 +56,11 @@
             header("Location: http://$_SERVER[HTTP_HOST]$directory/admin");
         }
 
+        public function redirectToAdminGuestList(){
+            $directory = getAbsolutePath();
+            header("Location: http://$_SERVER[HTTP_HOST]$directory/admin/guestList");
+        }
+
 		public function index()
 		{
             if (!$this->roleValidation('admin', NULL)){
@@ -291,7 +296,7 @@
         {
             $this->emailModel->setEmail($email);
             $this->emailModel->deleteEmail();
-            $this->redirectToAdmin();
+            $this->redirectToAdminGuestList();
         }
 
         public function deleteUser($id)
