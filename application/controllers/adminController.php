@@ -230,8 +230,14 @@
                 $this->userModel->updateCategory($_POST["book_id"]);
             }
 
-            $this->userModel->updateBook($_POST["book_id"]);
-            header("Location: http://$_SERVER[HTTP_HOST]$directory/book");
+            if ($this->validHTMLEntities($_POST["title"]) &&
+                $this->validHTMLEntities($_POST["author"]) &&
+                $this->validHTMLEntities($_POST["description"]) &&
+                $this->validHTMLEntities($_POST["publisher"]) )
+            {
+                $this->userModel->updateBook($_POST["book_id"]);
+            }
+            header("Location: http://$_SERVER[HTTP_HOST]$directory/admin/listBook");
 
         }
 
